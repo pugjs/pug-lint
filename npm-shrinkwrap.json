@@ -1,0 +1,94 @@
+{
+  "name": "jadelint",
+  "version": "0.0.1",
+  "dependencies": {
+    "commander": {
+      "version": "2.8.1",
+      "from": "commander@^2.8.1",
+      "dependencies": {
+        "graceful-readlink": {
+          "version": "1.0.1",
+          "from": "graceful-readlink@>= 1.0.0"
+        }
+      }
+    },
+    "glob": {
+      "version": "5.0.13",
+      "from": "glob@^5.0.6",
+      "dependencies": {
+        "inflight": {
+          "version": "1.0.4",
+          "from": "inflight@^1.0.4",
+          "dependencies": {
+            "wrappy": {
+              "version": "1.0.1",
+              "from": "wrappy@1"
+            }
+          }
+        },
+        "inherits": {
+          "version": "2.0.1",
+          "from": "inherits@2"
+        },
+        "minimatch": {
+          "version": "2.0.8",
+          "from": "minimatch@^2.0.1",
+          "dependencies": {
+            "brace-expansion": {
+              "version": "1.1.0",
+              "from": "brace-expansion@^1.0.0",
+              "dependencies": {
+                "balanced-match": {
+                  "version": "0.2.0",
+                  "from": "balanced-match@^0.2.0"
+                },
+                "concat-map": {
+                  "version": "0.0.1",
+                  "from": "concat-map@0.0.1"
+                }
+              }
+            }
+          }
+        },
+        "once": {
+          "version": "1.3.2",
+          "from": "once@^1.3.0",
+          "dependencies": {
+            "wrappy": {
+              "version": "1.0.1",
+              "from": "wrappy@1"
+            }
+          }
+        },
+        "path-is-absolute": {
+          "version": "1.0.0",
+          "from": "path-is-absolute@^1.0.0"
+        }
+      }
+    },
+    "jade-lexer": {
+      "version": "0.0.7",
+      "from": "jade-lexer@^0.0.7",
+      "dependencies": {
+        "character-parser": {
+          "version": "1.2.2",
+          "from": "character-parser@^1.2.1"
+        }
+      }
+    },
+    "jade-parser": {
+      "version": "0.0.8",
+      "from": "jade-parser@^0.0.8",
+      "dependencies": {
+        "token-stream": {
+          "version": "0.0.1",
+          "from": "token-stream@0.0.1"
+        }
+      }
+    },
+    "jade-walk": {
+      "version": "0.0.2",
+      "from": "jade-walk@^0.0.2"
+    }
+  }
+}

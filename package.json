@@ -1,0 +1,55 @@
+{
+  "name": "jadelint",
+  "version": "0.0.1",
+  "description": "A linter for Jade",
+  "author": "Ben Edwards <hello@benedfit.com>",
+  "license": "ISC",
+  "keywords": [
+    "jadelint",
+    "jade-lint",
+    "jade",
+    "hinter",
+    "linter",
+    "lint",
+    "linting"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:benedfit/jadelint"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  },
+  "main": "./lib/jadelint",
+  "bin": {
+    "jadelint": "./bin/jadelint"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/jshint .",
+    "checkStyle": "./node_modules/.bin/jscs .",
+    "wrap": "rm -f npm-shrinkwrap.json; npm prune && npm install && npm shrinkwrap && pliers cleanShrinkwrap",
+    "pretest": "npm run lint && npm run checkStyle",
+    "test": "./node_modules/.bin/istanbul --include-all-sources cover ./node_modules/.bin/_mocha -- -R spec",
+    "posttest": "./node_modules/.bin/istanbul check-coverage && rm -rf coverage",
+    "postversion": "npm run wrap",
+    "prepublish": "npm test"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "commander": "^2.8.1",
+    "glob": "^5.0.6",
+    "jade-lexer": "^0.0.7",
+    "jade-parser": "^0.0.8",
+    "jade-walk": "^0.0.2"
+  },
+  "devDependencies": {
+    "istanbul": "^0.3.10",
+    "jscs": "^1.9.0",
+    "jshint": "^2.5.5",
+    "mocha": "^2.2.5",
+    "pliers": "^1.2.1",
+    "pliers-clean-shrinkwrap": "^1.0.1"
+  }
+}
