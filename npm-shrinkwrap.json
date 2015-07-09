@@ -2,10 +2,6 @@
   "name": "jadelint",
   "version": "0.0.1",
   "dependencies": {
-    "async": {
-      "version": "1.3.0",
-      "from": "async@^1.2.0"
-    },
     "commander": {
       "version": "2.8.1",
       "from": "commander@^2.8.1",
@@ -89,10 +85,6 @@
           "from": "token-stream@0.0.1"
         }
       }
-    },
-    "jade-walk": {
-      "version": "0.0.2",
-      "from": "jade-walk@^0.0.2"
     }
   }
 }

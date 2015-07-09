@@ -38,12 +38,10 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "async": "^1.2.0",
     "commander": "^2.8.1",
     "glob": "^5.0.6",
     "jade-lexer": "^0.0.7",
-    "jade-parser": "^0.0.8",
-    "jade-walk": "^0.0.2"
+    "jade-parser": "^0.0.8"
   },
   "devDependencies": {
     "istanbul": "^0.3.10",
