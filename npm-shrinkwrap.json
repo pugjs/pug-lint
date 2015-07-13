@@ -75,16 +75,6 @@
           "from": "character-parser@^1.2.1"
         }
       }
-    },
-    "jade-parser": {
-      "version": "0.0.8",
-      "from": "jade-parser@^0.0.8",
-      "dependencies": {
-        "token-stream": {
-          "version": "0.0.1",
-          "from": "token-stream@0.0.1"
-        }
-      }
     }
   }
 }
