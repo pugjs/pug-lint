@@ -8,13 +8,13 @@ A linter for Jade
 
 ## Rules
 
-You can specifically disable any rule by omitting it from your config or by assigning it to null
+You can specifically disable any rule by omitting it from your config or by assigning it to null.
 
-### commaSeparatedAttributes: `boolean`
+### commaSeparatedAttributes: `"require" | "disallow"`
 
-#### if (true)
+#### if ("require")
 
-All attributes must be comma separated
+All attributes must be comma separated.
 
 ```jade
 //- Valid
@@ -24,9 +24,9 @@ input(type='text', name='name', value='value')
 input(type='text' name='name' value='value')
 ```
 
-#### if (false)
+#### if ("disallow")
 
-No attributes should be comma separated
+No attributes should be comma separated.
 
 ```jade
 //- Valid
