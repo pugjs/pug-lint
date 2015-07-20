@@ -10,11 +10,11 @@ A linter for Jade
 
 You can specifically disable any rule by omitting it from your config or by assigning it to null.
 
-### commaSeparatedAttributes: `"require" | "disallow"`
+### attributeSeparator: `" " | "," | ", " | " ," | " , "`
 
-#### if ("require")
+#### e.g.: ", "
 
-All attributes must be comma separated.
+All attributes must be immediately followed by a comma and then a space.
 
 ```jade
 //- Valid
@@ -22,51 +22,39 @@ input(type='text', name='name', value='value')
 
 //- Invalid
 input(type='text' name='name' value='value')
-```
-
-#### if ("disallow")
-
-No attributes should be comma separated.
-
-```jade
-//- Valid
-input(type='text' name='name' value='value')
-
-//- Invalid
-input(type='text', name='name', value='value')
 ```
 
 ### idLiterals: `"require" | "disallow"`
 
-#### if ("require")
+#### "require"
 
 All IDs must be written as literals.
 
 ```jade
 //- Valid
-#id-literal
+#id
 
 //- Invalid
-div(id='id-attribute')
+div(id='id')
 ```
 
-#### if ("disallow")
+#### "disallow"
 
 All IDs must be written as attributes.
 
 ```jade
 //- Valid
-div(id='id-attribute')
+div(id='id')
 
 //- Invalid
-#id-literal
+#id
 ```
 
 ### spaceAfterCodeBuffer: `"require" | "disallow"`
 
-#### if ("require")
+#### "require"
 
-All code buffers must have a space after them.
+All code buffer operators must be immediately followed by a space.
 
 ```jade
 //- Valid
@@ -78,9 +66,9 @@ p='This code is <escaped>'
 p!='This code is <strong>not</strong> escaped'
 ```
 
-#### if ("disallow")
+#### "disallow"
 
-No code buffers should have a space after them.
+No code buffer operators should be followed by a space.
 
 ```jade
 //- Valid
