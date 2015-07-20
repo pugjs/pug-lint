@@ -54,7 +54,7 @@ function createTest(linter, fixturesPath) {
         assert.equal(linter.checkString('p=\'This code is <escaped>\'').length, 0)
       })
 
-      it('should report space after buffer in in file', function () {
+      it('should report space after buffer in file', function () {
         assert.equal(linter.checkFile(fixturesPath + 'space-after-code-buffer-require.jade').length, 2)
       })
 
