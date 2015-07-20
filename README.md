@@ -10,7 +10,7 @@ A linter for Jade
 
 You can specifically disable any rule by omitting it from your config or by assigning it to null.
 
-### attributeSeparator: `" " | "," | ", " | " ," | " , "`
+### attributeSeparator: `" "` | `","` | `", "` | `" ,"` | `" , "`
 
 #### e.g.: ", "
 
@@ -24,7 +24,7 @@ input(type='text', name='name', value='value')
 input(type='text' name='name' value='value')
 ```
 
-### idLiterals: `"require" | "disallow"`
+### idLiterals: `"require"` | `"disallow"`
 
 #### "require"
 
@@ -50,7 +50,7 @@ div(id='id')
 #id
 ```
 
-### spaceAfterCodeBuffer: `"require" | "disallow"`
+### spaceAfterCodeBuffer: `"require"` | `"disallow"`
 
 #### "require"
 
