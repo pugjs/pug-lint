@@ -10,9 +10,9 @@ A linter for Jade
 
 You can specifically disable any rule by omitting it from your config or by assigning it to null.
 
-### commaSeparatedAttributes: `"always" | "never"`
+### commaSeparatedAttributes: `"require" | "disallow"`
 
-#### if ("always")
+#### if ("require")
 
 All attributes must be comma separated.
 
@@ -24,7 +24,7 @@ input(type='text', name='name', value='value')
 input(type='text' name='name' value='value')
 ```
 
-#### if ("never")
+#### if ("disallow")
 
 No attributes should be comma separated.
 

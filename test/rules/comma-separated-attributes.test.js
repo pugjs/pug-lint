@@ -16,10 +16,10 @@ function createTest(linter, fixturesPath) {
 
     })
 
-    describe('always', function () {
+    describe('require', function () {
 
       before(function () {
-        linter.configure({ commaSeparatedAttributes: 'always' })
+        linter.configure({ commaSeparatedAttributes: 'require' })
       })
 
       it('should report missing comma between attributes in string', function () {
@@ -31,19 +31,19 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report missing comma between attributes in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-never.jade').length, 2)
+        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-disallow.jade').length, 2)
       })
 
       it('should not report comma between attributes in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-always.jade').length, 0)
+        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-require.jade').length, 0)
       })
 
     })
 
-    describe('never', function () {
+    describe('disallow', function () {
 
       before(function () {
-        linter.configure({ commaSeparatedAttributes: 'never' })
+        linter.configure({ commaSeparatedAttributes: 'disallow' })
       })
 
       it('should report comma between attributes in string', function () {
@@ -55,11 +55,11 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report comma between attributes in in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-always.jade').length, 2)
+        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-require.jade').length, 2)
       })
 
       it('should not report missing comma between attributes in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-never.jade').length, 0)
+        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-disallow.jade').length, 0)
       })
 
     })
