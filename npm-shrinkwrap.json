@@ -17,8 +17,8 @@
       }
     },
     "glob": {
-      "version": "5.0.13",
-      "from": "glob@^5.0.6",
+      "version": "5.0.14",
+      "from": "glob@^5.0.14",
       "dependencies": {
         "inflight": {
           "version": "1.0.4",
@@ -35,7 +35,7 @@
           "from": "inherits@2"
         },
         "minimatch": {
-          "version": "2.0.8",
+          "version": "2.0.9",
           "from": "minimatch@^2.0.1",
           "dependencies": {
             "brace-expansion": {
@@ -71,8 +71,8 @@
       }
     },
     "jade-lexer": {
-      "version": "0.0.7",
-      "from": "jade-lexer@^0.0.7",
+      "version": "0.0.8",
+      "from": "jade-lexer@^0.0.8",
       "dependencies": {
         "character-parser": {
           "version": "1.2.2",
