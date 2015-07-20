@@ -31,11 +31,11 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report missing comma between attributes in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-false.jade').length, 2)
+        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-never.jade').length, 2)
       })
 
       it('should not report comma between attributes in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-true.jade').length, 0)
+        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-always.jade').length, 0)
       })
 
     })
@@ -55,11 +55,11 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report comma between attributes in in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-true.jade').length, 2)
+        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-always.jade').length, 2)
       })
 
       it('should not report missing comma between attributes in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-false.jade').length, 0)
+        assert.equal(linter.checkFile(fixturesPath + 'comma-separated-attributes-never.jade').length, 0)
       })
 
     })
