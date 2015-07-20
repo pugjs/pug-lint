@@ -1,4 +1,4 @@
-{ "commaSeparatedAttributes": "require"
+{ "attributeSeparator": ", "
 , "idLiterals": "disallow"
 , "spaceAfterCodeBuffer": "require"
 }
