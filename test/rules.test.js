@@ -4,7 +4,6 @@ var glob = require('glob')
 describe('rules', function () {
 
   var linter = new Linter()
-    , fixturesPath = __dirname + '/fixtures/rules/'
     , rules = []
 
   glob.sync(__dirname + '/rules/*.test.js').forEach(function (file) {
@@ -12,7 +11,7 @@ describe('rules', function () {
   })
 
   rules.forEach(function (rule) {
-    rule(linter, fixturesPath)
+    rule(linter)
   })
 
 })

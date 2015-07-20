@@ -2,7 +2,7 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter, fixturesPath) {
+function createTest(linter) {
 
   describe('spaceAfterCodeBuffer', function () {
 
@@ -22,20 +22,12 @@ function createTest(linter, fixturesPath) {
         linter.configure({ spaceAfterCodeBuffer: 'require' })
       })
 
-      it('should report missing space after buffer in string', function () {
+      it('should report missing space after buffer', function () {
         assert.equal(linter.checkString('p=\'This code is <escaped>\'').length, 1)
       })
 
-      it('should not report space after buffer in string', function () {
+      it('should not report space after buffer', function () {
         assert.equal(linter.checkString('p= \'This code is <escaped>\'').length, 0)
-      })
-
-      it('should report missing space after buffer in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'space-after-code-buffer-disallow.jade').length, 2)
-      })
-
-      it('should not report space after buffer in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'space-after-code-buffer-require.jade').length, 0)
       })
 
     })
@@ -46,20 +38,12 @@ function createTest(linter, fixturesPath) {
         linter.configure({ spaceAfterCodeBuffer: 'disallow' })
       })
 
-      it('should report space after buffer in string', function () {
+      it('should report space after buffer', function () {
         assert.equal(linter.checkString('p= \'This code is <escaped>\'').length, 1)
       })
 
-      it('should not report missing space after buffer in string', function () {
+      it('should not report missing space after buffer', function () {
         assert.equal(linter.checkString('p=\'This code is <escaped>\'').length, 0)
-      })
-
-      it('should report space after buffer in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'space-after-code-buffer-require.jade').length, 2)
-      })
-
-      it('should not report missing space after buffer in file', function () {
-        assert.equal(linter.checkFile(fixturesPath + 'space-after-code-buffer-disallow.jade').length, 0)
       })
 
     })
