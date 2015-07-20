@@ -35,3 +35,33 @@ input(type='text' name='name' value='value')
 //- Invalid
 input(type='text', name='name', value='value')
 ```
+
+### spaceAfterCodeBuffer: `"require" | "disallow"`
+
+#### if ("require")
+
+All code buffers must have a space after them.
+
+```jade
+//- Valid
+p= 'This code is <escaped>'
+p!= 'This code is <strong>not</strong> escaped'
+
+//- Invalid
+p='This code is <escaped>'
+p!='This code is <strong>not</strong> escaped'
+```
+
+#### if ("disallow")
+
+No code buffers should have a space after them.
+
+```jade
+//- Valid
+p='This code is <escaped>'
+p!='This code is <strong>not</strong> escaped'
+
+//- Invalid
+p= 'This code is <escaped>'
+p!= 'This code is <strong>not</strong> escaped'
+```
