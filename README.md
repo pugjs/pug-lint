@@ -36,6 +36,32 @@ input(type='text' name='name' value='value')
 input(type='text', name='name', value='value')
 ```
 
+### idLiterals: `"require" | "disallow"`
+
+#### if ("require")
+
+All IDs must be written as literals.
+
+```jade
+//- Valid
+#id-literal
+
+//- Invalid
+div(id='id-attribute')
+```
+
+#### if ("disallow")
+
+All IDs must be written as attributes.
+
+```jade
+//- Valid
+div(id='id-attribute')
+
+//- Invalid
+#id-literal
+```
+
 ### spaceAfterCodeBuffer: `"require" | "disallow"`
 
 #### if ("require")

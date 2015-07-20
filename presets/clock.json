@@ -1,3 +1,4 @@
 { "commaSeparatedAttributes": "require"
+, "idLiterals": "disallow"
 , "spaceAfterCodeBuffer": "require"
 }
