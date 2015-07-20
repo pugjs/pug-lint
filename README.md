@@ -2,7 +2,7 @@
 
 A linter for Jade
 
-> Under active development. Watch this space as the rules roll in :rainbow::rabbit:
+> Under active development. Watch this space as the [rules roll in](https://github.com/benedfit/jadelint/issues/3) :rainbow::rabbit:
 
 [![build](https://img.shields.io/travis/benedfit/jadelint.svg)](https://travis-ci.org/benedfit/jadelint)
 
