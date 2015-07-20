@@ -16,10 +16,10 @@ function createTest(linter, fixturesPath) {
 
     })
 
-    describe('true', function () {
+    describe('always', function () {
 
       before(function () {
-        linter.configure({ commaSeparatedAttributes: true })
+        linter.configure({ commaSeparatedAttributes: 'always' })
       })
 
       it('should report missing comma between attributes in string', function () {
@@ -40,10 +40,10 @@ function createTest(linter, fixturesPath) {
 
     })
 
-    describe('false', function () {
+    describe('never', function () {
 
       before(function () {
-        linter.configure({ commaSeparatedAttributes: false })
+        linter.configure({ commaSeparatedAttributes: 'never' })
       })
 
       it('should report comma between attributes in string', function () {
