@@ -24,6 +24,16 @@ input(type='text', name='name', value='value')
 input(type='text' name='name' value='value')
 ```
 
+### disallowTagInterpolation: `true`
+
+Jade must not contain any tag interpolation operators.
+
+```jade
+//- Invalid
+<strong>html text</strong>
+p this is <strong>html</strong> text
+```
+
 ### idLiterals: `"require"` | `"disallow"`
 
 #### "require"
