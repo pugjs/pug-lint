@@ -30,10 +30,6 @@ function createTest(linter) {
         assert.equal(linter.checkString('p this is <strong>html</strong> text').length, 1)
       })
 
-      it('should not report tag interpolation', function () {
-        assert.equal(linter.checkString('p #[strong html] text').length, 0)
-      })
-
     })
 
   })
