@@ -24,6 +24,16 @@ input(type='text', name='name', value='value')
 input(type='text' name='name' value='value')
 ```
 
+### disallowHtmlText: `true`
+
+Jade must not contain any HTML.
+
+```jade
+//- Invalid
+<strong>html text</strong>
+p this is <strong>html</strong> text
+```
+
 ### idLiterals: `"require"` | `"disallow"`
 
 #### "require"
