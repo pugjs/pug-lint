@@ -24,6 +24,16 @@ input(type='text', name='name', value='value')
 input(type='text' name='name' value='value')
 ```
 
+### disallowBlockExpansion: `true`
+
+Jade must not contain any block expansion operators.
+
+```jade
+//- Invalid
+p: strong text
+table: tr: td text
+```
+
 ### disallowTagInterpolation: `true`
 
 Jade must not contain any tag interpolation operators.
