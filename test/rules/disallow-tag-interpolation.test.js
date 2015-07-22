@@ -23,11 +23,11 @@ function createTest(linter) {
       })
 
       it('should report tag interpolation at the start', function () {
-        assert.equal(linter.checkString('| #[strong html] text').length, 1)
+        assert.equal(linter.checkString('| #[strong html] text').getErrorCount(), 1)
       })
 
       it('should report tag interpolation anywhere', function () {
-        assert.equal(linter.checkString('p #[strong html] text').length, 1)
+        assert.equal(linter.checkString('p #[strong html] text').getErrorCount(), 1)
       })
 
     })

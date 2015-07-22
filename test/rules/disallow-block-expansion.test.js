@@ -23,11 +23,11 @@ function createTest(linter) {
       })
 
       it('should report block expansion operator', function () {
-        assert.equal(linter.checkString('p: strong text').length, 1)
+        assert.equal(linter.checkString('p: strong text').getErrorCount(), 1)
       })
 
       it('should report tag multiple block expansion operators', function () {
-        assert.equal(linter.checkString('table: tr: td text').length, 2)
+        assert.equal(linter.checkString('table: tr: td text').getErrorCount(), 2)
       })
 
     })

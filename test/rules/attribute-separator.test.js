@@ -23,11 +23,11 @@ function createTest(linter) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\'  name=\'name\'  value=\'value\')').length, 1)
+        assert.equal(linter.checkString('input(type=\'text\'  name=\'name\'  value=\'value\')').getErrorCount(), 1)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').length, 0)
+        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').getErrorCount(), 0)
       })
 
     })
@@ -39,11 +39,11 @@ function createTest(linter) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').length, 1)
+        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').getErrorCount(), 1)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\',name=\'name\',value=\'value\')').length, 0)
+        assert.equal(linter.checkString('input(type=\'text\',name=\'name\',value=\'value\')').getErrorCount(), 0)
       })
 
     })
@@ -55,11 +55,11 @@ function createTest(linter) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').length, 1)
+        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').getErrorCount(), 1)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\', name=\'name\', value=\'value\')').length, 0)
+        assert.equal(linter.checkString('input(type=\'text\', name=\'name\', value=\'value\')').getErrorCount(), 0)
       })
 
     })
@@ -71,11 +71,11 @@ function createTest(linter) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\', name=\'name\', value=\'value\')').length, 1)
+        assert.equal(linter.checkString('input(type=\'text\', name=\'name\', value=\'value\')').getErrorCount(), 1)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' ,name=\'name\' ,value=\'value\')').length, 0)
+        assert.equal(linter.checkString('input(type=\'text\' ,name=\'name\' ,value=\'value\')').getErrorCount(), 0)
       })
 
     })
@@ -87,11 +87,11 @@ function createTest(linter) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').length, 1)
+        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').getErrorCount(), 1)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' , name=\'name\' , value=\'value\')').length, 0)
+        assert.equal(linter.checkString('input(type=\'text\' , name=\'name\' , value=\'value\')').getErrorCount(), 0)
       })
 
     })
