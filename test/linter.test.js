@@ -5,7 +5,7 @@ describe('linter', function () {
 
   var linter
 
-  describe('config', function () {
+  describe('configure', function () {
 
     it('should have no default configured rules', function () {
       linter = new Linter()
