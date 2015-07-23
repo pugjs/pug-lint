@@ -1,5 +1,6 @@
 { "attributeSeparator": ", "
 , "disallowBlockExpansion": null
+, "disallowHtmlText": true
 , "disallowTagInterpolation": null
 , "idLiterals": "disallow"
 , "literalsBeforeAttributes": "require"

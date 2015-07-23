@@ -34,6 +34,16 @@ p: strong text
 table: tr: td text
 ```
 
+### disallowHtmlText: `true`
+
+Jade must not contain any HTML text.
+
+```jade
+//- Invalid
+<strong>html text</strong>
+p this is <strong>html</strong> text
+```
+
 ### disallowTagInterpolation: `true`
 
 Jade must not contain any tag interpolation operators.
