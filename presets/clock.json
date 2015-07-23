@@ -1,4 +1,6 @@
 { "attributeSeparator": ", "
+, "disallowBlockExpansion": null
+, "disallowTagInterpolation": null
 , "idLiterals": "disallow"
 , "spaceAfterCodeBuffer": "require"
 }
