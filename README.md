@@ -40,8 +40,8 @@ Jade must not contain any tag interpolation operators.
 
 ```jade
 //- Invalid
-<strong>html text</strong>
-p this is <strong>html</strong> text
+| #[strong html] text
+p #[strong html] text
 ```
 
 ### idLiterals: `"require"` | `"disallow"`
