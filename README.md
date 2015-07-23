@@ -122,7 +122,7 @@ p= 'This code is <escaped>'
 p!= 'This code is <strong>not</strong> escaped'
 ```
 
-### validateAttributeQuoteMarks: `"\""` | `"'"` | true
+### validateAttributeQuoteMarks: `"\""` | `"'"` | `true`
 
 #### e.g.: "'"
 
