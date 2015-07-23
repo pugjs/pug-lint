@@ -122,6 +122,24 @@ p= 'This code is <escaped>'
 p!= 'This code is <strong>not</strong> escaped'
 ```
 
+### validateAttributeQuoteMarks: `"\""` | `"'"` | true
+
+#### e.g.: "'"
+
+All attribute values must be enclosed in single quotes.
+
+```jade
+//- Valid
+input(type='text' name='name' value='value')
+
+//- Invalid
+input(type="text" name="name" value="value")
+```
+
+#### if (true)
+
+All attribute values must be enclosed in quote marks match the first quote mark encountered in the source code.
+
 ### validateAttributeSeparator: `" "` | `","` | `", "` | `" ,"` | `" , "`
 
 #### e.g.: ", "

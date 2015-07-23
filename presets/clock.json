@@ -4,5 +4,6 @@
 , "idLiterals": "disallow"
 , "literalsBeforeAttributes": "require"
 , "spaceAfterCodeBuffer": "require"
+, "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "
 }
