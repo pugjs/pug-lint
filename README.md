@@ -92,11 +92,11 @@ input(type='text')#id.class
 input#id.class(type='text')
 ```
 
-### spaceAfterCodeBuffer: `"require"` | `"disallow"`
+### spaceAfterCodeOperator: `"require"` | `"disallow"`
 
 #### "require"
 
-All code buffer operators must be immediately followed by a space.
+All code operators (unbuffered/buffered/unescped buffered) must be immediately followed by a space.
 
 ```jade
 //- Valid
@@ -110,7 +110,7 @@ p!='This code is <strong>not</strong> escaped'
 
 #### "disallow"
 
-No code buffer operators should be followed by a space.
+No code operators should be followed by a space.
 
 ```jade
 //- Valid
