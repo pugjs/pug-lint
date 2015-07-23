@@ -10,20 +10,6 @@ A linter for Jade
 
 You can specifically disable any rule by omitting it from your config or by assigning it to null.
 
-### attributeSeparator: `" "` | `","` | `", "` | `" ,"` | `" , "`
-
-#### e.g.: ", "
-
-All attributes must be immediately followed by a comma and then a space.
-
-```jade
-//- Valid
-input(type='text', name='name', value='value')
-
-//- Invalid
-input(type='text' name='name' value='value')
-```
-
 ### disallowBlockExpansion: `true`
 
 Jade must not contain any block expansion operators.
@@ -134,4 +120,18 @@ p!='This code is <strong>not</strong> escaped'
 //- Invalid
 p= 'This code is <escaped>'
 p!= 'This code is <strong>not</strong> escaped'
+```
+
+### validateAttributeSeparator: `" "` | `","` | `", "` | `" ,"` | `" , "`
+
+#### e.g.: ", "
+
+All attributes must be immediately followed by a comma and then a space.
+
+```jade
+//- Valid
+input(type='text', name='name', value='value')
+
+//- Invalid
+input(type='text' name='name' value='value')
 ```

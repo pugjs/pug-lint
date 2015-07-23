@@ -4,12 +4,12 @@ var assert = require('assert')
 
 function createTest(linter) {
 
-  describe('attributeSeparator', function () {
+  describe('validateAttributeSeparator', function () {
 
     describe('null', function () {
 
       it('should be disabled if options are null', function () {
-        linter.configure({ attributeSeparator: null })
+        linter.configure({ validateAttributeSeparator: null })
 
         assert.equal(linter.getConfiguredRules().length, 0)
       })
@@ -19,7 +19,7 @@ function createTest(linter) {
     describe('space', function () {
 
       before(function () {
-        linter.configure({ attributeSeparator: ' ' })
+        linter.configure({ validateAttributeSeparator: ' ' })
       })
 
       it('should report invalid attribute separator', function () {
@@ -35,7 +35,7 @@ function createTest(linter) {
     describe('comma', function () {
 
       before(function () {
-        linter.configure({ attributeSeparator: ',' })
+        linter.configure({ validateAttributeSeparator: ',' })
       })
 
       it('should report invalid attribute separator', function () {
@@ -51,7 +51,7 @@ function createTest(linter) {
     describe('comma-space', function () {
 
       before(function () {
-        linter.configure({ attributeSeparator: ', ' })
+        linter.configure({ validateAttributeSeparator: ', ' })
       })
 
       it('should report invalid attribute separator', function () {
@@ -67,7 +67,7 @@ function createTest(linter) {
     describe('space-comma', function () {
 
       before(function () {
-        linter.configure({ attributeSeparator: ' ,' })
+        linter.configure({ validateAttributeSeparator: ' ,' })
       })
 
       it('should report invalid attribute separator', function () {
@@ -83,7 +83,7 @@ function createTest(linter) {
     describe('space-comma-space', function () {
 
       before(function () {
-        linter.configure({ attributeSeparator: ' , ' })
+        linter.configure({ validateAttributeSeparator: ' , ' })
       })
 
       it('should report invalid attribute separator', function () {
