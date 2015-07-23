@@ -23,11 +23,11 @@ function createTest(linter) {
       })
 
       it('should report ID attribute', function () {
-        assert.equal(linter.checkString('div(id=\'id\')').length, 1)
+        assert.equal(linter.checkString('div(id=\'id\')').getErrorCount(), 1)
       })
 
       it('should not report ID literal', function () {
-        assert.equal(linter.checkString('#id').length, 0)
+        assert.equal(linter.checkString('#id').getErrorCount(), 0)
       })
 
     })
@@ -39,11 +39,11 @@ function createTest(linter) {
       })
 
       it('should report ID literal', function () {
-        assert.equal(linter.checkString('#id').length, 1)
+        assert.equal(linter.checkString('#id').getErrorCount(), 1)
       })
 
       it('should not report ID attribute', function () {
-        assert.equal(linter.checkString('div(id=\'id\')').length, 0)
+        assert.equal(linter.checkString('div(id=\'id\')').getErrorCount(), 0)
       })
 
     })

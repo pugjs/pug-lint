@@ -24,14 +24,34 @@ input(type='text', name='name', value='value')
 input(type='text' name='name' value='value')
 ```
 
+### disallowBlockExpansion: `true`
+
+Jade must not contain any block expansion operators.
+
+```jade
+//- Invalid
+p: strong text
+table: tr: td text
+```
+
 ### disallowHtmlText: `true`
 
-Jade must not contain any HTML.
+Jade must not contain any HTML text.
 
 ```jade
 //- Invalid
 <strong>html text</strong>
 p this is <strong>html</strong> text
+```
+
+### disallowTagInterpolation: `true`
+
+Jade must not contain any tag interpolation operators.
+
+```jade
+//- Invalid
+| #[strong html] text
+p #[strong html] text
 ```
 
 ### idLiterals: `"require"` | `"disallow"`
@@ -58,6 +78,32 @@ div(id='id')
 
 //- Invalid
 #id
+```
+
+### literalsBeforeAttributes: `"require"` | `"disallow"`
+
+#### "require"
+
+All class or ID literals must be written before any attribute blocks.
+
+```jade
+//- Valid
+input#id.class(type='text')
+
+//- Invalid
+input(type='text')#id.class
+```
+
+#### "disallow"
+
+All attribute blocks must be written before any class or ID literals.
+
+```jade
+//- Valid
+input(type='text')#id.class
+
+//- Invalid
+input#id.class(type='text')
 ```
 
 ### spaceAfterCodeBuffer: `"require"` | `"disallow"`

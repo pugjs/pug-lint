@@ -23,11 +23,11 @@ function createTest(linter) {
       })
 
       it('should report missing space after buffer', function () {
-        assert.equal(linter.checkString('p=\'This code is <escaped>\'').length, 1)
+        assert.equal(linter.checkString('p=\'This code is <escaped>\'').getErrorCount(), 1)
       })
 
       it('should not report space after buffer', function () {
-        assert.equal(linter.checkString('p= \'This code is <escaped>\'').length, 0)
+        assert.equal(linter.checkString('p= \'This code is <escaped>\'').getErrorCount(), 0)
       })
 
     })
@@ -39,11 +39,11 @@ function createTest(linter) {
       })
 
       it('should report space after buffer', function () {
-        assert.equal(linter.checkString('p= \'This code is <escaped>\'').length, 1)
+        assert.equal(linter.checkString('p= \'This code is <escaped>\'').getErrorCount(), 1)
       })
 
       it('should not report missing space after buffer', function () {
-        assert.equal(linter.checkString('p=\'This code is <escaped>\'').length, 0)
+        assert.equal(linter.checkString('p=\'This code is <escaped>\'').getErrorCount(), 0)
       })
 
     })
