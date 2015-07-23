@@ -2,7 +2,7 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter) {
+function createTest(linter, fixturesPath) {
 
   describe('disallowHtmlText', function () {
 
@@ -32,6 +32,14 @@ function createTest(linter) {
 
       it('should not report missing HTML text', function () {
         assert.equal(linter.checkString('p this is text').getErrorCount(), 0)
+      })
+
+      it('should report multiple errors found in file', function () {
+        var result = linter.checkFile(fixturesPath + 'disallow-html-text.jade')
+
+        assert.equal(result.getErrorCount(), 2)
+        assert.equal(result.getError(0).line, 3)
+        assert.equal(result.getError(1).line, 6)
       })
 
     })

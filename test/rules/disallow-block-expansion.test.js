@@ -2,7 +2,7 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter) {
+function createTest(linter, fixturesPath) {
 
   describe('disallowBlockExpansion', function () {
 
@@ -28,6 +28,18 @@ function createTest(linter) {
 
       it('should report tag multiple block expansion operators', function () {
         assert.equal(linter.checkString('table: tr: td text').getErrorCount(), 2)
+      })
+
+      it('should report multiple errors found in file', function () {
+        var result = linter.checkFile(fixturesPath + 'disallow-block-expansion.jade')
+
+        assert.equal(result.getErrorCount(), 6)
+        assert.equal(result.getError(0).line, 4)
+        assert.equal(result.getError(1).line, 6)
+        assert.equal(result.getError(2).line, 6)
+        assert.equal(result.getError(3).line, 8)
+        assert.equal(result.getError(4).line, 8)
+        assert.equal(result.getError(5).line, 8)
       })
 
     })

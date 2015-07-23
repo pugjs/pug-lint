@@ -2,10 +2,6 @@
   "name": "jadelint",
   "version": "0.0.1",
   "dependencies": {
-    "async": {
-      "version": "1.4.0",
-      "from": "async@"
-    },
     "commander": {
       "version": "2.8.1",
       "from": "commander@^2.8.1",
