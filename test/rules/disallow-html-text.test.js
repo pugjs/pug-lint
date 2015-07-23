@@ -30,6 +30,10 @@ function createTest(linter) {
         assert.equal(linter.checkString('p this is <strong>html</strong> text').getErrorCount(), 1)
       })
 
+      it('should not report missing HTML text', function () {
+        assert.equal(linter.checkString('p this is text').getErrorCount(), 0)
+      })
+
     })
 
   })
