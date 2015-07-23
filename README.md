@@ -70,6 +70,32 @@ div(id='id')
 #id
 ```
 
+### literalsBeforeAttributes: `"require"` | `"disallow"`
+
+#### "require"
+
+All class or ID literals must be written before any attribute blocks.
+
+```jade
+//- Valid
+input#id.class(type='text')
+
+//- Invalid
+input(type='text')#id.class
+```
+
+#### "disallow"
+
+All attribute blocks must be written before any class or ID literals.
+
+```jade
+//- Valid
+input(type='text')#id.class
+
+//- Invalid
+input#id.class(type='text')
+```
+
 ### spaceAfterCodeBuffer: `"require"` | `"disallow"`
 
 #### "require"

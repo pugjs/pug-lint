@@ -2,5 +2,6 @@
 , "disallowBlockExpansion": null
 , "disallowTagInterpolation": null
 , "idLiterals": "disallow"
+, "literalsBeforeAttributes": "require"
 , "spaceAfterCodeBuffer": "require"
 }
