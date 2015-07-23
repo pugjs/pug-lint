@@ -27,7 +27,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",
     "checkStyle": "./node_modules/.bin/jscs .",
-    "checkDuplication": "./node_modules/.bin/jsinspect",
+    "checkDuplication": "./node_modules/.bin/jsinspect .",
     "wrap": "rm -f npm-shrinkwrap.json; npm prune && npm install && npm shrinkwrap && pliers cleanShrinkwrap",
     "pretest": "npm run lint && npm run checkStyle && npm run checkDuplication",
     "test": "./node_modules/.bin/istanbul --include-all-sources cover ./node_modules/.bin/_mocha -- -R spec",
