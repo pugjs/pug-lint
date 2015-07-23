@@ -23,11 +23,11 @@ function createTest(linter) {
       })
 
       it('should report HTML text at the start', function () {
-        assert.equal(linter.checkString('<strong>html</strong> text').length, 1)
+        assert.equal(linter.checkString('<strong>html</strong> text').getErrorCount(), 1)
       })
 
-      it.skip('should report HTML text anywhere', function () {
-        assert.equal(linter.checkString('p this is <strong>html</strong> text').length, 1)
+      it('should report HTML text anywhere', function () {
+        assert.equal(linter.checkString('p this is <strong>html</strong> text').getErrorCount(), 1)
       })
 
     })
