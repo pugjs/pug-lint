@@ -30,7 +30,22 @@ Jade must not contain any HTML text.
 p this is <strong>html</strong> text
 ```
 
+### disallowSpaceAfterCodeOperator: `true`
+
+No code operators (unbuffered/buffered/unescped buffered) should be followed by any spaces.
+
+```jade
+//- Valid
+p='This code is <escaped>'
+p!='This code is <strong>not</strong> escaped'
+
+//- Invalid
+p= 'This code is <escaped>'
+p!=  'This code is <strong>not</strong> escaped'
+```
+
 ### disallowTagInterpolation: `true`
+
 
 Jade must not contain any tag interpolation operators.
 
@@ -92,11 +107,9 @@ input(type='text')#id.class
 input#id.class(type='text')
 ```
 
-### spaceAfterCodeOperator: `"require"` | `"disallow"`
+### requireSpaceAfterCodeOperator: `true`
 
-#### "require"
-
-All code operators (unbuffered/buffered/unescped buffered) must be immediately followed by a space.
+All code operators (unbuffered/buffered/unescaped buffered) must be immediately followed by a single space.
 
 ```jade
 //- Valid
@@ -105,21 +118,7 @@ p!= 'This code is <strong>not</strong> escaped'
 
 //- Invalid
 p='This code is <escaped>'
-p!='This code is <strong>not</strong> escaped'
-```
-
-#### "disallow"
-
-No code operators should be followed by a space.
-
-```jade
-//- Valid
-p='This code is <escaped>'
-p!='This code is <strong>not</strong> escaped'
-
-//- Invalid
-p= 'This code is <escaped>'
-p!= 'This code is <strong>not</strong> escaped'
+p!=  'This code is <strong>not</strong> escaped'
 ```
 
 ### validateAttributeQuoteMarks: `"\""` | `"'"` | `true`
