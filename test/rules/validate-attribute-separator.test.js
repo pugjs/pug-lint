@@ -2,7 +2,9 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter) {
+function createTest(linter, fixturesPath) {
+
+  var fixturePath = fixturesPath + 'validate-attribute-separator.jade'
 
   describe('validateAttributeSeparator', function () {
 
@@ -30,6 +32,13 @@ function createTest(linter) {
         assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').getErrorCount(), 0)
       })
 
+      it('should report multiple errors found in file', function () {
+        var result = linter.checkFile(fixturePath)
+
+        assert.equal(result.getErrorCount(), 9)
+        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
+      })
+
     })
 
     describe('comma', function () {
@@ -44,6 +53,13 @@ function createTest(linter) {
 
       it('should not report valid attribute separator', function () {
         assert.equal(linter.checkString('input(type=\'text\',name=\'name\',value=\'value\')').getErrorCount(), 0)
+      })
+
+      it('should report multiple errors found in file', function () {
+        var result = linter.checkFile(fixturePath)
+
+        assert.equal(result.getErrorCount(), 9)
+        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
       })
 
     })
@@ -62,6 +78,13 @@ function createTest(linter) {
         assert.equal(linter.checkString('input(type=\'text\', name=\'name\', value=\'value\')').getErrorCount(), 0)
       })
 
+      it('should report multiple errors found in file', function () {
+        var result = linter.checkFile(fixturePath)
+
+        assert.equal(result.getErrorCount(), 9)
+        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
+      })
+
     })
 
     describe('space-comma', function () {
@@ -78,6 +101,13 @@ function createTest(linter) {
         assert.equal(linter.checkString('input(type=\'text\' ,name=\'name\' ,value=\'value\')').getErrorCount(), 0)
       })
 
+      it('should report multiple errors found in file', function () {
+        var result = linter.checkFile(fixturePath)
+
+        assert.equal(result.getErrorCount(), 9)
+        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
+      })
+
     })
 
     describe('space-comma-space', function () {
@@ -92,6 +122,13 @@ function createTest(linter) {
 
       it('should not report valid attribute separator', function () {
         assert.equal(linter.checkString('input(type=\'text\' , name=\'name\' , value=\'value\')').getErrorCount(), 0)
+      })
+
+      it('should report multiple errors found in file', function () {
+        var result = linter.checkFile(fixturePath)
+
+        assert.equal(result.getErrorCount(), 9)
+        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
       })
 
     })
