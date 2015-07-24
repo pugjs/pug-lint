@@ -20,6 +20,18 @@ p: strong text
 table: tr: td text
 ```
 
+### disallowClassLiterals: `true`
+
+Jade must not contain any class literals.
+
+```jade
+//- Invalid
+.class
+
+//- Valid
+div(class='class')
+```
+
 ### disallowHtmlText: `true`
 
 Jade must not contain any HTML text.
