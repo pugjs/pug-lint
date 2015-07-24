@@ -1,9 +1,10 @@
 { "disallowBlockExpansion": null
 , "disallowHtmlText": true
+, "disallowSpaceAfterCodeOperator": null
 , "disallowTagInterpolation": null
 , "idLiterals": "disallow"
 , "literalsBeforeAttributes": "require"
-, "spaceAfterCodeBuffer": "require"
+, "requireSpaceAfterCodeOperator": true
 , "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "
 }
