@@ -38,6 +38,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-html-text.jade')
 
         assert.equal(result.getErrorCount(), 2)
+        assert.equal(result.getError(0).rule, 'disallowHtmlText')
         assert.equal(result.getError(0).line, 3)
         assert.equal(result.getError(1).line, 6)
       })
