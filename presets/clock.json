@@ -1,8 +1,8 @@
 { "disallowBlockExpansion": null
 , "disallowHtmlText": true
+, "disallowIdLiterals": true
 , "disallowSpaceAfterCodeOperator": null
 , "disallowTagInterpolation": null
-, "idLiterals": "disallow"
 , "literalsBeforeAttributes": "require"
 , "requireSpaceAfterCodeOperator": true
 , "validateAttributeQuoteMarks": "'"

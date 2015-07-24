@@ -30,18 +30,30 @@ Jade must not contain any HTML text.
 p this is <strong>html</strong> text
 ```
 
+### disallowIdLiterals: `true`
+
+Jade must not contain any ID literals.
+
+```jade
+//- Invalid
+#id
+
+//- Valid
+div(id='id')
+```
+
 ### disallowSpaceAfterCodeOperator: `true`
 
 No code operators (unbuffered/buffered/unescped buffered) should be followed by any spaces.
 
 ```jade
-//- Valid
-p='This code is <escaped>'
-p!='This code is <strong>not</strong> escaped'
-
 //- Invalid
 p= 'This code is <escaped>'
 p!=  'This code is <strong>not</strong> escaped'
+
+//- Valid
+p='This code is <escaped>'
+p!='This code is <strong>not</strong> escaped'
 ```
 
 ### disallowTagInterpolation: `true`
@@ -55,32 +67,6 @@ Jade must not contain any tag interpolation operators.
 p #[strong html] text
 ```
 
-### idLiterals: `"require"` | `"disallow"`
-
-#### "require"
-
-All IDs must be written as literals.
-
-```jade
-//- Valid
-#id
-
-//- Invalid
-div(id='id')
-```
-
-#### "disallow"
-
-All IDs must be written as attributes.
-
-```jade
-//- Valid
-div(id='id')
-
-//- Invalid
-#id
-```
-
 ### literalsBeforeAttributes: `"require"` | `"disallow"`
 
 #### "require"
@@ -88,11 +74,11 @@ div(id='id')
 All class or ID literals must be written before any attribute blocks.
 
 ```jade
-//- Valid
-input#id.class(type='text')
-
 //- Invalid
 input(type='text')#id.class
+
+//- Valid
+input#id.class(type='text')
 ```
 
 #### "disallow"
@@ -100,11 +86,11 @@ input(type='text')#id.class
 All attribute blocks must be written before any class or ID literals.
 
 ```jade
-//- Valid
-input(type='text')#id.class
-
 //- Invalid
 input#id.class(type='text')
+
+//- Valid
+input(type='text')#id.class
 ```
 
 ### requireSpaceAfterCodeOperator: `true`
@@ -112,13 +98,13 @@ input#id.class(type='text')
 All code operators (unbuffered/buffered/unescaped buffered) must be immediately followed by a single space.
 
 ```jade
-//- Valid
-p= 'This code is <escaped>'
-p!= 'This code is <strong>not</strong> escaped'
-
 //- Invalid
 p='This code is <escaped>'
 p!=  'This code is <strong>not</strong> escaped'
+
+//- Valid
+p= 'This code is <escaped>'
+p!= 'This code is <strong>not</strong> escaped'
 ```
 
 ### validateAttributeQuoteMarks: `"\""` | `"'"` | `true`
@@ -128,11 +114,11 @@ p!=  'This code is <strong>not</strong> escaped'
 All attribute values must be enclosed in single quotes.
 
 ```jade
-//- Valid
-input(type='text' name='name' value='value')
-
 //- Invalid
 input(type="text" name="name" value="value")
+
+//- Valid
+input(type='text' name='name' value='value')
 ```
 
 #### if (true)
@@ -146,9 +132,9 @@ All attribute values must be enclosed in quote marks match the first quote mark 
 All attributes must be immediately followed by a comma and then a space.
 
 ```jade
-//- Valid
-input(type='text', name='name', value='value')
-
 //- Invalid
 input(type='text' name='name' value='value')
+
+//- Valid
+input(type='text', name='name', value='value')
 ```
