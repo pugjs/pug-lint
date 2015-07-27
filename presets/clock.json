@@ -1,12 +1,17 @@
 { "disallowBlockExpansion": null
 , "disallowClassLiterals": null
+, "disallowClassLiteralsBeforeAttributes": null
+, "disallowClassLiteralsBeforeIdLiterals": null
 , "disallowHtmlText": true
 , "disallowIdLiterals": true
+, "disallowIdLiteralsBeforeAttributes": null
 , "disallowSpaceAfterCodeOperator": null
 , "disallowStringConcatenation": true
 , "disallowStringInterpolation": null
 , "disallowTagInterpolation": null
-, "literalsBeforeAttributes": "require"
+, "requireClassLiteralsBeforeAttributes": true
+, "requireClassLiteralsBeforeIdLiterals": true
+, "requireIdLiteralsBeforeAttributes": true
 , "requireSpaceAfterCodeOperator": true
 , "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "

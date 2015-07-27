@@ -32,6 +32,30 @@ Jade must not contain any class literals.
 div(class='class')
 ```
 
+### disallowClassLiteralsBeforeAttributes: `true`
+
+All attribute blocks must be written before any class literals.
+
+```jade
+//- Invalid
+input.class(type='text')
+
+//- Valid
+input(type='text').class
+```
+
+### disallowClassLiteralsBeforeIdLiterals: `true`
+
+All ID literals must be written before any class literals.
+
+```jade
+//- Invalid
+input.class#id(type='text')
+
+//- Valid
+input#id.class(type='text')
+```
+
 ### disallowHtmlText: `true`
 
 Jade must not contain any HTML text.
@@ -52,6 +76,18 @@ Jade must not contain any ID literals.
 
 //- Valid
 div(id='id')
+```
+
+### disallowIdLiteralsBeforeAttributes: `true`
+
+All attribute blocks must be written before any ID literals.
+
+```jade
+//- Invalid
+input#id(type='text')
+
+//- Valid
+input(type='text')#id
 ```
 
 ### disallowSpaceAfterCodeOperator: `true`
@@ -98,30 +134,40 @@ Jade must not contain any tag interpolation operators.
 p #[strong html] text
 ```
 
-### literalsBeforeAttributes: `"require"` | `"disallow"`
+### requireClassLiteralsBeforeAttributes: `true`
 
-#### "require"
-
-All class or ID literals must be written before any attribute blocks.
+All class literals must be written before any attribute blocks.
 
 ```jade
 //- Invalid
-input(type='text')#id.class
+input(type='text').class
 
 //- Valid
-input#id.class(type='text')
+input.class(type='text')
 ```
 
-#### "disallow"
+### requireClassLiteralsBeforeIdLiterals: `true`
 
-All attribute blocks must be written before any class or ID literals.
+All class literals must be written before any ID literals.
 
 ```jade
 //- Invalid
 input#id.class(type='text')
 
 //- Valid
-input(type='text')#id.class
+input.class#id(type='text')
+```
+
+### requireIdLiteralsBeforeAttributes: `true`
+
+All ID literals must be written before any attribute blocks.
+
+```jade
+//- Invalid
+input(type='text')#id
+
+//- Valid
+input#id(type='text')
 ```
 
 ### requireSpaceAfterCodeOperator: `true`
