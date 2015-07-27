@@ -68,6 +68,17 @@ p='This code is <escaped>'
 p!='This code is <strong>not</strong> escaped'
 ```
 
+### disallowStringInterpolation: `true`
+
+
+Jade must not contain any string interpolation operators.
+
+```jade
+//- Invalid
+h1 #{title} text
+a(href='text #{title}') Link
+```
+
 ### disallowTagInterpolation: `true`
 
 
