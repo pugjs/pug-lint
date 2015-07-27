@@ -2,6 +2,7 @@
 , "disallowClassLiterals": null
 , "disallowClassLiteralsBeforeAttributes": null
 , "disallowClassLiteralsBeforeIdLiterals": null
+, "disallowDuplicateAttributes": true
 , "disallowHtmlText": true
 , "disallowIdLiterals": true
 , "disallowIdLiteralsBeforeAttributes": null

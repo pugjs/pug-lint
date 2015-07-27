@@ -56,6 +56,20 @@ input.class#id(type='text')
 input#id.class(type='text')
 ```
 
+### disallowDuplicateAttributes: `true`
+
+Attribute blocks must not contain any duplicates. And if an ID literal is present an ID attribute must not be used. Ignores class attributes
+
+```jade
+//- Invalid
+div(a='a' a='b')
+#id(id='id')
+
+//- Valid
+div(class='a', class='b')
+.class(class='class')
+```
+
 ### disallowHtmlText: `true`
 
 Jade must not contain any HTML text.
