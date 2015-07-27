@@ -1,4 +1,5 @@
 { "disallowBlockExpansion": null
+, "disallowClassLiterals": null
 , "disallowHtmlText": true
 , "disallowIdLiterals": true
 , "disallowSpaceAfterCodeOperator": null
