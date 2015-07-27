@@ -2,6 +2,7 @@
 , "disallowHtmlText": true
 , "disallowIdLiterals": true
 , "disallowSpaceAfterCodeOperator": null
+, "disallowStringConcatenation": true
 , "disallowStringInterpolation": null
 , "disallowTagInterpolation": null
 , "literalsBeforeAttributes": "require"
