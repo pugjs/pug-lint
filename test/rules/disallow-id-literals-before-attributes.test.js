@@ -34,7 +34,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-id-literals-before-attributes.jade')
 
         assert.equal(result.getErrorCount(), 2)
-        assert.equal(result.getError(0).rule, 'disallowIdLiteralsBeforeAttributes')
+        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWIDLITERALSBEFOREATTRIBUTES')
       })
 
     })

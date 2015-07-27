@@ -50,7 +50,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'require-space-after-code-operator.jade')
 
         assert.equal(result.getErrorCount(), 6)
-        assert.equal(result.getError(0).rule, 'requireSpaceAfterCodeOperator')
+        assert.equal(result.getError(0).code, 'JADE:LINT_REQUIRESPACEAFTERCODEOPERATOR')
       })
 
     })

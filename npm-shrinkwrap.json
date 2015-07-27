@@ -66,6 +66,10 @@
         }
       }
     },
+    "jade-error": {
+      "version": "1.0.0",
+      "from": "jade-error@"
+    },
     "jade-lexer": {
       "version": "0.0.8",
       "from": "jade-lexer@^0.0.8",

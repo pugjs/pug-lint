@@ -34,7 +34,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-string-concatenation.jade')
 
         assert.equal(result.getErrorCount(), 5)
-        assert.equal(result.getError(0).rule, 'disallowStringConcatenation')
+        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWSTRINGCONCATENATION')
         assert.equal(result.getError(0).line, 7)
       })
 

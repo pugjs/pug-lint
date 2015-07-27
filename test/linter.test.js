@@ -22,7 +22,7 @@ describe('linter', function () {
       var result = linter.checkFile(fixturesPath + 'invalid.jade')
 
       assert.equal(result.getErrorCount(), 1)
-      assert.equal(result.getError(0).rule, 'parseError')
+      assert.equal(result.getError(0).code, 'JADE:UNEXPECTED_TEXT')
     })
 
   })

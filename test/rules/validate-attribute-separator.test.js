@@ -36,7 +36,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
+        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -59,7 +59,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
+        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -82,7 +82,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
+        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -105,7 +105,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
+        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -128,7 +128,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).rule, 'validateAttributeSeparator')
+        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })

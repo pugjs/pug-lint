@@ -34,7 +34,7 @@ function createTest(linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-tag-interpolation.jade')
 
         assert.equal(result.getErrorCount(), 4)
-        assert.equal(result.getError(0).rule, 'disallowTagInterpolation')
+        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWTAGINTERPOLATION')
         assert.equal(result.getError(0).line, 2)
         assert.equal(result.getError(1).line, 3)
         assert.equal(result.getError(2).line, 5)
