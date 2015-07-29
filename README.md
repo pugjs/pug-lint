@@ -329,7 +329,7 @@ input(type='text' name='name' value='value')
 input(type='text', name='name', value='value')
 ```
 
-### validateIndentation: `int` | "\t"
+### validateIndentation: `int` | `"\t"`
 
 #### e.g.: 2
 
