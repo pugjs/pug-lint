@@ -15,7 +15,7 @@ A linter and style checker for Jade
 
 ### Sublime Text 3
 
-If you use `SublimeLinter 3` with `Sublime Text 3` you can install the
+If you use SublimeLinter 3 with Sublime Text 3 you can install the
 [SublimeLinter-jade-lint](https://github.com/benedfit/SublimeLinter-contrib-jade-lint)
 plugin using [Package Control](https://packagecontrol.io/).
 
