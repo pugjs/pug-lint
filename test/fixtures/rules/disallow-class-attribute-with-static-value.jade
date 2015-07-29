@@ -1,0 +1,15 @@
+a.button
+.button
+
+- var classes = ['foo', 'bar', 'baz']
+a(class=classes)
+a.bing(class=classes class=['bing'])
+
+- var currentUrl = '/about'
+a(class={active: currentUrl === '/'} href='/') Home
+a(class={active: currentUrl === '/about'} href='/about') About
+
+- var classes = ['bing']
+a(class=classes)
+a(class={active: true})
+a(class='bing')
