@@ -1,6 +1,6 @@
 # Contribution guide
 
-Thanks for wanting to contribute! This document describes some points about the contribution process for jade-lint.
+Thanks for wanting to contribute! This document describes some points about the contribution process for Jade-Lint.
 
 1. [Maintainers](#maintainers)
 1. [Pull requests](#pull-requests)
@@ -56,8 +56,8 @@ When it comes to bugs, the more details you provide, the easier it is to reprodu
 Some helpful points to provide (if you can):
 
 1. A failing test would be amazing
-1. Code snippets that make jade-lint exhibit the issue
-1. The version of jade-lint that you're using
+1. Code snippets that make Jade-Lint exhibit the issue
+1. The version of Jade-Lint that you're using
 1. Your operating system (Windows, Mac, or Linux)
 1. Screen-shots
 
@@ -71,7 +71,7 @@ If you've got an idea for a new feature, file an issue providing some details on
 
 It's likely that you'll have to implement feature requests or enhancements on your own. To do that, you'll need to be comfortable with JavaScript, Node.js, and familiar with [Jade's abstract syntax tree format](https://github.com/jadejs/jade-parser).
 
-To understand how jade-lint works, the best place to start is in the `lib/` directory: starting with `lib/cli.js` (to see the processing flow when `jade-lint` is invoked in the terminal) then going to `lib/linter.js` for understanding how jade-lint checks files.
+To understand how Jade-Lint works, the best place to start is in the `lib/` directory: starting with `lib/cli.js` (to see the processing flow when `jade-lint` is invoked in the terminal) then going to `lib/linter.js` for understanding how Jade-Lint checks files.
 
 If you cannot implement the feature, but you feel that it would be helpful to others, you can create an issue on GitHub. If the maintainers feel that the issue satisfies our [criteria for closing issues](#prissue-closing-criteria), your issue will be closed with a genuine thank you and an explanation for the closure.
 

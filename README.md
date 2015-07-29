@@ -1,4 +1,4 @@
-# jade-lint
+# Jade-Lint
 
 A linter and style checker for Jade
 
