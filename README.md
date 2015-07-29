@@ -7,6 +7,22 @@ A linter and style checker for Jade
 [![build](https://img.shields.io/travis/benedfit/jade-lint.svg)](https://travis-ci.org/benedfit/jade-lint)
 [![npm](https://img.shields.io/npm/v/jade-lint.svg)](https://www.npmjs.com/package/jade-lint)
 
+## CLI
+
+[Coming soon](https://github.com/benedfit/jade-lint/issues/2).
+
+## Editor integration
+
+### Sublime Text 3
+
+If you use `SublimeLinter 3` with `Sublime Text 3` you can install the
+[SublimeLinter-jade-lint](https://github.com/benedfit/SublimeLinter-contrib-jade-lint)
+plugin using [Package Control](https://packagecontrol.io/).
+
+### Atom
+
+Coming soon.
+
 ## Rules
 
 You can specifically disable any rule by omitting it from your config or by assigning it to null.
