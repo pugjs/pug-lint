@@ -21,7 +21,7 @@ plugin using [Package Control](https://packagecontrol.io/).
 
 ### Atom
 
-Coming soon.
+[Coming soon](https://github.com/benedfit/jade-lint/issues/12).
 
 ## Rules
 
