@@ -1,7 +1,7 @@
 {
   "name": "jadelint",
   "version": "0.0.1",
-  "description": "A linter for Jade",
+  "description": "A linter and style checker for Jade",
   "author": "Ben Edwards <hello@benedfit.com>",
   "license": "ISC",
   "keywords": [

@@ -1,6 +1,6 @@
 # Jadelint
 
-A linter for Jade
+A linter and style checker for Jade
 
 > Under active development. Watch this space as the [rules roll in](https://github.com/benedfit/jadelint/issues/3) :rainbow::rabbit:
 
