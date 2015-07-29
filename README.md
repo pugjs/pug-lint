@@ -104,6 +104,23 @@ input#id(type='text')
 input(type='text')#id
 ```
 
+### disallowMultipleLineBreaks: `true`
+
+Jade must not contain multiple blank lines in a row.
+
+```jade
+//- Invalid
+div
+
+
+div
+
+//- Valid
+div
+
+div
+```
+
 ### disallowSpaceAfterCodeOperator: `true`
 
 No code operators (unbuffered/buffered/unescped buffered) should be followed by any spaces.

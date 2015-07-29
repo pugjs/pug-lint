@@ -6,6 +6,7 @@
 , "disallowHtmlText": true
 , "disallowIdLiterals": true
 , "disallowIdLiteralsBeforeAttributes": null
+, "disallowMultipleLineBreaks": true
 , "disallowSpaceAfterCodeOperator": null
 , "disallowStringConcatenation": true
 , "disallowStringInterpolation": null
