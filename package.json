@@ -7,11 +7,13 @@
   "keywords": [
     "jadelint",
     "jade-lint",
+    "jade lint",
     "jade",
     "hinter",
     "linter",
     "lint",
-    "linting"
+    "linting",
+    "lint jade"
   ],
   "repository": {
     "type": "git",
