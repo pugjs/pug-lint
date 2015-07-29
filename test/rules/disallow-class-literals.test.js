@@ -6,16 +6,6 @@ function createTest(linter, fixturesPath) {
 
   describe('disallowClassLiterals', function () {
 
-    describe('null', function () {
-
-      it('should be disabled if options are null', function () {
-        linter.configure({ disallowClassLiterals: null })
-
-        assert.equal(linter.getConfiguredRules().length, 0)
-      })
-
-    })
-
     describe('true', function () {
 
       before(function () {

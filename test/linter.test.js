@@ -14,6 +14,12 @@ describe('linter', function () {
       assert.equal(linter.getConfiguredRules().length, 0)
     })
 
+    it('should not use disabled rules', function () {
+      linter.configure({ validateAttributeSeparator: null })
+
+      assert.equal(linter.getConfiguredRules().length, 0)
+    })
+
     it('should no check empty strings', function () {
       assert.equal(linter.checkString('').getErrorCount(), 0)
     })

@@ -8,16 +8,6 @@ function createTest(linter, fixturesPath) {
 
   describe('validateAttributeSeparator', function () {
 
-    describe('null', function () {
-
-      it('should be disabled if options are null', function () {
-        linter.configure({ validateAttributeSeparator: null })
-
-        assert.equal(linter.getConfiguredRules().length, 0)
-      })
-
-    })
-
     describe('space', function () {
 
       before(function () {

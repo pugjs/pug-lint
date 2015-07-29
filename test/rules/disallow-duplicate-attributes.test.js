@@ -6,16 +6,6 @@ function createTest(linter, fixturesPath) {
 
   describe('disallowDuplicateAttributes', function () {
 
-    describe('null', function () {
-
-      it('should be disabled if options are null', function () {
-        linter.configure({ disallowDuplicateAttributes: null })
-
-        assert.equal(linter.getConfiguredRules().length, 0)
-      })
-
-    })
-
     describe('true', function () {
 
       before(function () {
