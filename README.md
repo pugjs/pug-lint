@@ -184,6 +184,10 @@ input(type='text')#id
 input#id(type='text')
 ```
 
+### requireLineFeedAtFileEnd: `true`
+
+All files must end with a line feed.
+
 ### requireLowerCaseAttributes: `true`
 
 All attributes must be written in lower case.
