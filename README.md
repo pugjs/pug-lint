@@ -184,6 +184,18 @@ input(type='text')#id
 input#id(type='text')
 ```
 
+### requireLowerCaseTags: `true`
+
+All tags must be written in lower case
+
+```jade
+//- Invalid
+Div(class='class')
+
+//- Valid
+div(class='class')
+```
+
 ### requireSpaceAfterCodeOperator: `true`
 
 All code operators (unbuffered/buffered/unescaped buffered) must be immediately followed by a single space.

@@ -13,6 +13,7 @@
 , "requireClassLiteralsBeforeAttributes": true
 , "requireClassLiteralsBeforeIdLiterals": true
 , "requireIdLiteralsBeforeAttributes": true
+, "requireLowerCaseTags": true
 , "requireSpaceAfterCodeOperator": true
 , "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "
