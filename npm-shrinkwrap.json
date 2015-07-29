@@ -79,6 +79,10 @@
           "from": "character-parser@^1.2.1"
         }
       }
+    },
+    "void-elements": {
+      "version": "2.0.1",
+      "from": "void-elements@"
     }
   }
 }

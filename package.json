@@ -42,7 +42,8 @@
     "commander": "^2.8.1",
     "glob": "^5.0.14",
     "jade-error": "^1.0.0",
-    "jade-lexer": "^0.0.8"
+    "jade-lexer": "^0.0.8",
+    "void-elements": "^2.0.1"
   },
   "devDependencies": {
     "istanbul": "^0.3.10",

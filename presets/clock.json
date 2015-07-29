@@ -16,4 +16,5 @@
 , "requireSpaceAfterCodeOperator": true
 , "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "
+, "validateSelfClosingTags": true
 }

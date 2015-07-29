@@ -229,3 +229,21 @@ input(type='text' name='name' value='value')
 //- Valid
 input(type='text', name='name', value='value')
 ```
+
+### validateSelfClosingTags: `true`
+
+Checks that Jade does not contain any [unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements). Files with `doctype xml` are ignored.
+
+```jade
+//- Invalid
+area/
+link/
+
+//- Valid
+area
+link
+foo/
+
+doctype xml
+area/
+```
