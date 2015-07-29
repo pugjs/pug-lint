@@ -184,6 +184,18 @@ input(type='text')#id
 input#id(type='text')
 ```
 
+### requireLowerCaseAttributes: `true`
+
+All attributes must be written in lower case.
+
+```jade
+//- Invalid
+div(Class='class')
+
+//- Valid
+div(class='class')
+```
+
 ### requireLowerCaseTags: `true`
 
 All tags must be written in lower case.
