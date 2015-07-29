@@ -254,6 +254,22 @@ input(type='text' name='name' value='value')
 input(type='text', name='name', value='value')
 ```
 
+### validateLineBreaks: `"CR"` | `"LF"` | `"CRLF"`
+
+#### e.g.: "LF"
+
+All line break characters must match.
+
+```jade
+//- Invalid
+div(class='class')<CRLF>
+.button
+
+//- Valid
+div(class='class')<LF>
+.button
+```
+
 ### validateSelfClosingTags: `true`
 
 Checks that Jade does not contain any [unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements). Files with `doctype xml` are ignored.
