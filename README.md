@@ -254,6 +254,36 @@ input(type='text' name='name' value='value')
 input(type='text', name='name', value='value')
 ```
 
+### validateIndentation: `int` | "\t"
+
+#### e.g.: 2
+
+Indentation must be consistently two spaces.
+
+```jade
+//- Invalid
+div
+<TAB>div
+
+//- Valid
+div
+<SPACE><SPACE>div
+```
+
+#### e.g.: "\t"
+
+Indentation must be consistently tabs.
+
+```jade
+//- Invalid
+div
+<SPACE><SPACE>div
+
+//- Valid
+div
+<TAB>div
+```
+
 ### validateLineBreaks: `"CR"` | `"LF"` | `"CRLF"`
 
 #### e.g.: "LF"
