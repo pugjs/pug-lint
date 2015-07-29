@@ -58,7 +58,7 @@ input#id.class(type='text')
 
 ### disallowDuplicateAttributes: `true`
 
-Attribute blocks must not contain any duplicates. And if an ID literal is present an ID attribute must not be used. Ignores class attributes
+Attribute blocks must not contain any duplicates. And if an ID literal is present an ID attribute must not be used. Ignores class attributes.
 
 ```jade
 //- Invalid
@@ -186,7 +186,7 @@ input#id(type='text')
 
 ### requireLowerCaseTags: `true`
 
-All tags must be written in lower case
+All tags must be written in lower case.
 
 ```jade
 //- Invalid
