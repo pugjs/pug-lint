@@ -11,6 +11,7 @@
 , "disallowStringConcatenation": true
 , "disallowStringInterpolation": null
 , "disallowTagInterpolation": null
+, "maximumNumberOfLines": null
 , "requireClassLiteralsBeforeAttributes": true
 , "requireClassLiteralsBeforeIdLiterals": true
 , "requireIdLiteralsBeforeAttributes": true

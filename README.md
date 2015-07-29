@@ -165,6 +165,10 @@ Jade must not contain any tag interpolation operators.
 p #[strong html] text
 ```
 
+### maximumNumberOfLines: `int`
+
+Jade files should be at most the number of lines specified.
+
 ### requireClassLiteralsBeforeAttributes: `true`
 
 All class literals must be written before any attribute blocks.
