@@ -28,7 +28,7 @@ plugin using [Package Control](https://packagecontrol.io/).
 You can specifically disable any rule by omitting it from your `.jade-lintrc` config file or by assigning it to null, like so:
 
 ```json
-{ disallowBlockExpansion: null
+{ "disallowBlockExpansion": null
 }
 ```
 
