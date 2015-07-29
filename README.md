@@ -104,6 +104,22 @@ input#id(type='text')
 input(type='text')#id
 ```
 
+### disallowImplicitDiv: `true`
+
+Avoid writing `div` when it would otherwise be implicit.
+
+```jade
+//- Invalid
+div.class
+div#id
+div.class(class='class')
+
+//- Valid
+.class
+#id
+.class(class='class')
+```
+
 ### disallowMultipleLineBreaks: `true`
 
 Jade must not contain multiple blank lines in a row.
