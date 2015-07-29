@@ -151,6 +151,18 @@ p='This code is <escaped>'
 p!='This code is <strong>not</strong> escaped'
 ```
 
+### disallowSpecificTags: `string` | `Array`
+
+Jade must not contain any of the tags specified.
+
+#### e.g.: [ "b", "i" ]
+
+```jade
+//- Invalid
+b Bold text
+i Italic text
+```
+
 ### disallowStringConcatenation: `true`
 
 Jade must not contain any string concatenation.

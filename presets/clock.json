@@ -9,6 +9,7 @@
 , "disallowImplicitDiv": true
 , "disallowMultipleLineBreaks": true
 , "disallowSpaceAfterCodeOperator": null
+, "disallowSpecificTags": null
 , "disallowStringConcatenation": true
 , "disallowStringInterpolation": null
 , "disallowTagInterpolation": null
