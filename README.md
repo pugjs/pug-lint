@@ -1,10 +1,10 @@
-# Jadelint
+# jade-lint
 
 A linter and style checker for Jade
 
-> Under active development. Watch this space as the [rules roll in](https://github.com/benedfit/jadelint/issues/3) :rainbow::rabbit:
+> Under active development. Watch this space as the [rules roll in](https://github.com/benedfit/jade-lint/issues/3) :rainbow::rabbit:
 
-[![build](https://img.shields.io/travis/benedfit/jadelint.svg)](https://travis-ci.org/benedfit/jadelint)
+[![build](https://img.shields.io/travis/benedfit/jade-lint.svg)](https://travis-ci.org/benedfit/jade-lint)
 
 ## Rules
 

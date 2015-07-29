@@ -1,5 +1,5 @@
 {
-  "name": "jadelint",
+  "name": "jade-lint",
   "version": "0.0.1",
   "description": "A linter and style checker for Jade",
   "author": "Ben Edwards <hello@benedfit.com>",
@@ -15,14 +15,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:benedfit/jadelint"
+    "url": "git@github.com:benedfit/jade-lint"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
   },
-  "main": "./lib/jadelint",
+  "main": "./lib/linter",
   "bin": {
-    "jadelint": "./bin/jadelint"
+    "jade-lint": "./bin/cli"
   },
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",

@@ -1,5 +1,5 @@
 {
-  "name": "jadelint",
+  "name": "jade-lint",
   "version": "0.0.1",
   "dependencies": {
     "commander": {
