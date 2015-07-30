@@ -1,0 +1,46 @@
+var assert = require('assert')
+  , configFile = require('../lib/config-file')
+
+  , fixturesPath = __dirname + '/fixtures/config-file/'
+
+describe('configFile', function () {
+
+  var config
+
+  it('should load config file from specific dot file', function () {
+    config = configFile.load(fixturesPath + 'dotfile/.jade-lintrc')
+
+    assert.equal(config.hasOwnProperty('disallowSpecificTags'), true, config)
+  })
+
+  it('should load config file from specified JSON file', function () {
+    config = configFile.load(fixturesPath + 'json/.jade-lint.json')
+
+    assert.equal(config.hasOwnProperty('disallowSpecificTags'), true, config)
+  })
+
+  it('should load config from dot file in working directory', function () {
+    config = configFile.load(null, fixturesPath + 'dotfile')
+
+    assert.equal(config.hasOwnProperty('disallowSpecificTags'), true, config)
+  })
+
+  it('should load config from JSON file in working directory', function () {
+    config = configFile.load(null, fixturesPath + 'json')
+
+    assert.equal(config.hasOwnProperty('disallowSpecificTags'), true, config)
+  })
+
+  it('should load config from package.json in working directory', function () {
+    config = configFile.load(null, fixturesPath + 'package')
+
+    assert.equal(config.hasOwnProperty('disallowSpecificTags'), true, config)
+  })
+
+  it('should load config from home directory if working directory is empty', function () {
+    config = configFile.load(null, fixturesPath)
+
+    assert.equal(config === undefined, true, config)
+  })
+
+})

@@ -1,0 +1,7 @@
+%dirname%disallow-block-expansion.jade:8
+    6| table: tr: td Cell
+    7| 
+  > 8| table: tr: td: span Cell
+    9| 
+
+Tag "span" must not be used

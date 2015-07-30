@@ -1,0 +1,2 @@
+unexpected text |
+div on line 2 of %dirname%invalid.jade

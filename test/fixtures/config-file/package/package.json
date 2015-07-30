@@ -1,0 +1,4 @@
+{ "jadeLintConfig":
+  { "disallowSpecificTags": [ "span" ]
+  }
+}

@@ -9,7 +9,23 @@ A linter and style checker for Jade
 
 ## CLI
 
-[Coming soon](https://github.com/benedfit/jade-lint/issues/2).
+### Installation
+
+```shell
+$ npm install -g jade-lint
+```
+
+### Usage
+
+```shell
+$ jade-lint [options] <file ...>
+```
+
+#### options
+
+* `-h, --help`: output usage information
+* `-V, --version`: output the version number
+* `-c, --config <path>`: configuration file path
 
 ## Editor integration
 
