@@ -12,7 +12,7 @@
     "code style",
     "formatter",
     "style guide",
-    "validate"
+    "validate",
     "lint jade",
     "jade lint",
     "linter",
@@ -34,7 +34,7 @@
     "hinting",
     "hinting jade",
     "jade hinting",
-    "jade-hinting",
+    "jade-hinting"
   ],
   "repository": {
     "type": "git",
