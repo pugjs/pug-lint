@@ -15,8 +15,8 @@ function createTest(linter, fixturesPath) {
       it('should report mixed indentation as a parse error', function () {
         var result = linter.checkString('div\n  div\n\tdiv')
 
-        assert.equal(result.getErrorCount(), 1)
-        assert.equal(result.getError(0).code, 'JADE:INVALID_INDENTATION')
+        assert.equal(result.length, 1)
+        assert.equal(result[0].code, 'JADE:INVALID_INDENTATION')
       })
 
     })
@@ -28,19 +28,19 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report invalid indentation', function () {
-        assert.equal(linter.checkString('div\n\tdiv\n\t\tdiv').getErrorCount(), 2)
+        assert.equal(linter.checkString('div\n\tdiv\n\t\tdiv').length, 2)
       })
 
       it('should not report valid indentation', function () {
-        assert.equal(linter.checkString('div\n  div').getErrorCount(), 0)
+        assert.equal(linter.checkString('div\n  div').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'validate-indentation--spaces.jade')
 
-        assert.equal(result.getErrorCount(), 1)
-        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEINDENTATION')
-        assert.equal(result.getError(0).line, 9)
+        assert.equal(result.length, 1)
+        assert.equal(result[0].code, 'JADE:LINT_VALIDATEINDENTATION')
+        assert.equal(result[0].line, 9)
       })
 
     })
@@ -52,19 +52,19 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report invalid indentation', function () {
-        assert.equal(linter.checkString('div\n  div\n      div').getErrorCount(), 2)
+        assert.equal(linter.checkString('div\n  div\n      div').length, 2)
       })
 
       it('should not report valid indentation', function () {
-        assert.equal(linter.checkString('div\n\tdiv').getErrorCount(), 0)
+        assert.equal(linter.checkString('div\n\tdiv').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'validate-indentation--tabs.jade')
 
-        assert.equal(result.getErrorCount(), 1)
-        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEINDENTATION')
-        assert.equal(result.getError(0).line, 9)
+        assert.equal(result.length, 1)
+        assert.equal(result[0].code, 'JADE:LINT_VALIDATEINDENTATION')
+        assert.equal(result[0].line, 9)
       })
 
     })

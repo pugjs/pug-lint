@@ -15,18 +15,18 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report disallowed tags', function () {
-        assert.equal(linter.checkString('b bold text').getErrorCount(), 1)
+        assert.equal(linter.checkString('b bold text').length, 1)
       })
 
       it('should not report allowed tags', function () {
-        assert.equal(linter.checkString('i italic text').getErrorCount(), 0)
+        assert.equal(linter.checkString('i italic text').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.getErrorCount(), 2)
-        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWSPECIFICTAGS')
+        assert.equal(result.length, 2)
+        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSPECIFICTAGS')
       })
 
     })
@@ -38,18 +38,18 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report disallowed tags', function () {
-        assert.equal(linter.checkString('b bold text').getErrorCount(), 1)
+        assert.equal(linter.checkString('b bold text').length, 1)
       })
 
       it('should not report allowed tags', function () {
-        assert.equal(linter.checkString('i italic text').getErrorCount(), 0)
+        assert.equal(linter.checkString('i italic text').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.getErrorCount(), 4)
-        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWSPECIFICTAGS')
+        assert.equal(result.length, 4)
+        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSPECIFICTAGS')
       })
 
     })

@@ -13,18 +13,18 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report ID literals before class literals', function () {
-        assert.equal(linter.checkString('input(type=\'text\')#id.class').getErrorCount(), 1)
+        assert.equal(linter.checkString('input(type=\'text\')#id.class').length, 1)
       })
 
       it('should not report class literals before ID literals', function () {
-        assert.equal(linter.checkString('input.class#id(type=\'text\')').getErrorCount(), 0)
+        assert.equal(linter.checkString('input.class#id(type=\'text\')').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'require-class-literals-before-id-literals.jade')
 
-        assert.equal(result.getErrorCount(), 1)
-        assert.equal(result.getError(0).code, 'JADE:LINT_REQUIRECLASSLITERALSBEFOREIDLITERALS')
+        assert.equal(result.length, 1)
+        assert.equal(result[0].code, 'JADE:LINT_REQUIRECLASSLITERALSBEFOREIDLITERALS')
       })
 
     })

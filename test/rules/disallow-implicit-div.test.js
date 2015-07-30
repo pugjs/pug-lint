@@ -13,21 +13,21 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report implicit div', function () {
-        assert.equal(linter.checkString('div.class').getErrorCount(), 1)
+        assert.equal(linter.checkString('div.class').length, 1)
       })
 
       it('should not report explicit div', function () {
-        assert.equal(linter.checkString('div(class=\'class\')').getErrorCount(), 0)
+        assert.equal(linter.checkString('div(class=\'class\')').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'disallow-implicit-div.jade')
 
-        assert.equal(result.getErrorCount(), 3)
-        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWIMPLICITDIV')
-        assert.equal(result.getError(0).line, 6)
-        assert.equal(result.getError(1).line, 7)
-        assert.equal(result.getError(2).line, 8)
+        assert.equal(result.length, 3)
+        assert.equal(result[0].code, 'JADE:LINT_DISALLOWIMPLICITDIV')
+        assert.equal(result[0].line, 6)
+        assert.equal(result[1].line, 7)
+        assert.equal(result[2].line, 8)
       })
 
     })

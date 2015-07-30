@@ -13,24 +13,24 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report block expansion operator', function () {
-        assert.equal(linter.checkString('p: strong text').getErrorCount(), 1)
+        assert.equal(linter.checkString('p: strong text').length, 1)
       })
 
       it('should report tag multiple block expansion operators', function () {
-        assert.equal(linter.checkString('table: tr: td text').getErrorCount(), 2)
+        assert.equal(linter.checkString('table: tr: td text').length, 2)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'disallow-block-expansion.jade')
 
-        assert.equal(result.getErrorCount(), 6)
-        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWBLOCKEXPANSION')
-        assert.equal(result.getError(0).line, 4)
-        assert.equal(result.getError(1).line, 6)
-        assert.equal(result.getError(2).line, 6)
-        assert.equal(result.getError(3).line, 8)
-        assert.equal(result.getError(4).line, 8)
-        assert.equal(result.getError(5).line, 8)
+        assert.equal(result.length, 6)
+        assert.equal(result[0].code, 'JADE:LINT_DISALLOWBLOCKEXPANSION')
+        assert.equal(result[0].line, 4)
+        assert.equal(result[1].line, 6)
+        assert.equal(result[2].line, 6)
+        assert.equal(result[3].line, 8)
+        assert.equal(result[4].line, 8)
+        assert.equal(result[5].line, 8)
       })
 
     })

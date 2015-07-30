@@ -13,15 +13,15 @@ function createTest(linter) {
       })
 
       it('should not validate strings with less than two lines', function () {
-        assert.equal(linter.checkString('div').getErrorCount(), 0)
+        assert.equal(linter.checkString('div').length, 0)
       })
 
       it('should report invalid line breaks', function () {
-        assert.equal(linter.checkString('div\r\ndiv').getErrorCount(), 1)
+        assert.equal(linter.checkString('div\r\ndiv').length, 1)
       })
 
       it('should not report valid line breaks', function () {
-        assert.equal(linter.checkString('div\rdiv').getErrorCount(), 0)
+        assert.equal(linter.checkString('div\rdiv').length, 0)
       })
 
     })
@@ -33,11 +33,11 @@ function createTest(linter) {
       })
 
       it('should report invalid line breaks', function () {
-        assert.equal(linter.checkString('div\r\ndiv').getErrorCount(), 1)
+        assert.equal(linter.checkString('div\r\ndiv').length, 1)
       })
 
       it('should not report valid line breaks', function () {
-        assert.equal(linter.checkString('div\ndiv').getErrorCount(), 0)
+        assert.equal(linter.checkString('div\ndiv').length, 0)
       })
 
     })
@@ -49,11 +49,11 @@ function createTest(linter) {
       })
 
       it('should report invalid line breaks', function () {
-        assert.equal(linter.checkString('div\rdiv').getErrorCount(), 1)
+        assert.equal(linter.checkString('div\rdiv').length, 1)
       })
 
       it('should not report valid line breaks', function () {
-        assert.equal(linter.checkString('div\r\ndiv').getErrorCount(), 0)
+        assert.equal(linter.checkString('div\r\ndiv').length, 0)
       })
 
     })

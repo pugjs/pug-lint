@@ -13,18 +13,19 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report class literals before attributes', function () {
-        assert.equal(linter.checkString('input#id.class(type=\'text\')').getErrorCount(), 1)
+        assert.equal(linter.checkString('input#id.class(type=\'text\')').length, 1)
       })
 
       it('should not report attributes before class literals', function () {
-        assert.equal(linter.checkString('input(type=\'text\')#id.class').getErrorCount(), 0)
+        assert.equal(linter.checkString('input(type=\'text\')#id.class').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'disallow-class-literals-before-attributes.jade')
 
-        assert.equal(result.getErrorCount(), 2)
-        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWCLASSLITERALSBEFOREATTRIBUTES')
+        assert.equal(result.length, 2)
+        assert.equal(result[0].code, 'JADE:LINT_DISALLOWCLASSLITERALSBEFOREATTRIBUTES')
+        assert.equal(result[0].line, 2)
       })
 
     })
