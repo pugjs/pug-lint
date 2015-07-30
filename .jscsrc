@@ -21,4 +21,5 @@
 , "disallowKeywordsOnNewLine": [ "else" ]
 , "requireSpacesInFunctionExpression": { "beforeOpeningCurlyBrace": true }
 , "requireSpacesInAnonymousFunctionExpression": { "beforeOpeningRoundBrace": true }
+, "disallowKeywordsInComments": [ "TODO" ]
 }
