@@ -45,7 +45,7 @@
   },
   "main": "./lib/linter",
   "bin": {
-    "jade-lint": "./bin/cli"
+    "jade-lint": "./bin/jade-lint"
   },
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",
