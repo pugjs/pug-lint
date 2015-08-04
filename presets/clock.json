@@ -22,6 +22,9 @@
 , "requireLowerCaseAttributes": true
 , "requireLowerCaseTags": true
 , "requireSpaceAfterCodeOperator": true
+, "requireSpecificAttributes":
+  { "img": "alt"
+  }
 , "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "
 , "validateIndentation": 2

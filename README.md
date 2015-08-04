@@ -334,6 +334,20 @@ p= 'This code is <escaped>'
 p!= 'This code is <strong>not</strong> escaped'
 ```
 
+### requireSpecificAttributes: `Array`
+
+#### e.g.: [ { img: [ "alt" ] } ]
+
+`img` tags must contain all of the attributes specified.
+
+```jade
+//- Invalid
+img(src='src')
+
+//- Valid
+img(src='src' alt='alt')
+```
+
 ### validateAttributeQuoteMarks: `"\""` | `"'"` | `true`
 
 #### e.g.: "'"
