@@ -189,6 +189,27 @@ p='This code is <escaped>'
 p!='This code is <strong>not</strong> escaped'
 ```
 
+### disallowSpecificAttributes: `string` | `Array`
+
+#### e.g.: "a" OR [ "A", "b" ]
+
+Jade must not contain any of the attributes specified.
+
+```jade
+//- Invalid
+span(a='a')
+div(B='b')
+```
+
+#### e.g.: [ { img: [ "title" ] } ]
+
+`img` tags not not contain any of the attributes specified.
+
+```jade
+//- Invalid
+img(title='title')
+```
+
 ### disallowSpecificTags: `string` | `Array`
 
 Jade must not contain any of the tags specified.
