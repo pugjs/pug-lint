@@ -203,7 +203,7 @@ div(B='b')
 
 #### e.g.: [ { img: [ "title" ] } ]
 
-`img` tags not not contain any of the attributes specified.
+`img` tags must not contain any of the attributes specified.
 
 ```jade
 //- Invalid
