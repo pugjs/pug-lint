@@ -13,7 +13,7 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report duplicate attributes', function () {
-        assert.equal(linter.checkString('div(a=\'a\' a=\'b\')').length, 1)
+        assert.equal(linter.checkString('div(a=\'a\' A=\'b\')').length, 1)
       })
 
       it('should report duplicate ID attributes', function () {
@@ -21,7 +21,7 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should not report duplicate class attributes', function () {
-        assert.equal(linter.checkString('.class(class=\'class\' class=\'class\')').length, 0)
+        assert.equal(linter.checkString('.class(Class=\'class\' class=\'class\')').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
