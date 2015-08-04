@@ -23,8 +23,8 @@
 , "requireLowerCaseTags": true
 , "requireSpaceAfterCodeOperator": true
 , "requireSpecificAttributes":
-  { "img": "alt"
-  }
+  [ { "img": "alt" }
+  ]
 , "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "
 , "validateIndentation": 2
