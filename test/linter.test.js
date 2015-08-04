@@ -14,6 +14,18 @@ describe('linter', function () {
       assert.equal(linter.getConfiguredRules().length, 0)
     })
 
+    it('should load configured rules for a preset', function () {
+      linter.configure({ preset: 'clock' })
+
+      assert.equal(linter.getConfiguredRules().length > 0, true)
+    })
+
+    it('should error for invalid preset', function () {
+      assert.throws(function () {
+        linter.configure({ preset: 'nonexistent' })
+      }, /Preset "nonexistent" does not exist/)
+    })
+
     it('should not use disabled rules', function () {
       linter.configure({ validateAttributeSeparator: null })
 
