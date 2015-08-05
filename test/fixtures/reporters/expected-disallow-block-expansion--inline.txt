@@ -1,0 +1,1 @@
+%dirname%disallow-block-expansion.jade: line 8, col 0, Tag "span" must not be used

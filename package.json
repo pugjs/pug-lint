@@ -76,6 +76,7 @@
     "jsinspect": "^0.6.1",
     "mocha": "^2.2.5",
     "pliers": "^1.2.1",
-    "pliers-clean-shrinkwrap": "^1.0.1"
+    "pliers-clean-shrinkwrap": "^1.0.1",
+    "sinon": "^1.15.4"
   }
 }

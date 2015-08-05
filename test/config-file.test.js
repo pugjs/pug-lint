@@ -6,6 +6,7 @@ var assert = require('assert')
 describe('configFile', function () {
 
   var config
+    , reporter
 
   it('should load config file from specific dot file', function () {
     config = configFile.load(fixturesPath + 'dotfile/.jade-lintrc')
@@ -41,6 +42,30 @@ describe('configFile', function () {
     config = configFile.load(null, fixturesPath)
 
     assert.equal(config === undefined, true, config)
+  })
+
+  it('should return in-built reporter', function () {
+    reporter = configFile.getReporter('console')
+
+    assert.equal(reporter.writer !== null, true, reporter)
+  })
+
+  it('should return custom reporter', function () {
+    reporter = configFile.getReporter(fixturesPath + 'reporter.js')
+
+    assert.equal(reporter.writer !== null, true, reporter)
+  })
+
+  it('should return null if no in-built or custom reporter is found', function () {
+    reporter = configFile.getReporter('nonexistent')
+
+    assert.equal(reporter.writer, null, reporter)
+  })
+
+  it('should return null if no reporter is specified', function () {
+    reporter = configFile.getReporter()
+
+    assert.equal(reporter.writer, null, reporter)
   })
 
 })

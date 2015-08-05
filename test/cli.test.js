@@ -79,7 +79,7 @@ describe('cli', function () {
 
   it('should report errors for file path', function (done) {
     var args = [ fixturesRelativePath + 'invalid.jade' ]
-      , expectedReport = fs.readFileSync(fixturesPath + 'expected-invalid.txt', 'utf-8')
+      , expectedReport = fs.readFileSync(fixturesPath + 'reporters/expected-invalid.txt', 'utf-8')
 
     run(args, function (err, code, stdout, stderr) {
       assert(!err, err)
@@ -93,7 +93,7 @@ describe('cli', function () {
   it('should report errors for directory path', function (done) {
     var dirname = fixturesRelativePath + 'rules/'
       , args = [ dirname ]
-      , expectedReport = fs.readFileSync(fixturesPath + 'expected-invalid.txt', 'utf-8')
+      , expectedReport = fs.readFileSync(fixturesPath + 'reporters/expected-invalid.txt', 'utf-8')
 
     run(args, function (err, code, stdout, stderr) {
       assert(!err, err)
@@ -107,9 +107,44 @@ describe('cli', function () {
   it('should use config when it is supplied', function (done) {
     var dirname = fixturesRelativePath + 'rules/'
       , args = [ '-c', fixturesPath + 'config-file/dotfile/.jade-lintrc', dirname + 'disallow-block-expansion.jade' ]
-      , expectedReport = fs.readFileSync(fixturesPath + 'expected-disallow-block-expansion.txt', 'utf-8')
+      , expectedReport = fs.readFileSync(fixturesPath + 'reporters/expected-disallow-block-expansion--console.txt'
+        , 'utf-8')
 
     run(args, function (err, code, stdout, stderr) {
+      assert(!err, err)
+      assert.equal(code, 2, code)
+      assert.equal(stdout, '', stdout)
+      assert.equal(stderr.trim(), expectedReport.replace(/%dirname%/g, dirname).trim(), stderr)
+      done()
+    })
+  })
+
+  it('should error on invalid reporter', function (done) {
+    var args = [ '-r', 'nonexistent', fixturesRelativePath ]
+
+    run(args, function (err, code, stdout, stderr) {
+      assert(!err, err)
+      assert.equal(code, 1, code)
+      assert.equal(stdout, '', stdout)
+      assert.equal(stderr.trim(), 'Reporter "nonexistent" does not exist', stderr)
+      done()
+    })
+  })
+
+  it('should report errors using reporter', function (done) {
+    var dirname = fixturesRelativePath + 'rules/'
+      , args =
+        [ '-r'
+        , 'inline'
+        , '-c'
+        , fixturesPath + 'config-file/dotfile/.jade-lintrc'
+        , dirname + 'disallow-block-expansion.jade'
+        ]
+      , expectedReport = fs.readFileSync(fixturesPath + 'reporters/expected-disallow-block-expansion--inline.txt'
+        , 'utf-8')
+
+    run(args, function (err, code, stdout, stderr) {
+
       assert(!err, err)
       assert.equal(code, 2, code)
       assert.equal(stdout, '', stdout)

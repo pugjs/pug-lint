@@ -26,6 +26,7 @@ $ jade-lint [options] <file ...>
 * `-h, --help`: output usage information
 * `-V, --version`: output the version number
 * `-c, --config <path>`: configuration file path
+* `-r, --reporter <reporter>`: error reporter; console - default, inline
 
 ## Editor integration
 
