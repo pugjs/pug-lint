@@ -68,7 +68,8 @@
     },
     "jade-error": {
       "version": "1.0.0",
-      "from": "jade-error@"
+      "from": "jade-error@git+https://github.com/jadejs/jade-error",
+      "resolved": "git+https://github.com/jadejs/jade-error#0e37ffb1d678a29445679257fa0827f12c279f0e"
     },
     "jade-lexer": {
       "version": "0.0.8",

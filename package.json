@@ -64,7 +64,7 @@
   "dependencies": {
     "commander": "^2.8.1",
     "glob": "^5.0.14",
-    "jade-error": "^1.0.0",
+    "jade-error": "jadejs/jade-error",
     "jade-lexer": "^0.0.8",
     "jsonminify": "^0.2.3",
     "void-elements": "^2.0.1"
