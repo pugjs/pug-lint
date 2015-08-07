@@ -335,6 +335,18 @@ p= 'This code is <escaped>'
 p!= 'This code is <strong>not</strong> escaped'
 ```
 
+### requireSpacesInsideAttributeBrackets: `true`
+
+Requires space after opening attribute bracket and before closing.
+
+```jade
+//- Invalid
+input(type='text' name='name' value='value')
+
+//- Valid
+input( type='text' name='name' value='value' )
+```
+
 ### requireSpecificAttributes: `Array`
 
 #### e.g.: [ { img: [ "alt" ] } ]
