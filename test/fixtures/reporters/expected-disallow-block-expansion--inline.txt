@@ -1,1 +1,7 @@
-%dirname%disallow-block-expansion.jade:8 Tag "span" must not be used
+%dirname%disallow-block-expansion.jade:4:0 Block expansion operators must not be used
+%dirname%disallow-block-expansion.jade:6:0 Block expansion operators must not be used
+%dirname%disallow-block-expansion.jade:6:0 Block expansion operators must not be used
+%dirname%disallow-block-expansion.jade:8:0 Block expansion operators must not be used
+%dirname%disallow-block-expansion.jade:8:0 Block expansion operators must not be used
+%dirname%disallow-block-expansion.jade:8:0 Block expansion operators must not be used
+

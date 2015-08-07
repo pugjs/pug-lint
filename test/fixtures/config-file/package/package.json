@@ -1,4 +1,4 @@
 { "jadeLintConfig":
-  { "disallowSpecificTags": [ "span" ]
+  { "disallowBlockExpansion": true
   }
 }
