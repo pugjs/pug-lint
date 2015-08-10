@@ -27,6 +27,10 @@ function createTest(linter, fixturesPath) {
         assert.equal(result[0].code, 'JADE:LINT_REQUIRELOWERCASEATTRIBUTES')
       })
 
+      it('should not report errors found in XML', function () {
+        assert.equal(linter.checkString('doctype xml\ndiv(Class=\'class\')').length, 0)
+      })
+
     })
 
   })
