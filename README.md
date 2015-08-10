@@ -38,7 +38,7 @@ plugin using [Package Control](https://packagecontrol.io/).
 
 ### Atom
 
-[Coming soon](https://github.com/benedfit/jade-lint/issues/12).
+If you use Atom, you can install the [linter-jade](https://atom.io/packages/linter-jade) package.
 
 ## Rules
 
