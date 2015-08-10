@@ -27,6 +27,7 @@ function createTest(linter, fixturesPath) {
 
         assert.equal(result.length, 1)
         assert.equal(result[0].code, 'JADE:LINT_REQUIRELINEFEEDATFILEEND')
+        assert.equal(result[0].line, 2)
       })
 
       it('should not report line feed at file end', function () {
