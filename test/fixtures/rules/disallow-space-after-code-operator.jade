@@ -9,3 +9,30 @@ p!=  test
 -test
 - test
 -  test
+
+if true
+  p=test
+  p= test
+  p=  test
+else if false
+  p!=test
+  p!= test
+  p!=  test
+else
+  -test
+  - test
+  -  test
+
+ul
+  each val in [0, 1, 2, 3]
+    li=val
+    li= val
+    li=  val
+
+- var n = 0
+ul
+  while n < 4
+    - n++
+    li=n
+    li= n
+    li=  n
