@@ -1,3 +1,11 @@
+## v1.2.7 / 2015-08-10
+
+### Highlights
+* Major bug fixing drive on existing rules
+
+### Changes
+[v1.2.6...v1.2.7](https://github.com/benedfit/jade-lint/compare/v1.2.6...v1.2.7)
+
 ## v1.2.6 / 2015-08-09
 
 ### Highlights
