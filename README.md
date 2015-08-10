@@ -40,6 +40,10 @@ plugin using [Package Control](https://packagecontrol.io/).
 
 If you use Atom, you can install the [linter-jade](https://atom.io/packages/linter-jade) package.
 
+### Vim
+
+[Coming soon](https://github.com/benedfit/jade-lint/issues/21).
+
 ## Rules
 
 You can specifically disable any rule by omitting it from your `.jade-lintrc` config file or by assigning it to null, like so:
