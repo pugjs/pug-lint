@@ -1,0 +1,89 @@
+## v1.2.6 / 2015-08-09
+
+### Highlights
+* Further fix to validateAttributeSeparators
+
+### Changes
+[v1.2.5...v1.2.6](https://github.com/benedfit/jade-lint/compare/v1.2.5...v1.2.6)
+
+## v1.2.5 / 2015-08-08
+
+### Highlights
+* Further fix to validateAttributeSeparators
+
+### Changes
+[v1.2.4...v1.2.5](https://github.com/benedfit/jade-lint/compare/v1.2.4...v1.2.5)
+
+## v1.2.4 / 2015-08-08
+
+### Highlights
+* New rule to disallow spaces inside attribute brackets
+
+### Changes
+[v1.2.3...v1.2.4](https://github.com/benedfit/jade-lint/compare/v1.2.3...v1.2.4)
+
+## v1.2.3 / 2015-08-08
+
+### Highlights
+* Fixed bug with validateAttributeSeparator parsing the whole line rather than just the attribute values
+
+### Changes
+[v1.2.2...v1.2.3](https://github.com/benedfit/jade-lint/compare/v1.2.2...v1.2.3)
+
+## v1.2.2 / 2015-08-06
+
+### Highlights
+* Fixed bug with validateAttributeSeparator handling of Array and object values
+
+### Changes
+[v1.2.1...v1.2.2](https://github.com/benedfit/jade-lint/compare/v1.2.1...v1.2.2)
+
+## v1.2.1 / 2015-08-05
+
+### Highlights
+* Simplified inline reporter
+
+### Changes
+[v1.2.0...v1.2.1](https://github.com/benedfit/jade-lint/compare/v1.2.0...v1.2.1)
+
+## v1.2.0 / 2015-08-06
+
+### Highlights
+* Support for built-in and custom reporters
+
+### Changes
+[v1.1.0...v1.2.0](https://github.com/benedfit/jade-lint/compare/v1.1.0...v1.2.0)
+
+## v1.1.0 / 2015-08-04
+
+### Highlights
+* Support for presets
+
+### Changes
+[v1.0.2...v1.1.0](https://github.com/benedfit/jade-lint/compare/v1.0.2...v1.1.0)
+
+## v1.0.2 / 2015-08-04
+
+### Highlights
+* New rules: requireSpecificAttributes
+* FIX: Attribute quote validation can now handle boolean attributes correctly
+
+### Changes
+[v1.0.1...v1.0.2](https://github.com/benedfit/jade-lint/compare/v1.0.1...v1.0.2)
+
+## v1.0.1 / 2015-08-04
+
+### Highlights
+* New rules:
+  * disallowSpecificAttributes
+  * disallowSpecificTags
+
+### Changes
+[v1.0.0...v1.0.1](https://github.com/benedfit/jade-lint/compare/v1.0.0...v1.0.1)
+
+## v1.0.0 / 2015-07-30
+
+### Highlights
+* CLI support
+* Config file support
+* Initial batch of rules
