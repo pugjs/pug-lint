@@ -21,11 +21,11 @@ $ npm install -g jade-lint
 $ jade-lint [options] <file ...>
 ```
 
-#### options
+#### Options
 
 * `-h, --help`: output usage information
 * `-V, --version`: output the version number
-* `-c, --config <path>`: configuration file path
+* `-c, --config <path>`: [configuration file](#configuration-file) path
 * `-r, --reporter <reporter>`: error reporter; console - default, inline
 
 ## Editor integration
@@ -44,7 +44,33 @@ If you use Atom, you can install the [linter-jade](https://atom.io/packages/lint
 
 [Coming soon](https://github.com/benedfit/jade-lint/issues/21).
 
-## Rules
+## Configuration file
+
+Options and rules can be specified in a `.jade-lintrc` or `.jade-lint.json` file, or via adding a `"jadeLintConfig"` option to `package.json`.
+
+### Options
+
+#### preset
+
+Type: `string`
+Values: `"clock"`
+
+Presets are pre-defined sets of rules. You can specifically disable any preset rule by assigning it to null, like so:
+
+```json
+{ "presets": "clock"
+, "disallowIdLiterals": null
+}
+```
+
+#### excludeFiles
+
+Type: `Array`
+Default: `[ "node_modules/**" ]`
+
+Disables style checking for specified paths declared with glob patterns.
+
+### Rules
 
 You can specifically disable any rule by omitting it from your `.jade-lintrc` config file or by assigning it to null, like so:
 
@@ -53,7 +79,7 @@ You can specifically disable any rule by omitting it from your `.jade-lintrc` co
 }
 ```
 
-### disallowBlockExpansion: `true`
+#### disallowBlockExpansion: `true`
 
 Jade must not contain any block expansion operators.
 
@@ -63,7 +89,7 @@ p: strong text
 table: tr: td text
 ```
 
-### disallowClassLiterals: `true`
+#### disallowClassLiterals: `true`
 
 Jade must not contain any class literals.
 
@@ -75,7 +101,7 @@ Jade must not contain any class literals.
 div(class='class')
 ```
 
-### disallowClassLiteralsBeforeAttributes: `true`
+#### disallowClassLiteralsBeforeAttributes: `true`
 
 All attribute blocks must be written before any class literals.
 
@@ -87,7 +113,7 @@ input.class(type='text')
 input(type='text').class
 ```
 
-### disallowClassLiteralsBeforeIdLiterals: `true`
+#### disallowClassLiteralsBeforeIdLiterals: `true`
 
 All ID literals must be written before any class literals.
 
@@ -99,7 +125,7 @@ input.class#id(type='text')
 input#id.class(type='text')
 ```
 
-### disallowDuplicateAttributes: `true`
+#### disallowDuplicateAttributes: `true`
 
 Attribute blocks must not contain any duplicates. And if an ID literal is present an ID attribute must not be used. Ignores class attributes.
 
@@ -113,7 +139,7 @@ div(class='a', class='b')
 .class(class='class')
 ```
 
-### disallowHtmlText: `true`
+#### disallowHtmlText: `true`
 
 Jade must not contain any HTML text.
 
@@ -123,7 +149,7 @@ Jade must not contain any HTML text.
 p this is <strong>html</strong> text
 ```
 
-### disallowIdLiterals: `true`
+#### disallowIdLiterals: `true`
 
 Jade must not contain any ID literals.
 
@@ -135,7 +161,7 @@ Jade must not contain any ID literals.
 div(id='id')
 ```
 
-### disallowIdLiteralsBeforeAttributes: `true`
+#### disallowIdLiteralsBeforeAttributes: `true`
 
 All attribute blocks must be written before any ID literals.
 
@@ -147,7 +173,7 @@ input#id(type='text')
 input(type='text')#id
 ```
 
-### disallowImplicitDiv: `true`
+#### disallowImplicitDiv: `true`
 
 Avoid writing `div` when it would otherwise be implicit.
 
@@ -163,7 +189,7 @@ div.class(class='class')
 .class(class='class')
 ```
 
-### disallowMultipleLineBreaks: `true`
+#### disallowMultipleLineBreaks: `true`
 
 Jade must not contain multiple blank lines in a row.
 
@@ -180,7 +206,7 @@ div
 div
 ```
 
-### disallowSpaceAfterCodeOperator: `true`
+#### disallowSpaceAfterCodeOperator: `true`
 
 No code operators (unbuffered/buffered/unescped buffered) should be followed by any spaces.
 
@@ -194,7 +220,7 @@ p='This code is <escaped>'
 p!='This code is <strong>not</strong> escaped'
 ```
 
-### disallowSpacesInsideAttributeBrackets: `true`
+#### disallowSpacesInsideAttributeBrackets: `true`
 
 Disallows space after opening attribute bracket and before closing.
 
@@ -206,9 +232,9 @@ input( type='text' name='name' value='value' )
 input(type='text' name='name' value='value')
 ```
 
-### disallowSpecificAttributes: `string` | `Array`
+#### disallowSpecificAttributes: `string` | `Array`
 
-#### e.g.: "a" OR [ "A", "b" ]
+##### e.g.: "a" OR [ "A", "b" ]
 
 Jade must not contain any of the attributes specified.
 
@@ -218,7 +244,7 @@ span(a='a')
 div(B='b')
 ```
 
-#### e.g.: [ { img: [ "title" ] } ]
+##### e.g.: [ { img: [ "title" ] } ]
 
 `img` tags must not contain any of the attributes specified.
 
@@ -227,11 +253,11 @@ div(B='b')
 img(title='title')
 ```
 
-### disallowSpecificTags: `string` | `Array`
+#### disallowSpecificTags: `string` | `Array`
 
 Jade must not contain any of the tags specified.
 
-#### e.g.: [ "b", "i" ]
+##### e.g.: [ "b", "i" ]
 
 ```jade
 //- Invalid
@@ -239,7 +265,7 @@ b Bold text
 i Italic text
 ```
 
-### disallowStringConcatenation: `true`
+#### disallowStringConcatenation: `true`
 
 Jade must not contain any string concatenation.
 
@@ -249,7 +275,7 @@ h1= title + \'text\'
 a(href='text ' + title) Link
 ```
 
-### disallowStringInterpolation: `true`
+#### disallowStringInterpolation: `true`
 
 Jade must not contain any string interpolation operators.
 
@@ -259,7 +285,7 @@ h1 #{title} text
 a(href='text #{title}') Link
 ```
 
-### disallowTagInterpolation: `true`
+#### disallowTagInterpolation: `true`
 
 Jade must not contain any tag interpolation operators.
 
@@ -269,11 +295,11 @@ Jade must not contain any tag interpolation operators.
 p #[strong html] text
 ```
 
-### maximumNumberOfLines: `int`
+#### maximumNumberOfLines: `int`
 
 Jade files should be at most the number of lines specified.
 
-### requireClassLiteralsBeforeAttributes: `true`
+#### requireClassLiteralsBeforeAttributes: `true`
 
 All class literals must be written before any attribute blocks.
 
@@ -285,7 +311,7 @@ input(type='text').class
 input.class(type='text')
 ```
 
-### requireClassLiteralsBeforeIdLiterals: `true`
+#### requireClassLiteralsBeforeIdLiterals: `true`
 
 All class literals must be written before any ID literals.
 
@@ -297,7 +323,7 @@ input#id.class(type='text')
 input.class#id(type='text')
 ```
 
-### requireIdLiteralsBeforeAttributes: `true`
+#### requireIdLiteralsBeforeAttributes: `true`
 
 All ID literals must be written before any attribute blocks.
 
@@ -309,13 +335,13 @@ input(type='text')#id
 input#id(type='text')
 ```
 
-### requireLineFeedAtFileEnd: `true`
+#### requireLineFeedAtFileEnd: `true`
 
 All files must end with a line feed.
 
-### requireLowerCaseAttributes: `true`
+#### requireLowerCaseAttributes: `true`
 
-All attributes must be written in lower case.
+All attributes must be written in lower case. Files with `doctype xml` are ignored.
 
 ```jade
 //- Invalid
@@ -325,9 +351,9 @@ div(Class='class')
 div(class='class')
 ```
 
-### requireLowerCaseTags: `true`
+#### requireLowerCaseTags: `true`
 
-All tags must be written in lower case.
+All tags must be written in lower case. Files with `doctype xml` are ignored.
 
 ```jade
 //- Invalid
@@ -337,7 +363,7 @@ Div(class='class')
 div(class='class')
 ```
 
-### requireSpaceAfterCodeOperator: `true`
+#### requireSpaceAfterCodeOperator: `true`
 
 All code operators (unbuffered/buffered/unescaped buffered) must be immediately followed by a single space.
 
@@ -351,7 +377,7 @@ p= 'This code is <escaped>'
 p!= 'This code is <strong>not</strong> escaped'
 ```
 
-### requireSpacesInsideAttributeBrackets: `true`
+#### requireSpacesInsideAttributeBrackets: `true`
 
 Requires space after opening attribute bracket and before closing.
 
@@ -363,9 +389,9 @@ input(type='text' name='name' value='value')
 input( type='text' name='name' value='value' )
 ```
 
-### requireSpecificAttributes: `Array`
+#### requireSpecificAttributes: `Array`
 
-#### e.g.: [ { img: [ "alt" ] } ]
+##### e.g.: [ { img: [ "alt" ] } ]
 
 `img` tags must contain all of the attributes specified.
 
@@ -377,9 +403,9 @@ img(src='src')
 img(src='src' alt='alt')
 ```
 
-### validateAttributeQuoteMarks: `"\""` | `"'"` | `true`
+#### validateAttributeQuoteMarks: `"\""` | `"'"` | `true`
 
-#### e.g.: "'"
+##### e.g.: "'"
 
 All attribute values must be enclosed in single quotes.
 
@@ -391,13 +417,13 @@ input(type="text" name="name" value="value")
 input(type='text' name='name' value='value')
 ```
 
-#### if (true)
+##### if (true)
 
 All attribute values must be enclosed in quote marks match the first quote mark encountered in the source code.
 
-### validateAttributeSeparator: `" "` | `","` | `", "` | `" ,"` | `" , "`
+#### validateAttributeSeparator: `" "` | `","` | `", "` | `" ,"` | `" , "`
 
-#### e.g.: ", "
+##### e.g.: ", "
 
 All attributes must be immediately followed by a comma and then a space.
 
@@ -409,9 +435,9 @@ input(type='text' name='name' value='value')
 input(type='text', name='name', value='value')
 ```
 
-### validateIndentation: `int` | `"\t"`
+#### validateIndentation: `int` | `"\t"`
 
-#### e.g.: 2
+##### e.g.: 2
 
 Indentation must be consistently two spaces.
 
@@ -425,7 +451,7 @@ div
 <SPACE><SPACE>div
 ```
 
-#### e.g.: "\t"
+##### e.g.: "\t"
 
 Indentation must be consistently tabs.
 
@@ -439,9 +465,9 @@ div
 <TAB>div
 ```
 
-### validateLineBreaks: `"CR"` | `"LF"` | `"CRLF"`
+#### validateLineBreaks: `"CR"` | `"LF"` | `"CRLF"`
 
-#### e.g.: "LF"
+##### e.g.: "LF"
 
 All line break characters must match.
 
@@ -455,7 +481,7 @@ div(class='class')<LF>
 .button
 ```
 
-### validateSelfClosingTags: `true`
+#### validateSelfClosingTags: `true`
 
 Checks that Jade does not contain any [unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements). Files with `doctype xml` are ignored.
 
