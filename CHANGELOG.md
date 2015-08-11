@@ -1,3 +1,14 @@
+## v1.2.8 / 2015-08-11
+
+### Highlights
+* Files can now be excluded via `excludeFiles` option in config
+* Users can now define their own rules via `additionalRules` option in config
+* disallow/requireSpaceAfterCodeOperators how handles lines containing variable declarations
+* disallow/requireSpacesInsideAttributeBrackets now handles nested/multiple brackets
+
+### Changes
+[v1.2.7...v1.2.8](https://github.com/benedfit/jade-lint/compare/v1.2.7...v1.2.8)
+
 ## v1.2.7 / 2015-08-10
 
 ### Highlights
