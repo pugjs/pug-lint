@@ -70,6 +70,17 @@ Default: `[ "node_modules/**" ]`
 
 Disables style checking for specified paths declared with glob patterns.
 
+#### additionalRules
+
+Type: `Array`
+
+Array of file path matching patterns to load additional rules from, e.g.:
+
+```json
+{ "additionalRules": [ "project-rules/*.js" ]
+}
+``
+
 ### Rules
 
 You can specifically disable any rule by omitting it from your `.jade-lintrc` config file or by assigning it to null, like so:
