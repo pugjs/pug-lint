@@ -79,6 +79,23 @@ describe('linter', function () {
       assert.equal(result[0].code, 'JADE:UNEXPECTED_TEXT')
     })
 
+    it('should not report errors for default excluded directory path', function () {
+      linter.configure({ 'preset': 'clock' })
+      assert.equal(linter.checkPath(__dirname + '/../node_modules').length, 0)
+    })
+
+    it('should not report errors for user defined excluded directory path', function () {
+      linter.configure(
+        { preset: 'clock'
+        , excludeFiles:
+          [ 'node_modules/**'
+          , 'test/**'
+          ]
+        }
+      )
+      assert.equal(linter.checkPath(__dirname + '/..').length, 0)
+    })
+
   })
 
 })

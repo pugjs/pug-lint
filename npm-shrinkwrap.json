@@ -85,6 +85,26 @@
       "version": "0.2.3",
       "from": "jsonminify@0.2.3"
     },
+    "minimatch": {
+      "version": "2.0.10",
+      "from": "minimatch@",
+      "dependencies": {
+        "brace-expansion": {
+          "version": "1.1.0",
+          "from": "brace-expansion@^1.0.0",
+          "dependencies": {
+            "balanced-match": {
+              "version": "0.2.0",
+              "from": "balanced-match@^0.2.0"
+            },
+            "concat-map": {
+              "version": "0.0.1",
+              "from": "concat-map@0.0.1"
+            }
+          }
+        }
+      }
+    },
     "void-elements": {
       "version": "2.0.1",
       "from": "void-elements@2.0.1"

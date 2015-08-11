@@ -67,6 +67,7 @@
     "jade-error": "jadejs/jade-error",
     "jade-lexer": "^0.0.8",
     "jsonminify": "^0.2.3",
+    "minimatch": "^2.0.10",
     "void-elements": "^2.0.1"
   },
   "devDependencies": {
