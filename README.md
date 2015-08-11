@@ -53,6 +53,7 @@ Options and rules can be specified in a `.jade-lintrc` or `.jade-lint.json` file
 #### preset
 
 Type: `string`
+
 Values: `"clock"`
 
 Presets are pre-defined sets of rules. You can specifically disable any preset rule by assigning it to null, like so:
@@ -66,6 +67,7 @@ Presets are pre-defined sets of rules. You can specifically disable any preset r
 #### excludeFiles
 
 Type: `Array`
+
 Default: `[ "node_modules/**" ]`
 
 Disables style checking for specified paths declared with glob patterns.
