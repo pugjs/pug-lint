@@ -1,3 +1,9 @@
+## v1.2.9 / 2015-09-01
+
+### Highlights
+* Resolve paths to additional rules correctly
+* requireSpaceAfterCodeOperator now handles more valid cases
+
 ## v1.2.8 / 2015-08-11
 
 ### Highlights

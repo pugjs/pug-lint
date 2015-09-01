@@ -1,6 +1,6 @@
 {
   "name": "jade-lint",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "dependencies": {
     "commander": {
       "version": "2.8.1",
@@ -69,7 +69,7 @@
     "jade-error": {
       "version": "1.0.0",
       "from": "jade-error@git+https://github.com/jadejs/jade-error",
-      "resolved": "git+https://github.com/jadejs/jade-error#0e37ffb1d678a29445679257fa0827f12c279f0e"
+      "resolved": "git+https://github.com/jadejs/jade-error#8e6d69ee4a2a8aab38ad718e6e00937f2a32b814"
     },
     "jade-lexer": {
       "version": "0.0.8",
