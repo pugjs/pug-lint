@@ -68,7 +68,7 @@
     },
     "jade-error": {
       "version": "1.0.0",
-      "from": "jade-error@git+https://github.com/jadejs/jade-error",
+      "from": "jade-error@git+https://github.com/jadejs/jade-error#8e6d69ee4a2a8aab38ad718e6e00937f2a32b814",
       "resolved": "git+https://github.com/jadejs/jade-error#8e6d69ee4a2a8aab38ad718e6e00937f2a32b814"
     },
     "jade-lexer": {
@@ -87,15 +87,15 @@
     },
     "minimatch": {
       "version": "2.0.10",
-      "from": "minimatch@",
+      "from": "minimatch@2.0.10",
       "dependencies": {
         "brace-expansion": {
           "version": "1.1.0",
-          "from": "brace-expansion@^1.0.0",
+          "from": "brace-expansion@1.1.0",
           "dependencies": {
             "balanced-match": {
               "version": "0.2.0",
-              "from": "balanced-match@^0.2.0"
+              "from": "balanced-match@0.2.0"
             },
             "concat-map": {
               "version": "0.0.1",
