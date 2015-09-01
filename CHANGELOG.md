@@ -4,6 +4,9 @@
 * Resolve paths to additional rules correctly
 * requireSpaceAfterCodeOperator now handles more valid cases
 
+### Changes
+[v1.2.8...v1.2.9](https://github.com/benedfit/jade-lint/compare/v1.2.8...v1.2.9)
+
 ## v1.2.8 / 2015-08-11
 
 ### Highlights
