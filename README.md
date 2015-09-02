@@ -81,7 +81,7 @@ Array of file path matching patterns to load additional rules from, e.g.:
 ```json
 { "additionalRules": [ "project-rules/*.js" ]
 }
-``
+```
 
 ### Rules
 
