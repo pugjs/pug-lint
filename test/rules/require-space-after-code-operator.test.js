@@ -28,6 +28,7 @@ function createTest(linter, fixturesPath) {
         assert.equal(linter.checkString('dc:creator=authorName').length, 1)
         assert.equal(linter.checkString('guid(isPermaLink=\'true\')=pageUrl').length, 1)
         assert.equal(linter.checkString('tr: div=test').length, 1)
+        assert.equal(linter.checkString('a(href=\'/#{year}/\', rel=\'directory\')=year').length, 1)
       })
 
       it('should report missing space after escaped buffered operator', function () {
@@ -42,6 +43,7 @@ function createTest(linter, fixturesPath) {
         assert.equal(linter.checkString('dc:creator!=authorName').length, 1)
         assert.equal(linter.checkString('guid(isPermaLink=\'true\')!=pageUrl').length, 1)
         assert.equal(linter.checkString('tr: div!=test').length, 1)
+        assert.equal(linter.checkString('a(href=\'/#{year}/\', rel=\'directory\')!=year').length, 1)
       })
 
       it('should not report space after unbuffered operator', function () {
@@ -60,6 +62,7 @@ function createTest(linter, fixturesPath) {
         assert.equal(linter.checkString('dc:creator= authorName').length, 0)
         assert.equal(linter.checkString('guid(isPermaLink=\'true\')= pageUrl').length, 0)
         assert.equal(linter.checkString('tr: div= test').length, 0)
+        assert.equal(linter.checkString('a(href=\'/#{year}/\', rel=\'directory\')= year').length, 0)
       })
 
       it('should not report space after unbuffered operator', function () {
@@ -74,6 +77,7 @@ function createTest(linter, fixturesPath) {
         assert.equal(linter.checkString('dc:creator!= authorName').length, 0)
         assert.equal(linter.checkString('guid(isPermaLink=\'true\')!= pageUrl').length, 0)
         assert.equal(linter.checkString('tr: div!= test').length, 0)
+        assert.equal(linter.checkString('a(href=\'/#{year}/\', rel=\'directory\')!= year').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
