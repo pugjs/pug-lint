@@ -3,7 +3,7 @@
 , "disallowClassLiteralsBeforeAttributes": null
 , "disallowClassLiteralsBeforeIdLiterals": null
 , "disallowDuplicateAttributes": true
-, "disallowHtmlText": true
+, "disallowHtmlText": null
 , "disallowIdLiterals": true
 , "disallowIdLiteralsBeforeAttributes": null
 , "disallowImplicitDiv": true
