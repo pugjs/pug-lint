@@ -1,3 +1,13 @@
+## v1.2.10 / 2015-09-03
+
+### Highlights
+* Improvement to requireSpaceAfterCodeOperator
+* disallowStringConcatenation now ignores unbuffered code
+* Updates to Clock preset
+
+### Changes
+[v1.2.9...v1.2.10](https://github.com/benedfit/jade-lint/compare/v1.2.9...v1.2.10)
+
 ## v1.2.9 / 2015-09-01
 
 ### Highlights
