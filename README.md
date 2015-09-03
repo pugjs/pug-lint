@@ -42,7 +42,24 @@ If you use Atom, you can install the [linter-jade](https://atom.io/packages/lint
 
 ### Vim
 
-[Coming soon](https://github.com/benedfit/jade-lint/issues/21).
+jade-lint is part of [syntastic](https://github.com/scrooloose/syntastic).
+
+If you are using [vim-plug](https://github.com/junegunn/vim-plug) to manage your
+Vim plugins (recommended), you can do:
+
+```
+" In your ~/.vimrc
+Plug 'scrooloose/syntastic'
+" Then run these commands
+:source %
+:PlugInstall
+```
+
+Then to turn the jade-linter on, you will need this line in your .vimrc.
+
+```
+let g:syntastic_jade_checkers = ['jade_lint']
+```
 
 ## Configuration file
 
