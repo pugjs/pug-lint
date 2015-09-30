@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "commander": "^2.8.1",
+    "css-selector-parser": "^1.1.0",
     "glob": "^5.0.14",
     "jade-error": "^1.0.0",
     "jade-lexer": "^0.0.8",

@@ -13,7 +13,7 @@ function createTest(linter) {
       assert.equal(linter.getConfiguredRules().length > 0, true)
     })
 
-    it('AddDeferForAsyncScripts', function () {
+    it.skip('AddDeferForAsyncScripts', function () {
       assert.equal(linter.checkString('script(async defer src=\'script.js\')').length, 0)
       assert.equal(linter.checkString('script(async src=\'script.js\')').length, 1)
     })

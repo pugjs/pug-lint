@@ -29,12 +29,11 @@ function createTest(linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'require-specific-attributes.jade')
 
-        assert.equal(result.length, 4)
+        assert.equal(result.length, 3)
         assert.equal(result[0].code, 'JADE:LINT_REQUIRESPECIFICATTRIBUTES')
         assert.equal(result[0].line, 2)
         assert.equal(result[1].line, 3)
         assert.equal(result[2].line, 5)
-        assert.equal(result[3].line, 6)
       })
 
     })
