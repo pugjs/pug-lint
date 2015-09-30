@@ -1,3 +1,11 @@
+## v1.2.11 / 2015-09-30
+
+### Highlights
+* Add rule to require strict equality operators
+
+### Changes
+[v1.2.10...v1.2.11](https://github.com/benedfit/jade-lint/compare/v1.2.10...v1.2.11)
+
 ## v1.2.10 / 2015-09-03
 
 ### Highlights
