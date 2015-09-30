@@ -27,6 +27,7 @@
 , "requireSpecificAttributes":
   [ { "img": "alt" }
   ]
+, "requireStrictEqualityOperators": true
 , "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "
 , "validateIndentation": 2

@@ -433,6 +433,20 @@ img(src='src')
 img(src='src' alt='alt')
 ```
 
+#### requireStrictEqualityOperators: `true`
+
+Requires the use of `===` and `!==` instead of `==` and `!=`.
+
+```jade
+//- Invalid
+if true == false
+if true != false
+
+//- Valid
+if true === false
+if true !== false
+```
+
 #### validateAttributeQuoteMarks: `"\""` | `"'"` | `true`
 
 ##### e.g.: "'"
