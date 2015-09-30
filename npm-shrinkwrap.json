@@ -12,6 +12,10 @@
         }
       }
     },
+    "css-selector-parser": {
+      "version": "1.1.0",
+      "from": "css-selector-parser@^1.1.0"
+    },
     "glob": {
       "version": "5.0.14",
       "from": "glob@5.0.14",
