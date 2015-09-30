@@ -1,6 +1,6 @@
 {
   "name": "jade-lint",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "A linter and style checker for Jade",
   "author": "Ben Edwards <hello@benedfit.com>",
   "license": "ISC",

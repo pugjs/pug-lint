@@ -1,3 +1,11 @@
+## v1.2.12 / 2015-09-30
+
+### Highlights
+* Fix shrinkwrap
+
+### Changes
+[v1.2.11...v1.2.12](https://github.com/benedfit/jade-lint/compare/v1.2.11...v1.2.12)
+
 ## v1.2.11 / 2015-09-30
 
 ### Highlights
