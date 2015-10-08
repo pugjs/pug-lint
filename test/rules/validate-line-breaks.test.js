@@ -2,7 +2,7 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter) {
+function createTest (linter) {
 
   describe('validateLineBreaks', function () {
 

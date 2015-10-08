@@ -4,7 +4,7 @@ var assert = require('assert')
 
 module.exports = createTest
 
-function createTest(linter) {
+function createTest (linter) {
 
   describe('console', function () {
 

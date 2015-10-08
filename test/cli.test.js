@@ -1,7 +1,7 @@
 var assert = require('assert')
   , bin = require.resolve('../bin/jade-lint')
   , fs = require('fs')
-  , package = require('../package.json')
+  , packageDetails = require('../package.json')
   , spawn = require('child_process').spawn
 
   , fixturesPath = __dirname + '/fixtures/'
@@ -9,7 +9,7 @@ var assert = require('assert')
 
 describe('cli', function () {
 
-  function run(args, cb) {
+  function run (args, cb) {
     var command = [ bin ].concat(args)
       , stdout = ''
       , stderr = ''
@@ -44,7 +44,7 @@ describe('cli', function () {
       assert(!err, err)
       assert.equal(code, 0, code)
       assert.equal(stderr, '', stderr)
-      assert.equal(stdout.indexOf(package.version) !== -1, true, stdout)
+      assert.equal(stdout.indexOf(packageDetails.version) !== -1, true, stdout)
       done()
     })
   })
@@ -58,7 +58,7 @@ describe('cli', function () {
       assert.equal(code, 0, code)
       assert.equal(stderr, '', stderr)
       assert.equal(stdout.indexOf(message) !== -1, true, stdout)
-      assert.equal(stdout.indexOf(package.description) !== -1, true, stdout)
+      assert.equal(stdout.indexOf(packageDetails.description) !== -1, true, stdout)
       done()
     })
   })
@@ -72,7 +72,7 @@ describe('cli', function () {
       assert.equal(code, 0, code)
       assert.equal(stderr, '', stderr)
       assert.equal(stdout.indexOf(message) !== -1, true, stdout)
-      assert.equal(stdout.indexOf(package.description) !== -1, true, stdout)
+      assert.equal(stdout.indexOf(packageDetails.description) !== -1, true, stdout)
       done()
     })
   })

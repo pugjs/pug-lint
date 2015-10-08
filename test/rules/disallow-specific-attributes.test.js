@@ -2,7 +2,7 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter, fixturesPath) {
+function createTest (linter, fixturesPath) {
 
   var fixturePath = fixturesPath + 'disallow-specific-attributes.jade'
 

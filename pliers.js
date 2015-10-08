@@ -5,7 +5,7 @@ module.exports = tasks
 var glob = require('glob')
 
 /* istanbul ignore next */
-function tasks(pliers) {
+function tasks (pliers) {
 
   // Load pliers plugins
   glob.sync(__dirname + '/pliers/*.js').forEach(function (file) {
