@@ -1,3 +1,11 @@
+## v1.2.13 / 2015-10-08
+
+### Highlights
+* Add rules to disallow attribute interpolation and concatenation
+
+### Changes
+[v1.2.12...v1.2.13](https://github.com/benedfit/jade-lint/compare/v1.2.12...v1.2.13)
+
 ## v1.2.12 / 2015-09-30
 
 ### Highlights
