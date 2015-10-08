@@ -38,7 +38,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:benedfit/jade-lint"
+    "url": "git@github.com:benedfit/jade-lint.git"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
