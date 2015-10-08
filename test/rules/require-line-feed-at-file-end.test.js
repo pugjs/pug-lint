@@ -20,6 +20,7 @@ function createTest (linter, fixturesPath) {
         assert.equal(linter.checkString('div\r').length, 0)
         assert.equal(linter.checkString('div\n').length, 0)
         assert.equal(linter.checkString('div\r\n').length, 0)
+        assert.equal(linter.checkString('p.\r\rn  Test\r\n').length, 0)
       })
 
       it('should report missing line feed at file end', function () {
