@@ -1,4 +1,6 @@
-{ "disallowBlockExpansion": null
+{ "disallowAttributeConcatenation": true
+, "disallowAttributeInterpolation": null
+, "disallowBlockExpansion": null
 , "disallowClassLiterals": null
 , "disallowClassLiteralsBeforeAttributes": null
 , "disallowClassLiteralsBeforeIdLiterals": null

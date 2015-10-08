@@ -110,6 +110,24 @@ You can specifically disable any rule by omitting it from your `.jade-lintrc` co
 }
 ```
 
+#### disallowAttributeConcatenation: `true`
+
+Jade must not contain any attribute concatenation.
+
+```jade
+//- Invalid
+a(href='text ' + title) Link
+```
+
+#### disallowAttributeInterpolation: `true`
+
+Jade must not contain any attribute interpolation operators.
+
+```jade
+//- Invalid
+a(href='text #{title}') Link
+```
+
 #### disallowBlockExpansion: `true`
 
 Jade must not contain any block expansion operators.
@@ -303,7 +321,6 @@ Jade must not contain any string concatenation.
 ```jade
 //- Invalid
 h1= title + \'text\'
-a(href='text ' + title) Link
 ```
 
 #### disallowStringInterpolation: `true`
@@ -313,7 +330,6 @@ Jade must not contain any string interpolation operators.
 ```jade
 //- Invalid
 h1 #{title} text
-a(href='text #{title}') Link
 ```
 
 #### disallowTagInterpolation: `true`
