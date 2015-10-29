@@ -1,6 +1,6 @@
 # Jade-Lint
 
-A linter and style checker for Jade
+An unopinionated and configurable linter and style checker for Jade
 
 > Under active development. Watch this space as the [rules roll in](https://github.com/benedfit/jade-lint/issues/3) :rainbow::rabbit:
 
