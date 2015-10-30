@@ -1,2 +1,8 @@
-unexpected text |
-div on line 2 of %dirname%invalid.jade
+%dirname%invalid.jade:2:1
+    1| div
+  > 2| |
+    3| div
+    4| 
+
+unexpected text "|
+div"
