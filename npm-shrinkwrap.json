@@ -1,6 +1,6 @@
 {
   "name": "jade-lint",
-  "version": "1.2.13",
+  "version": "2.0.0",
   "dependencies": {
     "commander": {
       "version": "2.8.1",
@@ -57,7 +57,7 @@
     "jade-lexer": {
       "version": "0.0.8",
       "from": "jade-lexer@git://github.com/benedfit/jade-lexer.git#column-numbers",
-      "resolved": "git://github.com/benedfit/jade-lexer.git#56604afecc106ade949d80a8f8e4f6b56148a798",
+      "resolved": "git://github.com/benedfit/jade-lexer.git#1b76b799cf3bec27b4d7633a5a8ef60d640bde99",
       "dependencies": {
         "character-parser": {
           "version": "1.2.2",
