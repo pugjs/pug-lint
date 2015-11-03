@@ -2,7 +2,7 @@
 
 An unopinionated and configurable linter and style checker for Jade
 
-> Under active development. Watch this space as the [rules roll in](https://github.com/benedfit/jade-lint/issues/3) :rainbow::rabbit:
+> v2 under active development. Watch this space as issues are fixed, and the [rules roll in](https://github.com/benedfit/jade-lint/issues/3) :rainbow::rabbit:
 
 [![build status](https://img.shields.io/travis/benedfit/jade-lint.svg)](https://travis-ci.org/benedfit/jade-lint)
 [![dependency status](https://img.shields.io/david/benedfit/jade-lint.svg)](https://david-dm.org/benedfit/jade-lint)
