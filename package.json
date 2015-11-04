@@ -51,7 +51,8 @@
     "lint": "eslint -f unix .",
     "inspect": "jsinspect",
     "wrap": "rm -f npm-shrinkwrap.json; npm prune && npm install && npm shrinkwrap && pliers cleanShrinkwrap",
-    "pretest": "npm run lint && npm run inspect",
+    "docs": "pliers buildRuleDocs",
+    "pretest": "npm run docs && npm run lint && npm run inspect",
     "test": "istanbul cover ./node_modules/.bin/_mocha test",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
@@ -66,6 +67,7 @@
     "void-elements": "^2.0.1"
   },
   "devDependencies": {
+    "docco": "^0.7.0",
     "eslint": "^1.8.0",
     "eslint-config-clock": "^1.0.0",
     "eslint-config-standard": "^4.3.2",
