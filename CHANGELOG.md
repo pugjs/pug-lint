@@ -1,3 +1,11 @@
+## v2.0.0 / 2015-11-04
+
+### Highlights
+* Refactored to use the latest version of `jade-lint` for improved error reporting
+
+### Changes
+[v1.2.13...v2.0.0](https://github.com/benedfit/jade-lint/compare/v1.2.13...v2.0.0)
+
 ## v1.2.13 / 2015-10-08
 
 ### Highlights
