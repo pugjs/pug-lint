@@ -1,4 +1,4 @@
-## v2.0.1 / 2015-11-04
+## v2.0.1 / 2015-11-13
 
 ### Highlights
 * Disallow contradictory rules from being used
