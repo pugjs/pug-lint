@@ -55,6 +55,15 @@ describe('linter', function () {
       assert.equal(linter.getConfiguredRules().length, 0)
     })
 
+    it('should not use contradictory rules', function () {
+      linter.configure(
+        { disallowSpaceAfterCodeOperator: true
+        , requireSpaceAfterCodeOperator: true }
+      )
+
+      assert.equal(linter.getConfiguredRules().length, 1)
+    })
+
     it('should no check empty strings', function () {
       assert.equal(linter.checkString('').length, 0)
     })

@@ -112,3 +112,13 @@ You can specifically disable any rule by omitting it from your `.jade-lintrc` co
 { "disallowBlockExpansion": null
 }
 ```
+
+Some rules, if enabled at the same time, would be contradictory to one another, such as:
+
+```json
+{ "disallowSpaceAfterCodeOperator": true
+, "requireSpaceAfterCodeOperator": true
+}
+```
+
+In this case `requireSpaceAfterCodeOperator` is treated as null, and ignored.
