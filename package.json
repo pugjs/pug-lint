@@ -51,7 +51,7 @@
     "lint": "eslint -f unix .",
     "inspect": "jsinspect",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
-    "wrap": "rm -f npm-shrinkwrap.json; npm prune && npm install && npm shrinkwrap && pliers cleanShrinkwrap",
+    "wrap": "npm prune && npm shrinkwrap && pliers cleanShrinkwrap",
     "docs": "pliers buildRuleDocs",
     "pretest": "npm run docs && npm run lint && npm run inspect",
     "test": "npm run coverage",
