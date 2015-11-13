@@ -8,7 +8,6 @@
 , "disallowHtmlText": null
 , "disallowIdLiterals": true
 , "disallowIdLiteralsBeforeAttributes": null
-, "disallowImplicitDiv": true
 , "disallowMultipleLineBreaks": true
 , "disallowSpaceAfterCodeOperator": null
 , "disallowSpacesInsideAttributeBrackets": true
@@ -32,6 +31,7 @@
 , "requireStrictEqualityOperators": true
 , "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "
+, "validateDivTags": true
 , "validateIndentation": 2
 , "validateLineBreaks": "LF"
 , "validateSelfClosingTags": true

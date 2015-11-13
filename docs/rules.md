@@ -111,22 +111,6 @@ Jade must not contain any ID literals.
 div(id='id')
 ```
 
-# disallowImplicitDiv: `true`
-
-Avoid writing `div` when it would otherwise be implicit.
-
-```jade
-//- Invalid
-div.class
-div#id
-div.class(class='class')
-
-//- Valid
-.class
-#id
-.class(class='class')
-```
-
 # disallowMultipleLineBreaks: `true`
 
 Jade must not contain multiple blank lines in a row.
@@ -421,6 +405,22 @@ input(type='text' name='name' value='value')
 
 //- Valid
 input(type='text', name='name', value='value')
+```
+
+# validateDivTags: `true`
+
+Checks that Jade does not contain any unnecessary `div` tags.
+
+```jade
+//- Invalid
+div.class
+div#id
+div.class(class='class')
+
+//- Valid
+.class
+#id
+.class(class='class')
 ```
 
 # validateIndentation: `int` | `"\t"`
