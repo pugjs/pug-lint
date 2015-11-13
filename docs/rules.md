@@ -231,18 +231,6 @@ input(type='text').class
 input.class(type='text')
 ```
 
-# requireClassLiteralsBeforeAttributes: `true`
-
-All class literals must be written before any attribute blocks.
-
-```jade
-//- Invalid
-input(type='text').class
-
-//- Valid
-input.class(type='text')
-```
-
 # requireClassLiteralsBeforeIdLiterals: `true`
 
 All class literals must be written before any ID literals.
