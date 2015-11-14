@@ -13,7 +13,7 @@ a(style={color: 'red', background: 'green'})
 a(class = ['red', 'green', 'blue'])
 a(class= {active: currentUrl === '/', inactive: true})
 a(href="https://mozilla.org") Mozilla
-a( target="_blank" href=plate.url ).boilerplate(class='test')= plate.name
+a( target="_blank" href=!plate.url ).boilerplate(class='test')= plate.name
 a(class='class')(class='class')
 img(src=url('src'))
 a(style={color: 'red', background: 'green'})
