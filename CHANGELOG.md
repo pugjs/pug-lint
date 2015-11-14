@@ -1,3 +1,11 @@
+## v2.0.2 / 2015-11-14
+
+### Highlights
+* validateAttributeSeparator now handles unescaped attributes
+
+### Changes
+[v2.0.1...v2.0.2](https://github.com/benedfit/jade-lint/compare/v2.0.1...v2.0.2
+
 ## v2.0.1 / 2015-11-13
 
 ### Highlights
