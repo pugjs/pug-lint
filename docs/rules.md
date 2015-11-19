@@ -271,18 +271,6 @@ div(Class='class')
 div(class='class')
 ```
 
-# requireLowerCaseAttributes: `true`
-
-All attributes must be written in lower case. Files with `doctype xml` are ignored.
-
-```jade
-//- Invalid
-div(Class='class')
-
-//- Valid
-div(class='class')
-```
-
 # requireLowerCaseTags: `true`
 
 All tags must be written in lower case. Files with `doctype xml` are ignored.
