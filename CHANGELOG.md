@@ -1,3 +1,11 @@
+## v2.0.3 / 2015-11-21
+
+### Highlights
+* Now accounts for block expansion when validating order of literals and attributes
+
+### Changes
+[v2.0.2...v2.0.3](https://github.com/benedfit/jade-lint/compare/v2.0.2...v2.0.3)
+
 ## v2.0.2 / 2015-11-14
 
 ### Highlights
