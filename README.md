@@ -63,6 +63,12 @@ Then to turn the jade-linter on, you will need this line in your .vimrc.
 let g:syntastic_jade_checkers = ['jade_lint']
 ```
 
+## Build system integration
+
+### Gulp
+
+If you're using Gulp as your build system, you can use [gulp-jade-lint](https://github.com/emartech/gulp-jade-lint) for easier integration.
+
 ## Configuration file
 
 Options and rules can be specified in a `.jade-lintrc` or `.jade-lint.json` file, or via adding a `"jadeLintConfig"` option to `package.json`.
