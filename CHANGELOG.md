@@ -1,3 +1,13 @@
+## v2.0.4 / 2015-11-23
+
+### Highlights
+* Now accounts for block expansion when using the following rules
+  * disallowDuplicateAttributes
+  * validateDivTags
+
+### Changes
+[v2.0.3...v2.0.4](https://github.com/benedfit/jade-lint/compare/v2.0.3...v2.0.4)
+
 ## v2.0.3 / 2015-11-21
 
 ### Highlights
