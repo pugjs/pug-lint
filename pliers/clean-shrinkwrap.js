@@ -2,7 +2,7 @@
 module.exports = createTask
 
 /* istanbul ignore next */
-function createTask(pliers) {
+function createTask (pliers) {
 
   pliers('cleanShrinkwrap', require('pliers-clean-shrinkwrap')(pliers))
 

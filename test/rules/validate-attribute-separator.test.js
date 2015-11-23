@@ -2,7 +2,7 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter, fixturesPath) {
+function createTest (linter, fixturesPath) {
 
   var fixturePath = fixturesPath + 'validate-attribute-separator.jade'
 
@@ -15,18 +15,18 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\'  name=\'name\'  value=\'value\')').getErrorCount(), 1)
+        assert.equal(linter.checkString('input(type=\'text\'  name=\'name\'  value=\'value\')').length, 2)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').getErrorCount(), 0)
+        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result.length, 17)
+        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -38,18 +38,18 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').getErrorCount(), 1)
+        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').length, 2)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\',name=\'name\',value=\'value\')').getErrorCount(), 0)
+        assert.equal(linter.checkString('input(type=\'text\',name=\'name\',value=\'value\')').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result.length, 18)
+        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -61,18 +61,18 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').getErrorCount(), 1)
+        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').length, 2)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\', name=\'name\', value=\'value\')').getErrorCount(), 0)
+        assert.equal(linter.checkString('input(type=\'text\', name=\'name\', value=\'value\')').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result.length, 17)
+        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -84,18 +84,18 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\', name=\'name\', value=\'value\')').getErrorCount(), 1)
+        assert.equal(linter.checkString('input(type=\'text\', name=\'name\', value=\'value\')').length, 2)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' ,name=\'name\' ,value=\'value\')').getErrorCount(), 0)
+        assert.equal(linter.checkString('input(type=\'text\' ,name=\'name\' ,value=\'value\')').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result.length, 18)
+        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -107,18 +107,18 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report invalid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').getErrorCount(), 1)
+        assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').length, 2)
       })
 
       it('should not report valid attribute separator', function () {
-        assert.equal(linter.checkString('input(type=\'text\' , name=\'name\' , value=\'value\')').getErrorCount(), 0)
+        assert.equal(linter.checkString('input(type=\'text\' , name=\'name\' , value=\'value\')').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.getErrorCount(), 9)
-        assert.equal(result.getError(0).code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result.length, 19)
+        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })

@@ -2,7 +2,7 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter, fixturesPath) {
+function createTest (linter, fixturesPath) {
 
   describe('disallowClassLiteralsBeforeIdLiterals', function () {
 
@@ -13,18 +13,18 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report class literals before ID literals', function () {
-        assert.equal(linter.checkString('input.class#id(type=\'text\')').getErrorCount(), 1)
+        assert.equal(linter.checkString('input.class#id(type=\'text\')').length, 1)
       })
 
       it('should not report ID literals before class literals', function () {
-        assert.equal(linter.checkString('input(type=\'text\')#id.class').getErrorCount(), 0)
+        assert.equal(linter.checkString('input(type=\'text\')#id.class').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'disallow-class-literals-before-id-literals.jade')
 
-        assert.equal(result.getErrorCount(), 2)
-        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWCLASSLITERALSBEFOREIDLITERALS')
+        assert.equal(result.length, 2)
+        assert.equal(result[0].code, 'JADE:LINT_DISALLOWCLASSLITERALSBEFOREIDLITERALS')
       })
 
     })

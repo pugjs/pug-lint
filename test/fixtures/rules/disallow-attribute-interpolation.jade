@@ -1,0 +1,25 @@
+- var title = "On Dogs: Man's Best Friend";
+- var author = "enlore";
+- var theGreat = "<span>escape!</span>";
+
+h1= title
+h1 #{title}
+h1= title + 'text'
+h1= "text"+title
+p Written with love by #{author}
+p This will be safe: #{theGreat}
+a(href=title) Link
+a(href='#{title}') Link
+a(href='text ' + title) Link
+a(href=title + "text")
+a(href='text #{title}')
+
+- var msg = "not my inside voice";
+p This is #{msg.toUpperCase()}
+
+- var riskyBusiness = "<em>Some of the girls are wearing my mother's clothing.</em>";
+.quote
+  p Joel: !{riskyBusiness}
+
+a(href='text ' + riskyBusiness) Link
+a(href='text') !{riskyBusiness}

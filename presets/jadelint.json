@@ -1,0 +1,23 @@
+{ "disallowSpecificAttributes":
+  [ "xmlns"
+  , { "br": "role" }
+  , { "hr": "role" }
+  , { "nav": "role" }
+  ]
+, "disallowSpecificTags":
+  [ "b"
+  , "hgroup"
+  , "i"
+  , "s"
+  , "u"
+  ]
+, "requireSpecificAttributes":
+  [ { "abbr": "title" }
+  , { "html": "lang" }
+  , { "meter": [ "min", "max" ]}
+  , { "ol": "type" }
+  , { "progress": "max" }
+  , { "script[async]": "defer" }
+  ]
+, "validateAttributeQuoteMarks": true
+}

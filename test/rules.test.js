@@ -4,15 +4,15 @@ var glob = require('glob')
 describe('rules', function () {
 
   var linter = new Linter()
-    , rules = []
+    , tests = []
     , fixturesPath = __dirname + '/fixtures/rules/'
 
   glob.sync(__dirname + '/rules/*.test.js').forEach(function (file) {
-    rules.push(require(file))
+    tests.push(require(file))
   })
 
-  rules.forEach(function (rule) {
-    rule(linter, fixturesPath)
+  tests.forEach(function (test) {
+    test(linter, fixturesPath)
   })
 
 })

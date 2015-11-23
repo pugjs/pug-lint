@@ -1,273 +1,130 @@
-# Jadelint
+# Jade-Lint
 
-A linter for Jade
+An unopinionated and configurable linter and style checker for Jade
 
-> Under active development. Watch this space as the [rules roll in](https://github.com/benedfit/jadelint/issues/3) :rainbow::rabbit:
+> v2 under active development. Watch this space as issues are fixed, and the [rules roll in](https://github.com/benedfit/jade-lint/issues/3) :rainbow::rabbit:
 
-[![build](https://img.shields.io/travis/benedfit/jadelint.svg)](https://travis-ci.org/benedfit/jadelint)
+[![build status](https://img.shields.io/travis/benedfit/jade-lint.svg)](https://travis-ci.org/benedfit/jade-lint)
+[![coverage status](https://img.shields.io/coveralls/benedfit/jade-lint.svg)](https://coveralls.io/github/benedfit/jade-lint)
+[![dependency status](https://img.shields.io/david/benedfit/jade-lint.svg)](https://david-dm.org/benedfit/jade-lint)
+[![npm](https://img.shields.io/npm/v/jade-lint.svg)](https://www.npmjs.com/package/jade-lint)
 
-## Rules
+## CLI
 
-You can specifically disable any rule by omitting it from your config or by assigning it to null.
+### Installation
 
-### disallowBlockExpansion: `true`
-
-Jade must not contain any block expansion operators.
-
-```jade
-//- Invalid
-p: strong text
-table: tr: td text
+```shell
+$ npm install -g jade-lint
 ```
 
-### disallowClassLiterals: `true`
+### Usage
 
-Jade must not contain any class literals.
-
-```jade
-//- Invalid
-.class
-
-//- Valid
-div(class='class')
+```shell
+$ jade-lint [options] <file ...>
 ```
 
-### disallowClassLiteralsBeforeAttributes: `true`
+#### Options
 
-All attribute blocks must be written before any class literals.
+* `-h, --help`: output usage information
+* `-V, --version`: output the version number
+* `-c, --config <path>`: [configuration file](#configuration-file) path
+* `-r, --reporter <reporter>`: error reporter; console - default, inline
 
-```jade
-//- Invalid
-input.class(type='text')
+## Editor integration
 
-//- Valid
-input(type='text').class
+### Sublime Text 3
+
+If you use SublimeLinter 3 with Sublime Text 3, you can install the
+[SublimeLinter-jade-lint](https://github.com/benedfit/SublimeLinter-contrib-jade-lint)
+plugin using [Package Control](https://packagecontrol.io/).
+
+### Atom
+
+If you use Atom, you can install the [linter-jade](https://atom.io/packages/linter-jade) package.
+
+### Vim
+
+jade-lint is part of [syntastic](https://github.com/scrooloose/syntastic).
+
+If you are using [vim-plug](https://github.com/junegunn/vim-plug) to manage your
+Vim plugins (recommended), you can do:
+
+```
+" In your ~/.vimrc
+Plug 'scrooloose/syntastic'
+" Then run these commands
+:source %
+:PlugInstall
 ```
 
-### disallowClassLiteralsBeforeIdLiterals: `true`
+Then to turn the jade-linter on, you will need this line in your .vimrc.
 
-All ID literals must be written before any class literals.
-
-```jade
-//- Invalid
-input.class#id(type='text')
-
-//- Valid
-input#id.class(type='text')
+```
+let g:syntastic_jade_checkers = ['jade_lint']
 ```
 
-### disallowDuplicateAttributes: `true`
+## Build system integration
 
-Attribute blocks must not contain any duplicates. And if an ID literal is present an ID attribute must not be used. Ignores class attributes.
+### Gulp
 
-```jade
-//- Invalid
-div(a='a' a='b')
-#id(id='id')
+If you're using Gulp as your build system, you can use [gulp-jade-lint](https://github.com/emartech/gulp-jade-lint) for easier integration.
 
-//- Valid
-div(class='a', class='b')
-.class(class='class')
+## Configuration file
+
+Options and rules can be specified in a `.jade-lintrc` or `.jade-lint.json` file, or via adding a `"jadeLintConfig"` option to `package.json`.
+
+### Options
+
+#### preset
+
+Type: `string`
+
+Values: `"clock"`
+
+Presets are pre-defined sets of rules. You can specifically disable any preset rule by assigning it to null, like so:
+
+```json
+{ "preset": "clock"
+, "disallowIdLiterals": null
+}
 ```
 
-### disallowHtmlText: `true`
+#### excludeFiles
 
-Jade must not contain any HTML text.
+Type: `Array`
 
-```jade
-//- Invalid
-<strong>html text</strong>
-p this is <strong>html</strong> text
+Default: `[ "node_modules/**" ]`
+
+Disables style checking for specified paths declared with glob patterns.
+
+#### additionalRules
+
+Type: `Array`
+
+Array of file path matching patterns to load additional rules from, e.g.:
+
+```json
+{ "additionalRules": [ "project-rules/*.js" ]
+}
 ```
 
-### disallowIdLiterals: `true`
+### Rules
 
-Jade must not contain any ID literals.
+[List of available rules](docs/rules.md)
 
-```jade
-//- Invalid
-#id
+You can specifically disable any rule by omitting it from your `.jade-lintrc` config file or by assigning it to null, like so:
 
-//- Valid
-div(id='id')
+```json
+{ "disallowBlockExpansion": null
+}
 ```
 
-### disallowIdLiteralsBeforeAttributes: `true`
+Some rules, if enabled at the same time, would be contradictory to one another, such as:
 
-All attribute blocks must be written before any ID literals.
-
-```jade
-//- Invalid
-input#id(type='text')
-
-//- Valid
-input(type='text')#id
+```json
+{ "disallowSpaceAfterCodeOperator": true
+, "requireSpaceAfterCodeOperator": true
+}
 ```
 
-### disallowSpaceAfterCodeOperator: `true`
-
-No code operators (unbuffered/buffered/unescped buffered) should be followed by any spaces.
-
-```jade
-//- Invalid
-p= 'This code is <escaped>'
-p!=  'This code is <strong>not</strong> escaped'
-
-//- Valid
-p='This code is <escaped>'
-p!='This code is <strong>not</strong> escaped'
-```
-
-### disallowStringConcatenation: `true`
-
-Jade must not contain any string concatenation.
-
-```jade
-//- Invalid
-h1= title + \'text\'
-a(href='text ' + title) Link
-```
-
-### disallowStringInterpolation: `true`
-
-Jade must not contain any string interpolation operators.
-
-```jade
-//- Invalid
-h1 #{title} text
-a(href='text #{title}') Link
-```
-
-### disallowTagInterpolation: `true`
-
-Jade must not contain any tag interpolation operators.
-
-```jade
-//- Invalid
-| #[strong html] text
-p #[strong html] text
-```
-
-### requireClassLiteralsBeforeAttributes: `true`
-
-All class literals must be written before any attribute blocks.
-
-```jade
-//- Invalid
-input(type='text').class
-
-//- Valid
-input.class(type='text')
-```
-
-### requireClassLiteralsBeforeIdLiterals: `true`
-
-All class literals must be written before any ID literals.
-
-```jade
-//- Invalid
-input#id.class(type='text')
-
-//- Valid
-input.class#id(type='text')
-```
-
-### requireIdLiteralsBeforeAttributes: `true`
-
-All ID literals must be written before any attribute blocks.
-
-```jade
-//- Invalid
-input(type='text')#id
-
-//- Valid
-input#id(type='text')
-```
-
-### requireLowerCaseAttributes: `true`
-
-All attributes must be written in lower case.
-
-```jade
-//- Invalid
-div(Class='class')
-
-//- Valid
-div(class='class')
-```
-
-### requireLowerCaseTags: `true`
-
-All tags must be written in lower case.
-
-```jade
-//- Invalid
-Div(class='class')
-
-//- Valid
-div(class='class')
-```
-
-### requireSpaceAfterCodeOperator: `true`
-
-All code operators (unbuffered/buffered/unescaped buffered) must be immediately followed by a single space.
-
-```jade
-//- Invalid
-p='This code is <escaped>'
-p!=  'This code is <strong>not</strong> escaped'
-
-//- Valid
-p= 'This code is <escaped>'
-p!= 'This code is <strong>not</strong> escaped'
-```
-
-### validateAttributeQuoteMarks: `"\""` | `"'"` | `true`
-
-#### e.g.: "'"
-
-All attribute values must be enclosed in single quotes.
-
-```jade
-//- Invalid
-input(type="text" name="name" value="value")
-
-//- Valid
-input(type='text' name='name' value='value')
-```
-
-#### if (true)
-
-All attribute values must be enclosed in quote marks match the first quote mark encountered in the source code.
-
-### validateAttributeSeparator: `" "` | `","` | `", "` | `" ,"` | `" , "`
-
-#### e.g.: ", "
-
-All attributes must be immediately followed by a comma and then a space.
-
-```jade
-//- Invalid
-input(type='text' name='name' value='value')
-
-//- Valid
-input(type='text', name='name', value='value')
-```
-
-### validateSelfClosingTags: `true`
-
-Checks that Jade does not contain any [unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements). Files with `doctype xml` are ignored.
-
-```jade
-//- Invalid
-area/
-link/
-
-//- Valid
-area
-link
-foo/
-
-doctype xml
-area/
-```
+In this case `requireSpaceAfterCodeOperator` is treated as null, and ignored.

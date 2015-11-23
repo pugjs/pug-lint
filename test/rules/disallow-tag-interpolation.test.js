@@ -2,7 +2,7 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter, fixturesPath) {
+function createTest (linter, fixturesPath) {
 
   describe('disallowTagInterpolation', function () {
 
@@ -13,22 +13,22 @@ function createTest(linter, fixturesPath) {
       })
 
       it('should report tag interpolation at the start', function () {
-        assert.equal(linter.checkString('| #[strong html] text').getErrorCount(), 1)
+        assert.equal(linter.checkString('| #[strong html] text').length, 1)
       })
 
       it('should report tag interpolation anywhere', function () {
-        assert.equal(linter.checkString('p #[strong html] text').getErrorCount(), 1)
+        assert.equal(linter.checkString('p #[strong html] text').length, 1)
       })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'disallow-tag-interpolation.jade')
 
-        assert.equal(result.getErrorCount(), 4)
-        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWTAGINTERPOLATION')
-        assert.equal(result.getError(0).line, 2)
-        assert.equal(result.getError(1).line, 3)
-        assert.equal(result.getError(2).line, 5)
-        assert.equal(result.getError(3).line, 6)
+        assert.equal(result.length, 4)
+        assert.equal(result[0].code, 'JADE:LINT_DISALLOWTAGINTERPOLATION')
+        assert.equal(result[0].line, 2)
+        assert.equal(result[1].line, 3)
+        assert.equal(result[2].line, 5)
+        assert.equal(result[3].line, 6)
       })
 
     })
