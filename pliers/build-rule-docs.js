@@ -25,7 +25,8 @@ function createTask (pliers) {
         })
 
         if (!hasDocs) {
-          pliers.logger.warn('Missing: ' + file)
+          pliers.logger.error('Missing docs for rule:')
+          throw file
         }
       })
 

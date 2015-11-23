@@ -61,6 +61,7 @@
     "commander": "^2.9.0",
     "css-selector-parser": "^1.1.0",
     "glob": "^6.0.1",
+    "jade-attrs": "^2.0.0",
     "jade-error": "^1.1.1",
     "jade-lexer": "0.0.9",
     "jsonminify": "^0.2.3",
