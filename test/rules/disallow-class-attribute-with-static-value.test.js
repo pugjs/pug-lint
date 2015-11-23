@@ -2,7 +2,7 @@ module.exports = createTest
 
 var assert = require('assert')
 
-function createTest(linter, fixturesPath) {
+function createTest (linter, fixturesPath) {
 
   describe('disallowClassAttributeWithStaticValue', function () {
 
@@ -12,19 +12,19 @@ function createTest(linter, fixturesPath) {
         linter.configure({ disallowClassAttributeWithStaticValue: true })
       })
 
-      // it('should report block expansion operator', function () {
-      //   assert.equal(linter.checkString('p: strong text').getErrorCount(), 1)
-      // })
+      it('should report class attribute with static value', function () {
+        assert.equal(linter.checkString('a(class=\'bing\')').length, 1)
+      })
 
-      // it('should report tag multiple block expansion operators', function () {
-      //   assert.equal(linter.checkString('table: tr: td text').getErrorCount(), 2)
-      // })
+      it('should not report class attribute with dynamic value', function () {
+        assert.equal(linter.checkString('a(class={active: currentUrl === \'/\'})').length, 0)
+      })
 
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'disallow-class-attribute-with-static-value.jade')
 
-        assert.equal(result.getErrorCount(), 8)
-        assert.equal(result.getError(0).code, 'JADE:LINT_DISALLOWCLASSATTRIBUTEWITHSTATICVALUE')
+        assert.equal(result.length, 5)
+        assert.equal(result[0].code, 'JADE:LINT_DISALLOWCLASSATTRIBUTEWITHSTATICVALUE')
       })
 
     })

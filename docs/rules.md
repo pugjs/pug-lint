@@ -26,6 +26,18 @@ p: strong text
 table: tr: td text
 ```
 
+# disallowClassAttributeWithStaticValue: `true`
+
+Prefer class literals over `class` attributes with static values.
+
+```jade
+//- Invalid
+span(class='foo')
+
+//- Valid
+span.foo
+```
+
 # disallowClassLiteralsBeforeAttributes: `true`
 
 All attribute blocks must be written before any class literals.
