@@ -1,0 +1,20 @@
+a#button
+#button
+
+- var classes = ['foo', 'bar', 'baz']
+a(id=classes)
+a#bing(id=classes id=['bing'])
+
+- var currentUrl = '/about'
+a(id={active: currentUrl === '/'} href='/') Home
+a(id={active: currentUrl === '/about'} href='/about') About
+
+- var classes = ['bing']
+- var test = false
+a(id=classes)
+a(id={active: true})
+a(id='bing')
+a(id='bing ' + 'bong')
+a(id='bong ' + classes)
+a(id="bong")
+a(id='bing ' + (test === true ? 'bong' : 'bung'))

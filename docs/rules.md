@@ -99,6 +99,18 @@ Jade must not contain any HTML text.
 p this is <strong>html</strong> text
 ```
 
+# disallowIdAttributeWithStaticValue: `true`
+
+Prefer ID literals over `id` attributes with static values.
+
+```jade
+//- Invalid
+span(id='foo')
+
+//- Valid
+span#id
+```
+
 # disallowIdLiteralsBeforeAttributes: `true`
 
 All attribute blocks must be written before any ID literals.
