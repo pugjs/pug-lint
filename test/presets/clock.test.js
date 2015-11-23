@@ -15,7 +15,7 @@ function createTest (linter, fixturesPath) {
     it('should report errors found in file', function () {
       var result = linter.checkFile(fixturesPath + 'clock--invalid.jade')
 
-      assert.equal(result.length, 2)
+      assert.equal(result.length, 3)
     })
 
     it('should not report errors in valid file', function () {

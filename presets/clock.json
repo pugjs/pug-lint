@@ -1,11 +1,13 @@
 { "disallowAttributeConcatenation": true
 , "disallowAttributeInterpolation": null
 , "disallowBlockExpansion": null
+, "disallowClassAttributeWithStaticValue": true
 , "disallowClassLiterals": null
 , "disallowClassLiteralsBeforeAttributes": null
 , "disallowClassLiteralsBeforeIdLiterals": null
 , "disallowDuplicateAttributes": true
 , "disallowHtmlText": null
+, "disallowIdAttributeWithStaticValue": null
 , "disallowIdLiterals": true
 , "disallowIdLiteralsBeforeAttributes": null
 , "disallowMultipleLineBreaks": true
