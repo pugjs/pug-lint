@@ -50,6 +50,30 @@
         }
       }
     },
+    "jade-attrs": {
+      "version": "2.0.0",
+      "from": "jade-attrs@*",
+      "dependencies": {
+        "constantinople": {
+          "version": "3.0.2",
+          "from": "constantinople@>=3.0.1 <4.0.0",
+          "dependencies": {
+            "acorn": {
+              "version": "2.6.4",
+              "from": "acorn@>=2.1.0 <3.0.0"
+            }
+          }
+        },
+        "jade-runtime": {
+          "version": "1.1.0",
+          "from": "jade-runtime@>=1.1.0 <2.0.0"
+        },
+        "js-stringify": {
+          "version": "1.0.2",
+          "from": "js-stringify@>=1.0.1 <2.0.0"
+        }
+      }
+    },
     "jade-error": {
       "version": "1.2.0",
       "from": "jade-error@>=1.1.1 <2.0.0"
