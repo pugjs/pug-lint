@@ -84,7 +84,7 @@ Values: `"clock"`
 Presets are pre-defined sets of rules. You can specifically disable any preset rule by assigning it to null, like so:
 
 ```json
-{ "presets": "clock"
+{ "preset": "clock"
 , "disallowIdLiterals": null
 }
 ```
