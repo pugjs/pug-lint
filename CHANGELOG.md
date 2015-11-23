@@ -1,3 +1,13 @@
+## v2.0.5 / 2015-11-23
+
+### Highlights
+* New rules:
+  * disallowClassAttributeWithStaticValue
+  * disallowIdAttributeWithStaticValue
+
+### Changes
+[v2.0.4...v2.0.5](https://github.com/benedfit/jade-lint/compare/v2.0.4...v2.0.5)
+
 ## v2.0.4 / 2015-11-23
 
 ### Highlights
