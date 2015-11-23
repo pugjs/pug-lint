@@ -1,7 +1,7 @@
 ## v2.0.4 / 2015-11-23
 
 ### Highlights
-* Now accounts for block expansion when using the following rules
+* Now accounts for block expansion when using the following rules:
   * disallowDuplicateAttributes
   * validateDivTags
 
