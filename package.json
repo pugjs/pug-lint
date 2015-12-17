@@ -50,10 +50,11 @@
   "scripts": {
     "lint": "eslint -f unix .",
     "inspect": "jsinspect",
+    "depcheck": "david",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
     "wrap": "npm prune && npm shrinkwrap && pliers cleanShrinkwrap",
     "docs": "pliers buildRuleDocs",
-    "pretest": "npm run docs && npm run lint && npm run inspect",
+    "pretest": "npm run docs && npm run lint && npm run inspect && npm run depcheck",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
@@ -69,6 +70,7 @@
     "void-elements": "^2.0.1"
   },
   "devDependencies": {
+    "david": "^7.0.0",
     "docco": "^0.7.0",
     "eslint": "^1.8.0",
     "eslint-config-clock": "^1.0.0",
