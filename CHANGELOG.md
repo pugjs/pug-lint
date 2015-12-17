@@ -1,3 +1,11 @@
+## v2.0.6 / 2015-12-17
+
+### Highlights
+* validateAttributeSeparator now handles multi-line attribute blocks
+
+### Changes
+[v2.0.5...v2.0.6](https://github.com/benedfit/jade-lint/compare/v2.0.5...v2.0.6)
+
 ## v2.0.5 / 2015-11-23
 
 ### Highlights
