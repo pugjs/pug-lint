@@ -1,7 +1,7 @@
 ## v2.0.7 / 2015-12-17
 
 ### Highlights
-* Now Requires newline characters in validateAttributeSeparator.multiLineSeparator
+* Now requires newline characters in validateAttributeSeparator.multiLineSeparator
 
 ### Changes
 [v2.0.6...v2.0.7](https://github.com/benedfit/jade-lint/compare/v2.0.6...v2.0.7)
