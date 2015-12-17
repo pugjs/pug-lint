@@ -121,7 +121,7 @@ function createTest (linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.length, 31)
+        assert.equal(result.length, 32)
         assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
@@ -147,13 +147,15 @@ function createTest (linter, fixturesPath) {
         assert.equal(linter.checkString('input(type=\'text\' name=\'name\' value=\'value\')').length, 0)
       })
 
-      it.skip('should report multiple errors found in file', function () {
+      it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 27)
         assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
-        assert.equal(result[26].line, 48)
-        assert.equal(result[26].col, 3)
+        assert.equal(result[25].line, 42)
+        assert.equal(result[25].column, 1)
+        assert.equal(result[26].line, 44)
+        assert.equal(result[26].column, 1)
       })
 
     })
