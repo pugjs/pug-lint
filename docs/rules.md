@@ -397,27 +397,23 @@ All attribute values must be enclosed in quote marks match the first quote mark 
 
 ## e.g.: `", "`
 
-All attributes must be immediately followed by a comma and then a space.
+* All attributes must be immediately followed by a comma and then a space.
+* All attributes must be on the same line.
 
 ```jade
 //- Invalid
 input(type='text' name='name' value='value')
 div
   input(type='text'
-   name='name'
-   value='value'
+  , name='name'
+  , value='value'
   )
 
 //- Valid
 input(type='text', name='name', value='value')
-div
-  input(type='text'
-  , name='name'
-  , value='value'
-  )
 ```
 
-## e.g.: `{ "separator": " ", multiLineSeparator: "  " }`
+## e.g.: `{ "separator": " ", multiLineSeparator: "\n  " }`
 
 * All attributes that are on the same line must be immediately followed by a space.
 * All attributes that are on different lines must be preceded by two spaces.

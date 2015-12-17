@@ -25,7 +25,7 @@ function createTest (linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.length, 29)
+        assert.equal(result.length, 31)
         assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
         assert.equal(result[0].line, 3)
         assert.equal(result[0].column, 18)
@@ -52,7 +52,7 @@ function createTest (linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.length, 30)
+        assert.equal(result.length, 32)
         assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
@@ -75,7 +75,7 @@ function createTest (linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.length, 29)
+        assert.equal(result.length, 31)
         assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
@@ -98,7 +98,7 @@ function createTest (linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.length, 30)
+        assert.equal(result.length, 32)
         assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
@@ -121,19 +121,19 @@ function createTest (linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath)
 
-        assert.equal(result.length, 32)
+        assert.equal(result.length, 33)
         assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
 
-    describe('indentation', function () {
+    describe('indentation - spaces', function () {
 
       before(function () {
         linter.configure(
           { validateAttributeSeparator:
             { separator: ' '
-            , multiLineSeparator: '  '
+            , multiLineSeparator: '\n  '
             }
           }
         )
@@ -156,6 +156,30 @@ function createTest (linter, fixturesPath) {
         assert.equal(result[25].column, 1)
         assert.equal(result[26].line, 44)
         assert.equal(result[26].column, 1)
+      })
+
+    })
+
+    describe('indentation, comma-spaces', function () {
+
+      before(function () {
+        linter.configure(
+          { validateAttributeSeparator:
+            { separator: ', '
+            , multiLineSeparator: ',\n  '
+            }
+          }
+        )
+      })
+
+      it('should not report valid attribute separator', function () {
+        var result = linter.checkString('div(foo="1",\n  bar="{hello:\' world\',\\n  666: true}",\n  batz="2")')
+
+        assert.equal(result.length, 0)
+
+        result = linter.checkFile(fixturesPath + 'validate-attribute-separator--multiline.jade')
+
+        assert.equal(result.length, 0)
       })
 
     })
