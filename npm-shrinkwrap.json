@@ -1,6 +1,6 @@
 {
   "name": "jade-lint",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "dependencies": {
     "commander": {
       "version": "2.9.0",
