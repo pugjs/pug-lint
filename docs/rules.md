@@ -180,7 +180,7 @@ input(type='text' name='name' value='value')
 
 # disallowSpecificAttributes: `string` | `Array`
 
-## e.g.: "a" OR [ "A", "b" ]
+## e.g.: `"a"` OR `[ "A", "b" ]`
 
 Jade must not contain any of the attributes specified.
 
@@ -190,7 +190,7 @@ span(a='a')
 div(B='b')
 ```
 
-## e.g.: [ { img: [ "title" ] } ]
+## e.g.: `[ { img: [ "title" ] } ]`
 
 `img` tags must not contain any of the attributes specified.
 
@@ -203,7 +203,7 @@ img(title='title')
 
 Jade must not contain any of the tags specified.
 
-## e.g.: [ "b", "i" ]
+## e.g.: `[ "b", "i" ]`
 
 ```jade
 //- Invalid
@@ -335,7 +335,7 @@ input( type='text' name='name' value='value' )
 
 # requireSpecificAttributes: `Array`
 
-## e.g.: [ { img: [ "alt" ] } ]
+## e.g.: `[ { img: [ "alt" ] } ]`
 
 `img` tags must contain all of the attributes specified.
 
@@ -349,7 +349,7 @@ img(src='src' alt='alt')
 
 # requireSpecificAttributes: `Array`
 
-## e.g.: [ { img: [ "alt" ] } ]
+## e.g.: `[ { img: [ "alt" ] } ]`
 
 `img` tags must contain all of the attributes specified.
 
@@ -377,7 +377,7 @@ if true !== false
 
 # validateAttributeQuoteMarks: `"\""` | `"'"` | `true`
 
-## e.g.: "'"
+## e.g.: `"'"`
 
 All attribute values must be enclosed in single quotes.
 
@@ -458,7 +458,7 @@ div.class(class='class')
 
 # validateIndentation: `int` | `"\t"`
 
-## e.g.: 2
+## e.g.: `2`
 
 Indentation must be consistently two spaces.
 
@@ -469,7 +469,7 @@ div
 
 # validateLineBreaks: `"CR"` | `"LF"` | `"CRLF"`
 
-## e.g.: "LF"
+## e.g.: `"LF"`
 
 All line break characters must match.
 
