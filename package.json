@@ -65,7 +65,6 @@
     "jade-attrs": "^2.0.0",
     "jade-error": "^1.1.1",
     "jade-lexer": "0.0.9",
-    "jsonminify": "^0.2.3",
     "minimatch": "^3.0.0",
     "void-elements": "^2.0.1"
   },
