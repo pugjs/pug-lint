@@ -1,3 +1,11 @@
+## v2.1.0 / 2015-12-18
+
+### Highlights
+* Removed unused JSON.minify dependency
+
+### Changes
+[v2.0.7...v2.1.0](https://github.com/pugjs/jade-lint/compare/v2.0.7...v2.1.0)
+
 ## v2.0.7 / 2015-12-17
 
 ### Highlights
