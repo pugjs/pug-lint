@@ -1,3 +1,11 @@
+## v2.1.1 / 2015-12-18
+
+### Highlights
+* Renamed to pug-lint
+
+### Changes
+[v2.1.0...v2.1.1](https://github.com/pugjs/pug-lint/compare/v2.1.0...v2.1.1)
+
 ## v2.1.0 / 2015-12-18
 
 ### Highlights
