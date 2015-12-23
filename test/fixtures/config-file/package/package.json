@@ -1,4 +1,4 @@
-{ "jadeLintConfig":
+{ "pugLintConfig":
   { "disallowBlockExpansion": true
   }
 }

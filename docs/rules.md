@@ -1,6 +1,6 @@
 # disallowAttributeConcatenation: `true`
 
-Jade must not contain any attribute concatenation.
+Pug must not contain any attribute concatenation.
 
 ```jade
 //- Invalid
@@ -9,7 +9,7 @@ a(href='text ' + title) Link
 
 # disallowAttributeInterpolation: `true`
 
-Jade must not contain any attribute interpolation operators.
+Pug must not contain any attribute interpolation operators.
 
 ```jade
 //- Invalid
@@ -18,7 +18,7 @@ a(href='text #{title}') Link
 
 # disallowBlockExpansion: `true`
 
-Jade must not contain any block expansion operators.
+Pug must not contain any block expansion operators.
 
 ```jade
 //- Invalid
@@ -64,7 +64,7 @@ input#id.class(type='text')
 
 # disallowClassLiterals: `true`
 
-Jade must not contain any class literals.
+Pug must not contain any class literals.
 
 ```jade
 //- Invalid
@@ -91,7 +91,7 @@ div(class='a', class='b')
 
 # disallowHtmlText: `true`
 
-Jade must not contain any HTML text.
+Pug must not contain any HTML text.
 
 ```jade
 //- Invalid
@@ -125,7 +125,7 @@ input(type='text')#id
 
 # disallowIdLiterals: `true`
 
-Jade must not contain any ID literals.
+Pug must not contain any ID literals.
 
 ```jade
 //- Invalid
@@ -137,7 +137,7 @@ div(id='id')
 
 # disallowMultipleLineBreaks: `true`
 
-Jade must not contain multiple blank lines in a row.
+Pug must not contain multiple blank lines in a row.
 
 ```jade
 //- Invalid
@@ -182,7 +182,7 @@ input(type='text' name='name' value='value')
 
 ## e.g.: `"a"` OR `[ "A", "b" ]`
 
-Jade must not contain any of the attributes specified.
+Pug must not contain any of the attributes specified.
 
 ```jade
 //- Invalid
@@ -201,7 +201,7 @@ img(title='title')
 
 # disallowSpecificTags: `string` | `Array`
 
-Jade must not contain any of the tags specified.
+Pug must not contain any of the tags specified.
 
 ## e.g.: `[ "b", "i" ]`
 
@@ -213,7 +213,7 @@ i Italic text
 
 # disallowStringConcatenation: `true`
 
-Jade must not contain any string concatenation.
+Pug must not contain any string concatenation.
 
 ```jade
 //- Invalid
@@ -222,7 +222,7 @@ h1= title + \'text\'
 
 # disallowStringInterpolation: `true`
 
-Jade must not contain any string interpolation operators.
+Pug must not contain any string interpolation operators.
 
 ```jade
 //- Invalid
@@ -231,7 +231,7 @@ h1 #{title} text
 
 # disallowTagInterpolation: `true`
 
-Jade must not contain any tag interpolation operators.
+Pug must not contain any tag interpolation operators.
 
 ```jade
 //- Invalid
@@ -241,7 +241,7 @@ p #[strong html] text
 
 # maximumNumberOfLines: `int`
 
-Jade files should be at most the number of lines specified.
+Pug files should be at most the number of lines specified.
 
 # requireClassLiteralsBeforeAttributes: `true`
 
@@ -438,7 +438,7 @@ div
 
 # validateDivTags: `true`
 
-Checks that Jade does not contain any unnecessary `div` tags.
+Checks that Pug does not contain any unnecessary `div` tags.
 
 ```jade
 //- Invalid
@@ -481,7 +481,7 @@ div(class='class')<LF>
 
 # validateSelfClosingTags: `true`
 
-Checks that Jade does not contain any
+Checks that Pug does not contain any
 [unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements).
 Files with `doctype xml` are ignored.
 

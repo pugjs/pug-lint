@@ -1,5 +1,5 @@
 {
-  "name": "jade-lint",
+  "name": "pug-lint",
   "version": "2.1.0",
   "dependencies": {
     "commander": {

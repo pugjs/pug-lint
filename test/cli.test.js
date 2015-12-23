@@ -1,5 +1,5 @@
 var assert = require('assert')
-  , bin = require.resolve('../bin/jade-lint')
+  , bin = require.resolve('../bin/pug-lint')
   , fs = require('fs')
   , packageDetails = require('../package.json')
   , spawn = require('child_process').spawn
@@ -51,7 +51,7 @@ describe('cli', function () {
 
   it('should output help', function (done) {
     var args = [ '-h' ]
-      , message = 'Usage: jade-lint [options] <file ...>'
+      , message = 'Usage: pug-lint [options] <file ...>'
 
     run(args, function (err, code, stdout, stderr) {
       assert(!err, err)
@@ -65,7 +65,7 @@ describe('cli', function () {
 
   it('should output help if no file specified', function (done) {
     var args = []
-      , message = 'Usage: jade-lint [options] <file ...>'
+      , message = 'Usage: pug-lint [options] <file ...>'
 
     run(args, function (err, code, stdout, stderr) {
       assert(!err, err)
@@ -106,7 +106,7 @@ describe('cli', function () {
 
   it('should use config when it is supplied', function (done) {
     var dirname = fixturesRelativePath + 'rules/'
-      , args = [ '-c', fixturesPath + 'config-file/dotfile/.jade-lintrc', dirname + 'disallow-block-expansion.jade' ]
+      , args = [ '-c', fixturesPath + 'config-file/dotfile/.pug-lintrc', dirname + 'disallow-block-expansion.jade' ]
       , expectedReport = fs.readFileSync(fixturesPath + 'reporters/expected-disallow-block-expansion--console.txt'
         , 'utf-8')
 
@@ -137,7 +137,7 @@ describe('cli', function () {
         [ '-r'
         , 'inline'
         , '-c'
-        , fixturesPath + 'config-file/dotfile/.jade-lintrc'
+        , fixturesPath + 'config-file/dotfile/.pug-lintrc'
         , dirname + 'disallow-block-expansion.jade'
         ]
       , expectedReport = fs.readFileSync(fixturesPath + 'reporters/expected-disallow-block-expansion--inline.txt'

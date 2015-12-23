@@ -1,26 +1,26 @@
-# Jade-Lint
+# pug-lint
 
-An unopinionated and configurable linter and style checker for Jade
+An unopinionated and configurable linter and style checker for Pug (formerly Jade)
 
-> v2 under active development. Watch this space as issues are fixed, and the [rules roll in](https://github.com/benedfit/jade-lint/issues/3) :rainbow::rabbit:
+> v2 under active development. Watch this space as issues are fixed, and the [rules roll in](https://github.com/pugjs/pug-lint/issues/3) :rainbow::rabbit:
 
-[![build status](https://img.shields.io/travis/pugjs/jade-lint/master.svg)](https://travis-ci.org/pugjs/jade-lint)
-[![coverage status](https://img.shields.io/coveralls/pugjs/jade-lint/master.svg)](https://coveralls.io/github/pugjs/jade-lint)
-[![dependency status](https://img.shields.io/david/pugjs/jade-lint.svg)](https://david-dm.org/pugjs/jade-lint)
-[![npm](https://img.shields.io/npm/v/jade-lint.svg)](https://www.npmjs.com/package/jade-lint)
+[![build status](https://img.shields.io/travis/pugjs/pug-lint/master.svg)](https://travis-ci.org/pugjs/pug-lint)
+[![coverage status](https://img.shields.io/coveralls/pugjs/pug-lint/master.svg)](https://coveralls.io/github/pugjs/pug-lint)
+[![dependency status](https://img.shields.io/david/pugjs/pug-lint.svg)](https://david-dm.org/pugjs/pug-lint)
+[![npm](https://img.shields.io/npm/v/pug-lint.svg)](https://www.npmjs.com/package/pug-lint)
 
 ## CLI
 
 ### Installation
 
 ```shell
-$ npm install -g jade-lint
+$ npm install -g pug-lint
 ```
 
 ### Usage
 
 ```shell
-$ jade-lint [options] <file ...>
+$ pug-lint [options] <file ...>
 ```
 
 #### Options
@@ -71,7 +71,7 @@ If you're using Gulp as your build system, you can use [gulp-jade-lint](https://
 
 ## Configuration file
 
-Options and rules can be specified in a `.jade-lintrc` or `.jade-lint.json` file, or via adding a `"jadeLintConfig"` option to `package.json`.
+Options and rules can be specified in a `.pug-lintrc` or `.pug-lint.json` file, or via adding a `"pugLintConfig"` option to `package.json`.
 
 ### Options
 
@@ -112,7 +112,7 @@ Array of file path matching patterns to load additional rules from, e.g.:
 
 [List of available rules](docs/rules.md)
 
-You can specifically disable any rule by omitting it from your `.jade-lintrc` config file or by assigning it to null, like so:
+You can specifically disable any rule by omitting it from your `.pug-lintrc` config file or by assigning it to null, like so:
 
 ```json
 { "disallowBlockExpansion": null

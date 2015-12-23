@@ -9,13 +9,13 @@ describe('configFile', function () {
     , reporter
 
   it('should load config file from specific dot file', function () {
-    config = configFile.load(fixturesPath + 'dotfile/.jade-lintrc')
+    config = configFile.load(fixturesPath + 'dotfile/.pug-lintrc')
 
     assert.equal(config.hasOwnProperty('disallowBlockExpansion'), true, config)
   })
 
   it('should load config file from specified JSON file', function () {
-    config = configFile.load(fixturesPath + 'json/.jade-lint.json')
+    config = configFile.load(fixturesPath + 'json/.pug-lint.json')
 
     assert.equal(config.hasOwnProperty('disallowBlockExpansion'), true, config)
   })
