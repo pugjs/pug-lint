@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-class-literals.jade')
 
         assert.equal(result.length, 3)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWCLASSLITERALS')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWCLASSLITERALS')
         assert.equal(result[0].line, 1)
         assert.equal(result[1].line, 3)
         assert.equal(result[2].line, 4)

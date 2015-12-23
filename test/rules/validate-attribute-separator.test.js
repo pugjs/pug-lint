@@ -26,7 +26,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 31)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR')
         assert.equal(result[0].line, 3)
         assert.equal(result[0].column, 18)
         assert.equal(result[1].line, 3)
@@ -53,7 +53,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 32)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -76,7 +76,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 31)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -99,7 +99,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 32)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -122,7 +122,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 33)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR')
       })
 
     })
@@ -151,7 +151,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 27)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTESEPARATOR')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR')
         assert.equal(result[25].line, 42)
         assert.equal(result[25].column, 1)
         assert.equal(result[26].line, 44)

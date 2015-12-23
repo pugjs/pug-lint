@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'require-class-literals-before-attributes.jade')
 
         assert.equal(result.length, 2)
-        assert.equal(result[0].code, 'JADE:LINT_REQUIRECLASSLITERALSBEFOREATTRIBUTES')
+        assert.equal(result[0].code, 'PUG:LINT_REQUIRECLASSLITERALSBEFOREATTRIBUTES')
       })
 
     })

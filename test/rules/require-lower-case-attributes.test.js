@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'require-lower-case-attributes.jade')
 
         assert.equal(result.length, 3)
-        assert.equal(result[0].code, 'JADE:LINT_REQUIRELOWERCASEATTRIBUTES')
+        assert.equal(result[0].code, 'PUG:LINT_REQUIRELOWERCASEATTRIBUTES')
       })
 
       it('should not report errors found in XML', function () {

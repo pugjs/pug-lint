@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-class-literals-before-id-literals.jade')
 
         assert.equal(result.length, 2)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWCLASSLITERALSBEFOREIDLITERALS')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWCLASSLITERALSBEFOREIDLITERALS')
       })
 
     })

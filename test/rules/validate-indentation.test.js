@@ -16,7 +16,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkString('div\n  div\n\tdiv')
 
         assert.equal(result.length, 1)
-        assert.equal(result[0].code, 'JADE:INVALID_INDENTATION')
+        assert.equal(result[0].code, 'PUG:INVALID_INDENTATION')
       })
 
     })
@@ -39,7 +39,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'validate-indentation--spaces.jade')
 
         assert.equal(result.length, 1)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEINDENTATION')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEINDENTATION')
         assert.equal(result[0].line, 9)
       })
 
@@ -63,7 +63,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'validate-indentation--tabs.jade')
 
         assert.equal(result.length, 1)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEINDENTATION')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEINDENTATION')
         assert.equal(result[0].line, 9)
       })
 

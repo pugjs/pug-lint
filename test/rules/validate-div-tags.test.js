@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'validate-div-tags--html.jade')
 
         assert.equal(result.length, 3)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEDIVTAGS')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEDIVTAGS')
         assert.equal(result[0].line, 8)
         assert.equal(result[1].line, 9)
         assert.equal(result[2].line, 10)

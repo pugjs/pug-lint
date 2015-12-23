@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'maximum-number-of-lines.jade')
 
         assert.equal(result.length, 1)
-        assert.equal(result[0].code, 'JADE:LINT_MAXIMUMNUMBEROFLINES')
+        assert.equal(result[0].code, 'PUG:LINT_MAXIMUMNUMBEROFLINES')
       })
 
     })

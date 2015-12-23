@@ -27,7 +27,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'require-line-feed-at-file-end--missing.jade')
 
         assert.equal(result.length, 1)
-        assert.equal(result[0].code, 'JADE:LINT_REQUIRELINEFEEDATFILEEND')
+        assert.equal(result[0].code, 'PUG:LINT_REQUIRELINEFEEDATFILEEND')
         assert.equal(result[0].line, 2)
       })
 

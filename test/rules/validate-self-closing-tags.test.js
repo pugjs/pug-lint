@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'validate-self-closing-tags--html.jade')
 
         assert.equal(result.length, 16)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATESELFCLOSINGTAGS')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATESELFCLOSINGTAGS')
       })
 
       it('should not report any errors in XML file', function () {

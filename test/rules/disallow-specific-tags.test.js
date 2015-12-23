@@ -26,7 +26,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 2)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSPECIFICTAGS')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWSPECIFICTAGS')
       })
 
     })
@@ -49,7 +49,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 4)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSPECIFICTAGS')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWSPECIFICTAGS')
       })
 
     })

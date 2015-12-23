@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-multiple-line-breaks.jade')
 
         assert.equal(result.length, 2)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWMULTIPLELINEBREAKS')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWMULTIPLELINEBREAKS')
       })
 
     })

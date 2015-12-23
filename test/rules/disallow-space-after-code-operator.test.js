@@ -84,7 +84,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-space-after-code-operator.jade')
 
         assert.equal(result.length, 18)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSPACEAFTERCODEOPERATOR')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWSPACEAFTERCODEOPERATOR')
       })
 
     })

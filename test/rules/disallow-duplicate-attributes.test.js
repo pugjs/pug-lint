@@ -28,7 +28,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-duplicate-attributes.jade')
 
         assert.equal(result.length, 3)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWDUPLICATEATTRIBUTES')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWDUPLICATEATTRIBUTES')
 
       })
 

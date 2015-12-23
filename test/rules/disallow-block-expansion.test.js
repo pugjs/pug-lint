@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-block-expansion.jade')
 
         assert.equal(result.length, 6)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWBLOCKEXPANSION')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWBLOCKEXPANSION')
         assert.equal(result[0].line, 4)
         assert.equal(result[1].line, 6)
         assert.equal(result[2].line, 6)

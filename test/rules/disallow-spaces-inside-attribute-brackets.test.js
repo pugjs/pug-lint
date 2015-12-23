@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-spaces-inside-attribute-brackets.jade')
 
         assert.equal(result.length, 10)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSPACESINSIDEATTRIBUTEBRACKETS')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWSPACESINSIDEATTRIBUTEBRACKETS')
       })
 
     })

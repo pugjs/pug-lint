@@ -26,7 +26,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 6)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTEQUOTEMARKS')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTEQUOTEMARKS')
         assert.equal(result[0].line, 1)
         assert.equal(result[1].line, 1)
         assert.equal(result[2].line, 1)
@@ -55,7 +55,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 6)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTEQUOTEMARKS')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTEQUOTEMARKS')
         assert.equal(result[0].line, 2)
         assert.equal(result[1].line, 3)
         assert.equal(result[2].line, 3)
@@ -84,7 +84,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 6)
-        assert.equal(result[0].code, 'JADE:LINT_VALIDATEATTRIBUTEQUOTEMARKS')
+        assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTEQUOTEMARKS')
         assert.equal(result[0].line, 2)
         assert.equal(result[1].line, 3)
         assert.equal(result[2].line, 3)

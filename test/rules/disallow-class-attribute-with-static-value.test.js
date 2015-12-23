@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-class-attribute-with-static-value.jade')
 
         assert.equal(result.length, 5)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWCLASSATTRIBUTEWITHSTATICVALUE')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWCLASSATTRIBUTEWITHSTATICVALUE')
       })
 
     })

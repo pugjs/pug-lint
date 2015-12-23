@@ -26,7 +26,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 2)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSPECIFICATTRIBUTES')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWSPECIFICATTRIBUTES')
       })
 
     })
@@ -49,7 +49,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 3)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSPECIFICATTRIBUTES')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWSPECIFICATTRIBUTES')
       })
 
     })
@@ -78,7 +78,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturePath)
 
         assert.equal(result.length, 4)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSPECIFICATTRIBUTES')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWSPECIFICATTRIBUTES')
       })
 
     })

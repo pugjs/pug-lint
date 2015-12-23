@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'disallow-string-interpolation.jade')
 
         assert.equal(result.length, 6)
-        assert.equal(result[0].code, 'JADE:LINT_DISALLOWSTRINGINTERPOLATION')
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWSTRINGINTERPOLATION')
         assert.equal(result[0].line, 6)
       })
 

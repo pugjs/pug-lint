@@ -80,7 +80,7 @@ describe('linter', function () {
       var result = linter.checkFile(fixturesPath + 'invalid.jade')
 
       assert.equal(result.length, 1)
-      assert.equal(result[0].code, 'JADE:UNEXPECTED_TEXT')
+      assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT')
     })
 
   })
@@ -101,14 +101,14 @@ describe('linter', function () {
       var result = linter.checkPath(fixturesPath + 'invalid.jade')
 
       assert.equal(result.length, 1)
-      assert.equal(result[0].code, 'JADE:UNEXPECTED_TEXT')
+      assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT')
     })
 
     it('should report errors for directory path', function () {
       var result = linter.checkPath(fixturesPath)
 
       assert.equal(result.length, 2)
-      assert.equal(result[0].code, 'JADE:UNEXPECTED_TEXT')
+      assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT')
     })
 
     it('should not report errors for default excluded directory path', function () {

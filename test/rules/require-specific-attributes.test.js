@@ -30,7 +30,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'require-specific-attributes.jade')
 
         assert.equal(result.length, 3)
-        assert.equal(result[0].code, 'JADE:LINT_REQUIRESPECIFICATTRIBUTES')
+        assert.equal(result[0].code, 'PUG:LINT_REQUIRESPECIFICATTRIBUTES')
         assert.equal(result[0].line, 2)
         assert.equal(result[1].line, 3)
         assert.equal(result[2].line, 5)

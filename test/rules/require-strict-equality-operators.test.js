@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
         var result = linter.checkFile(fixturesPath + 'require-strict-equality-operators.jade')
 
         assert.equal(result.length, 4)
-        assert.equal(result[0].code, 'JADE:LINT_REQUIRESTRICTEQUALITYOPERATORS')
+        assert.equal(result[0].code, 'PUG:LINT_REQUIRESTRICTEQUALITYOPERATORS')
         assert.equal(result[0].line, 1)
         assert.equal(result[1].line, 3)
         assert.equal(result[2].line, 8)
