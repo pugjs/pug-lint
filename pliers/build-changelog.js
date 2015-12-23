@@ -1,7 +1,7 @@
 module.exports = createTask
 
 var changelog = require('changelog')
-  // , packageDetails = require('../package.json')
+  , packageDetails = require('../package.json')
 
 function createTask (pliers) {
 
@@ -10,7 +10,7 @@ function createTask (pliers) {
     var content = []
       , previousVersion = ''
 
-    changelog.generate('gulp').then(function (data) {
+    changelog.generate(packageDetails.name, packageDetails.version).then(function (data) {
       data.versions.forEach(function (version) {
         var currentVersion = 'v' + version.version
           , versions = previousVersion + '...' + currentVersion
@@ -25,8 +25,12 @@ function createTask (pliers) {
         content.push('')
         content.push('### Highlights')
 
-        data.versions.forEach(function (version) {
-          content.push('* ' + version.message)
+        version.changes.forEach(function (change) {
+          var message = change.message.split('\n')[0]
+
+          if (message && message.match(/^[^>v]/gm)) {
+            content.push('* ' + message)
+          }
         })
 
         content.push('')
