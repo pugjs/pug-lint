@@ -1,4 +1,4 @@
-## v2.1.1 / 2015-12-18
+## v2.1.1 / 2015-12-23
 
 ### Highlights
 * Renamed to pug-lint
