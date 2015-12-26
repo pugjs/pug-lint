@@ -71,7 +71,7 @@ If you're using Gulp as your build system, you can use [gulp-jade-lint](https://
 
 ### Grunt
 
-If you're using Gulp as your build system, you can use [grunt-puglint](https://github.com/mrmlnc/grunt-puglint) for easier integration.
+If you're using Grunt as your build system, you can use [grunt-puglint](https://github.com/mrmlnc/grunt-puglint) for easier integration.
 
 ## Configuration file
 
