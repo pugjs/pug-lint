@@ -1,3 +1,11 @@
+## v2.1.2 / 2016-01-02
+
+### Highlights
+* Removes unnecessary console.log
+
+### Changes
+[v2.1.1...v2.1.2](https://github.com/pugjs/pug-lint/compare/v2.1.1...v2.1.2)
+
 ## v2.1.1 / 2015-12-23
 
 ### Highlights
