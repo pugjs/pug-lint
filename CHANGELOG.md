@@ -1,3 +1,12 @@
+## v2.1.3 / 2016-01-20
+
+### Highlights
+* Remove shrinkwrap
+* Update dependencies
+
+### Changes
+[v2.1.2...v2.1.3](https://github.com/pugjs/pug-lint/compare/v2.1.2...v2.1.3)
+
 ## v2.1.2 / 2016-01-02
 
 ### Highlights
