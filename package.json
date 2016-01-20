@@ -72,7 +72,6 @@
     "inspect": "jsinspect",
     "depcheck": "david",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
-    "wrap": "npm prune && npm shrinkwrap && pliers cleanShrinkwrap",
     "docs": "pliers buildRuleDocs",
     "pretest": "npm run docs && npm run lint && npm run inspect && npm run depcheck",
     "test": "npm run coverage",
@@ -99,7 +98,6 @@
     "jsinspect": "^0.7.0",
     "mocha": "^2.3.3",
     "pliers": "^1.2.1",
-    "pliers-clean-shrinkwrap": "^1.0.1",
     "sinon": "^1.17.2"
   }
 }
