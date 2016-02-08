@@ -1,13 +1,16 @@
-mixin dummyMixin(config)
-	p config.message
-		- if (config.subMessage)
-			span config.subMessage
-
 +dummyMixin({
-	message: 'foo',
-	subMessage: 'bar'
+	a: 'foo',
+	b: 'bar'
 })
 
 +dummyMixin({
-	message: 'baz'
+	a: 'foo'
+})
+
++dummyMixin({
+	a: 'foo',
+	b: 'bar',
+
+
+	c: 'baz'
 })
