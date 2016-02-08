@@ -10,6 +10,7 @@ function createTask (pliers) {
 
     var content = []
       , previousVersion = ''
+      , changes = []
 
     changelog.generate(packageDetails.name, packageDetails.version).then(function (data) {
       data.versions.forEach(function (version) {
@@ -22,18 +23,21 @@ function createTask (pliers) {
           content.push('')
         }
 
-        content.push('## ' + currentVersion + ' / ' + version.date)
-        content.push('')
-        content.push('### Highlights')
         content.push('## ' + currentVersion + ' / ' + moment(version.date).format('YYYY-MM-DD'))
 
         version.changes.forEach(function (change) {
           var message = change.message.split('\n')[0]
 
           if (message && message.match(/^[^>v]/gm)) {
-            content.push('* ' + message)
+            changes.push('* ' + message)
           }
         })
+
+        if (changes.length) {
+          content.push('')
+          content.push('### Highlights')
+          content.push.apply(content, changes)
+        }
 
         content.push('')
 
