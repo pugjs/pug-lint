@@ -1,6 +1,7 @@
 module.exports = createTask
 
 var changelog = require('changelog')
+  , moment = require('moment')
   , packageDetails = require('../package.json')
 
 function createTask (pliers) {
@@ -24,6 +25,7 @@ function createTask (pliers) {
         content.push('## ' + currentVersion + ' / ' + version.date)
         content.push('')
         content.push('### Highlights')
+        content.push('## ' + currentVersion + ' / ' + moment(version.date).format('YYYY-MM-DD'))
 
         version.changes.forEach(function (change) {
           var message = change.message.split('\n')[0]

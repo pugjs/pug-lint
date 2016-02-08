@@ -99,6 +99,7 @@
     "istanbul": "^0.4.0",
     "jsinspect": "^0.7.0",
     "mocha": "^2.3.3",
+    "moment": "^2.11.2",
     "pliers": "^1.2.1",
     "sinon": "^1.17.2"
   }
