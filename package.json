@@ -56,6 +56,7 @@
     "pug-hinting",
     "jade-hinting"
   ],
+  "homepage": "https://github.com/pugjs/pug-lint",
   "repository": {
     "type": "git",
     "url": "git@github.com:pugjs/pug-lint.git"
@@ -74,7 +75,7 @@
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
     "docs": "pliers buildRuleDocs",
     "changelog": "pliers buildChangelog",
-    "pretest": "npm run docs && npm run lint && npm run inspect && npm run depcheck",
+    "pretest": "npm run docs && npm run lint && npm run inspect",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
@@ -101,6 +102,7 @@
     "mocha": "^2.3.3",
     "moment": "^2.11.2",
     "pliers": "^1.2.1",
+    "semver-regex": "^1.0.0",
     "sinon": "^1.17.2"
   }
 }
