@@ -413,7 +413,7 @@ div
 input(type='text', name='name', value='value')
 ```
 
-## e.g.: `{ "separator": " ", multiLineSeparator: "\n  " }`
+## e.g.: `{ "separator": " ", "multiLineSeparator": "\n  " }`
 
 * All attributes that are on the same line must be immediately followed by a space.
 * All attributes that are on different lines must be preceded by two spaces.
