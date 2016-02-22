@@ -151,7 +151,6 @@ function createTest (linter) {
     it.skip('UseFigcaptionAtStartOrEnd', function () {
       /*eslint max-len: [ 2, 1000, 2 ]*/
       assert.equal(linter.checkString('figure\n  img(src=\'/img/figure1.png\' alt=\'Some Figure\')\n  figcaption Figure 1\n\nfigure\n    figcaption Figure 1\n    img(src=\'/img/figure1.png\' alt=\'Some Figure\')').length, 0)
-      /*eslint max-len: [ 2, 1000, 2 ]*/
       assert.equal(linter.checkString('figure\n    img(src=\'/img/figure1.png\' alt=\'Some Figure\')\n    figcaption Figure 1\n    img(src=\'/img/figure1.png\' alt=\'Some Figure\')').length, 1)
     })
 
