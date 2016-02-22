@@ -1,4 +1,5 @@
 { "pugLintConfig":
+  // Comment
   { "disallowBlockExpansion": true
   }
 }
