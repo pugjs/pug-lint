@@ -1,5 +1,5 @@
-{ "disallowAttributeConcatenation": true
-, "disallowAttributeInterpolation": null
+{ "disallowAttributeConcatenation": null
+, "disallowAttributeInterpolation": true
 , "disallowBlockExpansion": null
 , "disallowClassAttributeWithStaticValue": true
 , "disallowClassLiterals": null
