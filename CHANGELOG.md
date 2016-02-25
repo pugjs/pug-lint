@@ -1,3 +1,13 @@
+## v2.1.4 / 2016-02-25
+
+### Highlights
+* Allows commenting in config files
+* disallowMultipleLineBreaks now uses lines in source rather than tokens to allow for multi-line attribute and mixin blocks
+* disallowAttributeConcatenation now handles `+` characters in quotes
+
+### Changes
+[v2.1.3...v2.1.4](https://github.com/pugjs/pug-lint/compare/v2.1.3...v2.1.4)
+
 ## v2.1.3 / 2016-01-20
 
 ### Highlights
