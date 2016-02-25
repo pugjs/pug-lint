@@ -19,6 +19,11 @@ function createTask (pliers) {
       , fileContent = fs.readFileSync(filePath, 'utf8')
       , complete = false
 
+    if (fileContent.indexOf(currentVersion) !== -1) {
+      pliers.logger.error('CHANGELOG already exists for ' + currentVersion)
+      return done()
+    }
+
     changelog.generate(packageDetails.homepage).then(function (data) {
       var version = data.versions[0]
 
@@ -62,8 +67,13 @@ function createTask (pliers) {
 
       content.push(fileContent)
 
+      pliers.logger.debug('Building CHANGELOG for ' + currentVersion)
+
       fs.writeFile(filePath, content.join('\n'), function (err) {
-        if (err) return done(err)
+        if (err) {
+          pliers.logger.error('Failed to build CHANGELOG')
+          return done(err)
+        }
 
         return done()
       })
