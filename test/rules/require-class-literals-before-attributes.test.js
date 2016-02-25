@@ -18,6 +18,7 @@ function createTest (linter, fixturesPath) {
 
       it('should not report class literals before attributes', function () {
         assert.equal(linter.checkString('input#id.class(type=\'text\')').length, 0)
+        assert.equal(linter.checkString('a(href=\'/#{year}/#{month}/\') #{monthName}#[span.hidden #{year}]').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
