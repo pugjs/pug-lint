@@ -4,4 +4,6 @@
 %dirname%disallow-block-expansion.jade:8:6 Block expansion operators must not be used
 %dirname%disallow-block-expansion.jade:8:10 Block expansion operators must not be used
 %dirname%disallow-block-expansion.jade:8:14 Block expansion operators must not be used
-
+%dirname%disallow-block-expansion.jade:10:20 Block expansion operators must not be used
+%dirname%disallow-block-expansion.jade:10:24 Block expansion operators must not be used
+%dirname%disallow-block-expansion.jade:10:28 Block expansion operators must not be used
