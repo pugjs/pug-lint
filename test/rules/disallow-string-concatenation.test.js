@@ -14,6 +14,9 @@ function createTest (linter, fixturesPath) {
 
       it('should report string concatenation', function () {
         assert.equal(linter.checkString('h1= title + \'text\'').length, 1)
+        assert.equal(linter.checkString('h1(class="test" + "test")= title + \'text\'').length, 1)
+        assert.equal(linter.checkString('h1= \'text+\'').length, 0)
+        assert.equal(linter.checkString('h1= test + test').length, 0)
       })
 
       it('should not report string interpolation', function () {
