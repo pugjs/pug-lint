@@ -17,22 +17,28 @@ function createTask (pliers) {
       , versions
       , filePath = __dirname + '/../CHANGELOG.md'
       , fileContent = fs.readFileSync(filePath, 'utf8')
+      , complete = false
 
     changelog.generate(packageDetails.homepage).then(function (data) {
-      data.versions.forEach(function (version, index) {
-        version.changes.forEach(function (change) {
-          var message = change.message.split('\n')[0]
+      var version = data.versions[0]
 
-          if (message) {
-            if (semverRegex().test(message) && !previousVersion.length) {
-              previousVersion = message
+      version.changes.forEach(function (change) {
+        if (complete) return
+
+        var message = change.message.split('\n')[0]
+
+        if (message) {
+          if (semverRegex().test(message)) {
+            if (previousVersion.length) {
+              complete = true
+              return
             }
 
-            if (index === 0 && message.match(/^[^>v]/gm)) {
-              changes.push('* ' + message)
-            }
+            previousVersion = message
+          } else if (message.match(/^[^>]/)) {
+            changes.push('* ' + message)
           }
-        })
+        }
       })
 
       if (previousVersion.length && previousVersion !== currentVersion) {
