@@ -1,4 +1,95 @@
 .container
   header.main-header
     a(href='/') Project Title
-    img(src='/', alt='alt')
+
+input(type='text', name='title', value='')
+
+//- input(
+  type='text'
+  name='example'
+  maxlength='20'
+  placeholder='Example Placeholder'
+  required
+  value=data.value
+  )
+
+button.class(type='submit') Submit
+button.class1.class2(type='submit') Submit
+//- input.class1.class2(
+  type='text'
+  value='Example'
+  )
+
+//- div
+  span(
+    href='#'
+    class='class'
+    name='name'
+    )
+
+- var classes = [ 'alpha', additionalClass ]
+div(class=classes)
+
+-
+  var classes =
+  { 'alpha': true
+  , 'gamma': someTruth
+  }
+
+div(class=classes)
+
+input(type='text', name='title')
+
+//- I’m good
+
+append scripts
+  script(src='foo.js')
+
+p= message
+a(href=url)
+
+label
+  input(type='checkbox', name='example')
+  = text
+
+ul
+  li: a(href='http://example.com/1') Link 1
+  li: a(href='http://example.com/2') Link 2
+
+h1= title
+
+a(href=link) Link
+
+h1= title
+h1 Welcome to #{title}.
+
+a(href=link)
+img(alt='A photo of the ' + city + ' skyline.')
+
+p Some 
+  em emphasised
+  |  text
+
+p Some #[em emphasised] text
+
+each i in [ 1, 2, 3 ]
+if foo === bar
++baz(a, b, c)
+
+-
+  var greeting =
+      { en: 'Hello world'
+      , de: 'Hallo welt'
+      , fr: 'Bonjour le monde'
+      , es: 'Hola mundo'
+      }
+
+- var a = 'foo'
+
+-
+  var a = 'foo'
+    , b = 'bar'
+
+if selected === 1
+  p Test
+else
