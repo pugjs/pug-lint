@@ -1,3 +1,11 @@
+## v2.1.5 / 2016-02-25
+
+### Highlights
+* Improves disallowAttributeConcatenation and disallowStringConcatenation to remove false positives
+
+### Changes
+[v2.1.4...v2.1.5](https://github.com/pugjs/pug-lint/compare/v2.1.4...v2.1.5)
+
 ## v2.1.4 / 2016-02-25
 
 ### Highlights

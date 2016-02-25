@@ -1,6 +1,6 @@
 {
   "name": "pug-lint",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "An unopinionated and configurable linter and style checker for Pug (formerly Jade)",
   "author": "Ben Edwards <hello@benedfit.com>",
   "license": "ISC",
