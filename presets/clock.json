@@ -32,8 +32,10 @@
   ]
 , "requireStrictEqualityOperators": true
 , "validateAttributeQuoteMarks": "'"
-, "validateAttributeSeparator": ", "
+, "validateAttributeSeparator":
   { "separator": ", "
+  , "multiLineSeparator": "\n  "
+  }
 , "validateDivTags": true
 , "validateIndentation": 2
 , "validateLineBreaks": "LF"
