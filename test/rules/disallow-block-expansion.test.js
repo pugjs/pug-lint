@@ -6,6 +6,26 @@ function createTest (linter, fixturesPath) {
 
   describe('disallowBlockExpansion', function () {
 
+    describe('Array', function () {
+
+      before(function () {
+        linter.configure(
+        { disallowBlockExpansion:
+          { whiteList: 'tag'
+          }
+        })
+      })
+
+      it('should report multiple errors found in file', function () {
+        var result = linter.checkFile(fixturesPath + 'disallow-block-expansion.jade')
+
+        assert.equal(result.length, 1)
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWBLOCKEXPANSION')
+        assert.equal(result[0].line, 10)
+      })
+
+    })
+
     describe('true', function () {
 
       before(function () {
@@ -23,7 +43,7 @@ function createTest (linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'disallow-block-expansion.jade')
 
-        assert.equal(result.length, 6)
+        assert.equal(result.length, 9)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWBLOCKEXPANSION')
         assert.equal(result[0].line, 4)
         assert.equal(result[1].line, 6)
