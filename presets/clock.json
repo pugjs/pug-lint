@@ -33,6 +33,7 @@
 , "requireStrictEqualityOperators": true
 , "validateAttributeQuoteMarks": "'"
 , "validateAttributeSeparator": ", "
+  { "separator": ", "
 , "validateDivTags": true
 , "validateIndentation": 2
 , "validateLineBreaks": "LF"
