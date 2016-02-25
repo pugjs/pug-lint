@@ -27,6 +27,11 @@ function createTest (linter, fixturesPath) {
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWMULTIPLELINEBREAKS')
       })
 
+      it('should not report line breaks in object-literal blocks', function () {
+        var result = linter.checkFile(fixturesPath + '../misc/disallow-multiple-line-breaks-object-block.jade')
+        assert.equal(result.length, 1)
+      })
+
     })
 
   })
