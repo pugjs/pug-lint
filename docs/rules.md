@@ -16,7 +16,22 @@ Pug must not contain any attribute interpolation operators.
 a(href='text #{title}') Link
 ```
 
-# disallowBlockExpansion: `true`
+# disallowBlockExpansion: `Array` | `true`
+
+## e.g.: `[ ]`
+
+Pug must not contain...
+
+```jade
+//- Invalid
+a(href='http://example.com', target='_blank'): img(src='http://example.com/image.jpg')
+
+//- Valid
+ul
+  li: a(href='http://example.com/1') Link 1
+```
+
+## if (true)
 
 Pug must not contain any block expansion operators.
 
