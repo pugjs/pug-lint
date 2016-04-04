@@ -4,7 +4,7 @@ var assert = require('assert')
 
 function createTest (linter, fixturesPath) {
 
-  var fixturePath = fixturesPath + 'validate-attribute-separator.jade'
+  var fixturePath = fixturesPath + 'validate-attribute-separator.pug'
 
   describe('validateAttributeSeparator', function () {
 
@@ -177,7 +177,7 @@ function createTest (linter, fixturesPath) {
 
         assert.equal(result.length, 0)
 
-        result = linter.checkFile(fixturesPath + 'validate-attribute-separator--multiline.jade')
+        result = linter.checkFile(fixturesPath + 'validate-attribute-separator--multiline.pug')
 
         assert.equal(result.length, 0)
       })

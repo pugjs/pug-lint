@@ -21,7 +21,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'disallow-class-literals-before-id-literals.jade')
+        var result = linter.checkFile(fixturesPath + 'disallow-class-literals-before-id-literals.pug')
 
         assert.equal(result.length, 2)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWCLASSLITERALSBEFOREIDLITERALS')

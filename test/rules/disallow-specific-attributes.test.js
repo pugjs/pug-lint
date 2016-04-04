@@ -4,7 +4,7 @@ var assert = require('assert')
 
 function createTest (linter, fixturesPath) {
 
-  var fixturePath = fixturesPath + 'disallow-specific-attributes.jade'
+  var fixturePath = fixturesPath + 'disallow-specific-attributes.pug'
 
   describe('disallowSpecificAttributes', function () {
 

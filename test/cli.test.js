@@ -78,7 +78,7 @@ describe('cli', function () {
   })
 
   it('should report errors for file path', function (done) {
-    var args = [ fixturesRelativePath + 'invalid.jade' ]
+    var args = [ fixturesRelativePath + 'invalid.pug' ]
       , expectedReport = fs.readFileSync(fixturesPath + 'reporters/expected-invalid.txt', 'utf-8')
 
     run(args, function (err, code, stdout, stderr) {
@@ -106,7 +106,7 @@ describe('cli', function () {
 
   it('should use config when it is supplied', function (done) {
     var dirname = fixturesRelativePath + 'rules/'
-      , args = [ '-c', fixturesPath + 'config-file/dotfile/.pug-lintrc', dirname + 'disallow-block-expansion.jade' ]
+      , args = [ '-c', fixturesPath + 'config-file/dotfile/.pug-lintrc', dirname + 'disallow-block-expansion.pug' ]
       , expectedReport = fs.readFileSync(fixturesPath + 'reporters/expected-disallow-block-expansion--console.txt'
         , 'utf-8')
 
@@ -138,7 +138,7 @@ describe('cli', function () {
         , 'inline'
         , '-c'
         , fixturesPath + 'config-file/dotfile/.pug-lintrc'
-        , dirname + 'disallow-block-expansion.jade'
+        , dirname + 'disallow-block-expansion.pug'
         ]
       , expectedReport = fs.readFileSync(fixturesPath + 'reporters/expected-disallow-block-expansion--inline.txt'
         , 'utf-8')

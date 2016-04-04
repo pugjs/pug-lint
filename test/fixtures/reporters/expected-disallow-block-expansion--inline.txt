@@ -1,7 +1,7 @@
-%dirname%disallow-block-expansion.jade:4:5 Block expansion operators must not be used
-%dirname%disallow-block-expansion.jade:6:6 Block expansion operators must not be used
-%dirname%disallow-block-expansion.jade:6:10 Block expansion operators must not be used
-%dirname%disallow-block-expansion.jade:8:6 Block expansion operators must not be used
-%dirname%disallow-block-expansion.jade:8:10 Block expansion operators must not be used
-%dirname%disallow-block-expansion.jade:8:14 Block expansion operators must not be used
+%dirname%disallow-block-expansion.pug:4:5 Block expansion operators must not be used
+%dirname%disallow-block-expansion.pug:6:6 Block expansion operators must not be used
+%dirname%disallow-block-expansion.pug:6:10 Block expansion operators must not be used
+%dirname%disallow-block-expansion.pug:8:6 Block expansion operators must not be used
+%dirname%disallow-block-expansion.pug:8:10 Block expansion operators must not be used
+%dirname%disallow-block-expansion.pug:8:14 Block expansion operators must not be used
 

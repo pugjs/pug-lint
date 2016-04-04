@@ -21,7 +21,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'require-lower-case-tags.jade')
+        var result = linter.checkFile(fixturesPath + 'require-lower-case-tags.pug')
 
         assert.equal(result.length, 6)
         assert.equal(result[0].code, 'PUG:LINT_REQUIRELOWERCASETAGS')

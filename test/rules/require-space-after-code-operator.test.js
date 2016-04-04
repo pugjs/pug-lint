@@ -81,7 +81,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'require-space-after-code-operator.jade')
+        var result = linter.checkFile(fixturesPath + 'require-space-after-code-operator.pug')
 
         assert.equal(result.length, 17)
         assert.equal(result[0].code, 'PUG:LINT_REQUIRESPACEAFTERCODEOPERATOR')

@@ -36,7 +36,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'validate-indentation--spaces.jade')
+        var result = linter.checkFile(fixturesPath + 'validate-indentation--spaces.pug')
 
         assert.equal(result.length, 1)
         assert.equal(result[0].code, 'PUG:LINT_VALIDATEINDENTATION')
@@ -60,7 +60,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'validate-indentation--tabs.jade')
+        var result = linter.checkFile(fixturesPath + 'validate-indentation--tabs.pug')
 
         assert.equal(result.length, 1)
         assert.equal(result[0].code, 'PUG:LINT_VALIDATEINDENTATION')

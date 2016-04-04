@@ -77,7 +77,7 @@ describe('linter', function () {
     })
 
     it('should report errors during parsing', function () {
-      var result = linter.checkFile(fixturesPath + 'invalid.jade')
+      var result = linter.checkFile(fixturesPath + 'invalid.pug')
 
       assert.equal(result.length, 1)
       assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT')
@@ -98,7 +98,7 @@ describe('linter', function () {
     })
 
     it('should report errors for file path', function () {
-      var result = linter.checkPath(fixturesPath + 'invalid.jade')
+      var result = linter.checkPath(fixturesPath + 'invalid.pug')
 
       assert.equal(result.length, 1)
       assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT')

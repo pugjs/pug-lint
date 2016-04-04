@@ -1,4 +1,4 @@
-%dirname%invalid.jade:2:1
+%dirname%invalid.pug:2:1
     1| div
   > 2| |
 -------^

@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report missing line feed at file end', function () {
-        var result = linter.checkFile(fixturesPath + 'require-line-feed-at-file-end--missing.jade')
+        var result = linter.checkFile(fixturesPath + 'require-line-feed-at-file-end--missing.pug')
 
         assert.equal(result.length, 1)
         assert.equal(result[0].code, 'PUG:LINT_REQUIRELINEFEEDATFILEEND')
@@ -32,7 +32,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should not report line feed at file end', function () {
-        var result = linter.checkFile(fixturesPath + 'require-line-feed-at-file-end.jade')
+        var result = linter.checkFile(fixturesPath + 'require-line-feed-at-file-end.pug')
 
         assert.equal(result.length, 0)
       })

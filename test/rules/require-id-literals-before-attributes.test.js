@@ -21,7 +21,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'require-id-literals-before-attributes.jade')
+        var result = linter.checkFile(fixturesPath + 'require-id-literals-before-attributes.pug')
 
         assert.equal(result.length, 2)
         assert.equal(result[0].code, 'PUG:LINT_REQUIREIDLITERALSBEFOREATTRIBUTES')

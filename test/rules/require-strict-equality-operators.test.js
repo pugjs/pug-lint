@@ -21,7 +21,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'require-strict-equality-operators.jade')
+        var result = linter.checkFile(fixturesPath + 'require-strict-equality-operators.pug')
 
         assert.equal(result.length, 4)
         assert.equal(result[0].code, 'PUG:LINT_REQUIRESTRICTEQUALITYOPERATORS')

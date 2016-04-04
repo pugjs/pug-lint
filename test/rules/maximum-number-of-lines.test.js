@@ -21,7 +21,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'maximum-number-of-lines.jade')
+        var result = linter.checkFile(fixturesPath + 'maximum-number-of-lines.pug')
 
         assert.equal(result.length, 1)
         assert.equal(result[0].code, 'PUG:LINT_MAXIMUMNUMBEROFLINES')

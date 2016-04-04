@@ -13,13 +13,13 @@ function createTest (linter, fixturesPath) {
     })
 
     it('should report errors found in file', function () {
-      var result = linter.checkFile(fixturesPath + 'clock--invalid.jade')
+      var result = linter.checkFile(fixturesPath + 'clock--invalid.pug')
 
       assert.equal(result.length, 3)
     })
 
     it('should not report errors in valid file', function () {
-      var result = linter.checkFile(fixturesPath + 'clock--valid.jade')
+      var result = linter.checkFile(fixturesPath + 'clock--valid.pug')
 
       assert.equal(result.length, 0)
     })

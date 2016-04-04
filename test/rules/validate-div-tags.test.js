@@ -21,7 +21,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in HTML file', function () {
-        var result = linter.checkFile(fixturesPath + 'validate-div-tags--html.jade')
+        var result = linter.checkFile(fixturesPath + 'validate-div-tags--html.pug')
 
         assert.equal(result.length, 3)
         assert.equal(result[0].code, 'PUG:LINT_VALIDATEDIVTAGS')
@@ -31,7 +31,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should not report any errors in XML file', function () {
-        var result = linter.checkFile(fixturesPath + 'validate-div-tags--xml.jade')
+        var result = linter.checkFile(fixturesPath + 'validate-div-tags--xml.pug')
 
         assert.equal(result.length, 0)
       })

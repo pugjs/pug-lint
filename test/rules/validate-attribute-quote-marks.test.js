@@ -4,7 +4,7 @@ var assert = require('assert')
 
 function createTest (linter, fixturesPath) {
 
-  var fixturePath = fixturesPath + 'validate-attribute-quote-marks.jade'
+  var fixturePath = fixturesPath + 'validate-attribute-quote-marks.pug'
 
   describe('validateAttributeQuoteMarks', function () {
 

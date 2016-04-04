@@ -4,7 +4,7 @@ var assert = require('assert')
 
 function createTest (linter, fixturesPath) {
 
-  var fixturePath = fixturesPath + 'disallow-specific-tags.jade'
+  var fixturePath = fixturesPath + 'disallow-specific-tags.pug'
 
   describe('disallowSpecificTags', function () {
 

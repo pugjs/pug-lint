@@ -24,7 +24,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'disallow-string-concatenation.jade')
+        var result = linter.checkFile(fixturesPath + 'disallow-string-concatenation.pug')
 
         assert.equal(result.length, 2)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWSTRINGCONCATENATION')
