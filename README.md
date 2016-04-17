@@ -67,7 +67,7 @@ let g:syntastic_jade_checkers = ['jade_lint']
 
 ### Gulp
 
-If you're using Gulp as your build system, you can use [gulp-pug-lint](https://github.com/emartech/gulp-pug-lint) for easier integration.
+If you're using Gulp as your build system, you can use [gulp-pug-linter](https://github.com/ilyakam/gulp-pug-linter) for easier integration.
 
 ### Grunt
 
