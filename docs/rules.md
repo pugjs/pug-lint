@@ -347,20 +347,6 @@ img(src='src')
 img(src='src' alt='alt')
 ```
 
-# requireSpecificAttributes: `Array`
-
-## e.g.: `[ { img: [ "alt" ] } ]`
-
-`img` tags must contain all of the attributes specified.
-
-```jade
-//- Invalid
-img(src='src')
-
-//- Valid
-img(src='src' alt='alt')
-```
-
 # requireStrictEqualityOperators: `true`
 
 Requires the use of `===` and `!==` instead of `==` and `!=`.
