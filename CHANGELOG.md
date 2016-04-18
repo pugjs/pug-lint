@@ -1,3 +1,11 @@
+## v2.1.7 / 2016-04-18
+
+### Highlights
+* Minor bug fixes
+
+### Changes
+[v2.1.6...v2.1.7](https://github.com/pugjs/pug-lint/compare/v2.1.6...v2.1.7)
+
 ## v2.1.6 / 2016-02-25
 
 ### Highlights
