@@ -42,6 +42,10 @@ plugin using [Package Control](https://packagecontrol.io/).
 
 If you use Atom, you can install the [linter-jade](https://atom.io/packages/linter-jade) package.
 
+### VS Code
+
+If you use VS Code, you can install the [vscode-puglint](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-puglint) extension.
+
 ### Vim
 
 jade-lint is part of [syntastic](https://github.com/scrooloose/syntastic).
