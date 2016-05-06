@@ -448,6 +448,7 @@ Indentation must be consistently two spaces.
 //- Invalid
 div
 <TAB>div
+```
 
 # validateLineBreaks: `"CR"` | `"LF"` | `"CRLF"`
 
