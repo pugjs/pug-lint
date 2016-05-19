@@ -449,6 +449,25 @@ Indentation must be consistently two spaces.
 div
 <TAB>div
 
+//- Valid
+div
+<SPACE><SPACE>div
+```
+
+## e.g.: `"\t"`
+
+Indentation must be consistently tabs.
+
+```jade
+//- Invalid
+div
+<SPACE><SPACE>div
+
+//- Valid
+div
+<TAB>div
+```
+
 # validateLineBreaks: `"CR"` | `"LF"` | `"CRLF"`
 
 ## e.g.: `"LF"`
