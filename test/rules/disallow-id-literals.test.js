@@ -26,6 +26,7 @@ function createTest (linter, fixturesPath) {
         assert.equal(result.length, 3)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWIDLITERALS')
         assert.equal(result[0].line, 1)
+        assert.equal(result[0].column, 4)
         assert.equal(result[1].line, 3)
         assert.equal(result[2].line, 4)
       })

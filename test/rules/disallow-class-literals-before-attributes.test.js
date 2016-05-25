@@ -26,6 +26,7 @@ function createTest (linter, fixturesPath) {
         assert.equal(result.length, 2)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWCLASSLITERALSBEFOREATTRIBUTES')
         assert.equal(result[0].line, 2)
+        assert.equal(result[0].column, 10)
       })
 
     })

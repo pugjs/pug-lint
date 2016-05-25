@@ -25,6 +25,8 @@ function createTest (linter, fixturesPath) {
 
         assert.equal(result.length, 5)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWIDATTRIBUTEWITHSTATICVALUE')
+        assert.equal(result[0].line, 6)
+        assert.equal(result[0].column, 19)
       })
 
     })

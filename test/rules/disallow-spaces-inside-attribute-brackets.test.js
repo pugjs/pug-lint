@@ -25,6 +25,8 @@ function createTest (linter, fixturesPath) {
 
         assert.equal(result.length, 10)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWSPACESINSIDEATTRIBUTEBRACKETS')
+        assert.equal(result[0].line, 3)
+        assert.equal(result[0].column, 7)
       })
 
     })

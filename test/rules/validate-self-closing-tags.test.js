@@ -25,6 +25,8 @@ function createTest (linter, fixturesPath) {
 
         assert.equal(result.length, 16)
         assert.equal(result[0].code, 'PUG:LINT_VALIDATESELFCLOSINGTAGS')
+        assert.equal(result[0].line, 20)
+        assert.equal(result[0].column, 5)
       })
 
       it('should not report any errors in XML file', function () {
