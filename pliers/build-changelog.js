@@ -25,25 +25,25 @@ function createTask (pliers) {
     }
 
     changelog.generate(packageDetails.homepage).then(function (data) {
-      var version = data.versions[0]
+      data.versions.forEach(function (version) {
+        version.changes.forEach(function (change) {
+          if (complete) return
 
-      version.changes.forEach(function (change) {
-        if (complete) return
+          var message = change.message.split('\n')[0]
 
-        var message = change.message.split('\n')[0]
+          if (message) {
+            if (semverRegex().test(message)) {
+              if (previousVersion.length) {
+                complete = true
+                return
+              }
 
-        if (message) {
-          if (semverRegex().test(message)) {
-            if (previousVersion.length) {
-              complete = true
-              return
+              previousVersion = message
+            } else if (message.match(/^[^>]/)) {
+              changes.push('* ' + message)
             }
-
-            previousVersion = message
-          } else if (message.match(/^[^>]/)) {
-            changes.push('* ' + message)
           }
-        }
+        })
       })
 
       if (previousVersion.length && previousVersion !== currentVersion) {
