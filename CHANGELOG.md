@@ -1,3 +1,15 @@
+## v2.1.8 / 2016-05-31
+
+### Highlights
+* Validating multi-line separator now handles outdents correctly
+* All rules now report column numbers for errors where appropriate
+* Adds missing portion of rule documentation for validateIndentation
+* Add information about plugin for VS Code
+* Remove duplicate rule requireSpecificAttributes from documentation
+
+### Changes
+[v2.1.7...v2.1.8](https://github.com/pugjs/pug-lint/compare/v2.1.7...v2.1.8)
+
 ## v2.1.7 / 2016-04-18
 
 ### Highlights
