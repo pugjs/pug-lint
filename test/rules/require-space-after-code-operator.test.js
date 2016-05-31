@@ -85,8 +85,15 @@ function createTest (linter, fixturesPath) {
 
         assert.equal(result.length, 9)
         assert.equal(result[0].code, 'PUG:LINT_REQUIRESPACEAFTERCODEOPERATOR')
-        assert.equal(result[0].line, 1)
-        assert.equal(result[0].column, 3)
+        assert.equal(result[0].msg, 'One space required after unbuffered code operator')
+        assert.equal(result[0].line, 9)
+        assert.equal(result[0].column, 2)
+        assert.equal(result[3].msg, 'One space required after buffered code operator')
+        assert.equal(result[3].line, 1)
+        assert.equal(result[3].column, 3)
+        assert.equal(result[7].msg, 'One space required after unescaped buffered code operator')
+        assert.equal(result[7].line, 5)
+        assert.equal(result[7].column, 4)
       })
 
     })
