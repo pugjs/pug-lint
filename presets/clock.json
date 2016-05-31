@@ -13,7 +13,9 @@
 , "disallowMultipleLineBreaks": true
 , "disallowSpaceAfterCodeOperator": null
 , "disallowSpacesInsideAttributeBrackets": true
-, "disallowSpecificAttributes": null
+, "disallowSpecificAttributes":
+  [ { "a": "name" }
+  ]
 , "disallowSpecificTags": null
 , "disallowStringConcatenation": true
 , "disallowStringInterpolation": null
@@ -28,7 +30,10 @@
 , "requireSpaceAfterCodeOperator": true
 , "requireSpacesInsideAttributeBrackets": null
 , "requireSpecificAttributes":
-  [ { "img": "alt" }
+  [ { "form": "action" }
+  , { "img": "alt" }
+  , { "input": "type" }
+  , { "input[type=submit]": "value" }
   ]
 , "requireStrictEqualityOperators": true
 , "validateAttributeQuoteMarks": "'"
