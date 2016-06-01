@@ -466,6 +466,25 @@ div.class(class='class')
 .class(class='class')
 ```
 
+# validateExtensions: `true`
+
+Pug template must use proper file extensions with inclusion and inheritance
+(`.pug`).
+
+```pug
+//- Invalid
+include a
+include a.jade
+extends a
+extends a.txt
+extends a.jade
+
+//- Valid
+include a.txt
+include a.pug
+extends a.pug
+```
+
 # validateIndentation: `int` | `"\t"`
 
 ## e.g.: `2`
