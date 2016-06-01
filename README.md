@@ -79,7 +79,7 @@ If you're using Grunt as your build system, you can use [grunt-puglint](https://
 
 ## Configuration file
 
-Options and rules can be specified in a `.pug-lintrc` or `.pug-lint.json` file, or via adding a `"pugLintConfig"` option to `package.json`.
+Options and rules can be specified in a `.pug-lintrc`, `.pug-lintrc.js`, or `.pug-lintrc.json` file, or via adding a `"pugLintConfig"` option to `package.json`.
 
 ### Options
 
