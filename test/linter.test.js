@@ -57,8 +57,8 @@ describe('linter', function () {
 
     it('should not use contradictory rules', function () {
       linter.configure(
-        { disallowSpaceAfterCodeOperator: true
-        , requireSpaceAfterCodeOperator: true }
+        { disallowClassLiteralsBeforeAttributes: true
+        , requireClassLiteralsBeforeAttributes: true }
       )
 
       assert.equal(linter.getConfiguredRules().length, 1)

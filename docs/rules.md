@@ -152,9 +152,11 @@ div
 div
 ```
 
-# disallowSpaceAfterCodeOperator: `true`
+# disallowSpaceAfterCodeOperator: `true` | `Array`
 
-No code operators (unbuffered/buffered/unescped buffered) should be followed by any spaces.
+## e.g.: `true`
+
+No code operators (`-`/`=`/`!=`) should be followed by any spaces.
 
 ```jade
 //- Invalid
@@ -164,6 +166,18 @@ p!=  'This code is <strong>not</strong> escaped'
 //- Valid
 p='This code is <escaped>'
 p!='This code is <strong>not</strong> escaped'
+```
+
+## e.g.: `[ "-" ]`
+
+No unbuffered code operators (`-`) should be followed by any spaces.
+
+```jade
+//- Invalid
+- var a = 'This is code'
+
+//- Valid
+-var a = 'This is code'
 ```
 
 # disallowSpacesInsideAttributeBrackets: `true`
@@ -307,9 +321,11 @@ Div(class='class')
 div(class='class')
 ```
 
-# requireSpaceAfterCodeOperator: `true`
+# requireSpaceAfterCodeOperator: `true` | `Array`
 
-All code operators (unbuffered/buffered/unescaped buffered) must be immediately followed by a single space.
+## e.g.: `true`
+
+All code operators (`-`/`=`/`!=`) must be immediately followed by a single space.
 
 ```jade
 //- Invalid
@@ -319,6 +335,18 @@ p!=  'This code is <strong>not</strong> escaped'
 //- Valid
 p= 'This code is <escaped>'
 p!= 'This code is <strong>not</strong> escaped'
+```
+
+## e.g.: `[ "-" ]`
+
+All unbuffered code operators (`-`) must be immediately followed by a single space.
+
+```jade
+//- Invalid
+-var a = 'This is code'
+
+//- Valid
+- var a = 'This is code'
 ```
 
 # requireSpacesInsideAttributeBrackets: `true`
