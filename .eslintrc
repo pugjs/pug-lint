@@ -3,6 +3,6 @@
   { "es6": false
   }
 , "globals":
-  {"$": true
+  { "$": true
   }
 }
