@@ -26,6 +26,8 @@ function createTask (pliers) {
 
     changelog.generate(packageDetails.homepage).then(function (data) {
       data.versions.forEach(function (version) {
+        if (complete) return
+
         version.changes.forEach(function (change) {
           if (complete) return
 
@@ -33,12 +35,12 @@ function createTask (pliers) {
 
           if (message) {
             if (semverRegex().test(message)) {
+              previousVersion = message
+
               if (previousVersion.length) {
                 complete = true
                 return
               }
-
-              previousVersion = message
             } else if (message.match(/^[^>]/)) {
               changes.push('* ' + message)
             }
