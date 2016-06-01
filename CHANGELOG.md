@@ -1,3 +1,11 @@
+## v2.1.9 / 2016-06-01
+
+### Highlights
+* Adds support to disallow/require space after individual code operator types
+
+### Changes
+[v2.1.8...v2.1.9](https://github.com/pugjs/pug-lint/compare/v2.1.8...v2.1.9)
+
 ## v2.1.8 / 2016-05-31
 
 ### Highlights
