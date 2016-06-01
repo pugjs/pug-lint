@@ -1,3 +1,11 @@
+## v2.1.10 / 2016-06-01
+
+### Highlights
+* Changes priority order, and fixes naming inconsistency, of supported config files
+
+### Changes
+[v2.1.9...v2.1.10](https://github.com/pugjs/pug-lint/compare/v2.1.9...v2.1.10)
+
 ## v2.1.9 / 2016-06-01
 
 ### Highlights
