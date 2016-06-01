@@ -98,6 +98,26 @@ function createTest (linter, fixturesPath) {
 
     })
 
+    describe('Array', function () {
+
+      before(function () {
+        linter.configure({ requireSpaceAfterCodeOperator: [ '-' ] })
+      })
+
+      it('should report missing space after unbuffered operator', function () {
+        assert.equal(linter.checkString('-This is code').length, 1)
+      })
+
+      it('should not report missing space after buffered operator', function () {
+        assert.equal(linter.checkString('p=\'This code is <escaped>\'').length, 0)
+      })
+
+      it('should not report missing space after unescaped buffered operator', function () {
+        assert.equal(linter.checkString('p!=\'This code is not <escaped>\'').length, 0)
+      })
+
+    })
+
   })
 
 }
