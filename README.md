@@ -40,7 +40,7 @@ plugin using [Package Control](https://packagecontrol.io/).
 
 ### Atom
 
-If you use Atom, you can install the [linter-jade](https://atom.io/packages/linter-jade) package.
+If you use Atom, you can install the [linter-pug](https://atom.io/packages/linter-pug) package.
 
 ### VS Code
 
