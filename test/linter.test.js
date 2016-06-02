@@ -14,6 +14,36 @@ describe('linter', function () {
       assert.equal(linter.getConfiguredRules().length, 0)
     })
 
+    it('should load extended config file by path', function () {
+      linter.configure({ extends: fixturesPath + 'config-file/json/.pug-lintrc.json' })
+
+      assert.equal(linter.getConfiguredRules().length > 0, true)
+    })
+
+    it('should load extended config file by module name', function () {
+      linter.configure({ extends: 'pug-lint-config-clock', validateSelfClosingTags: null })
+
+      assert.equal(linter.getConfiguredRules().length > 0, true)
+    })
+
+    it('should load extended config file by module short name', function () {
+      linter.configure({ extends: 'clock', validateSelfClosingTags: null })
+
+      assert.equal(linter.getConfiguredRules().length > 0, true)
+    })
+
+    it('should error for invalid extended config file by path', function () {
+      assert.throws(function () {
+        linter.configure({ extends: fixturesPath + 'nonexistent' })
+      }, /Cannot find configuration file ".*nonexistent" to extend/)
+    })
+
+    it('should error for invalid extended config file by module name', function () {
+      assert.throws(function () {
+        linter.configure({ extends: 'C:\\path\\dir\\nonexistent' })
+      }, /Cannot find module "pug-lint-config-.*nonexistent" to extend/)
+    })
+
     it('should load configured rules for a preset', function () {
       linter.configure({ preset: 'clock', validateSelfClosingTags: null })
 
