@@ -44,16 +44,10 @@ describe('linter', function () {
       }, /Cannot find module "pug-lint-config-.*nonexistent" to extend/)
     })
 
-    it('should load configured rules for a preset', function () {
-      linter.configure({ preset: 'clock', validateSelfClosingTags: null })
-
-      assert.equal(linter.getConfiguredRules().length > 0, true)
-    })
-
-    it('should error for invalid preset', function () {
+    it('should error for used of deprecated preset functionality', function () {
       assert.throws(function () {
-        linter.configure({ preset: 'nonexistent' })
-      }, /Preset "nonexistent" does not exist/)
+        linter.configure({ preset: 'clock' })
+      }, /Presets have been deprecated/)
     })
 
     it('should load additional user defined rules', function () {
@@ -67,9 +61,9 @@ describe('linter', function () {
       assert.equal(linter.getConfiguredRules().length, 2)
     })
 
-    it('should load additional user defined rules along side preset', function () {
+    it('should load additional user defined rules along side extended config file', function () {
       linter.configure(
-        { preset: 'clock'
+        { extends: 'clock'
         , additionalRules: [ fixturesPath + 'config-file/rule-*.js' ]
         , additionalRuleA: true
         , additionalRuleB: true
@@ -142,13 +136,13 @@ describe('linter', function () {
     })
 
     it('should not report errors for default excluded directory path', function () {
-      linter.configure({ 'preset': 'clock' })
+      linter.configure({ extends: 'clock' })
       assert.equal(linter.checkPath(__dirname + '/../node_modules').length, 0)
     })
 
     it('should not report errors for user defined excluded directory path', function () {
       linter.configure(
-        { preset: 'clock'
+        { extends: 'clock'
         , excludeFiles:
           [ 'node_modules/**'
           , 'test/**'

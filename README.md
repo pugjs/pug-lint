@@ -83,19 +83,11 @@ Options and rules can be specified in a `.pug-lintrc`, `.pug-lintrc.js`, or `.pu
 
 ### Options
 
-#### preset
+#### preset `deprecated`
 
-Type: `string`
+Presets have been deprecated in favour of [extending configuration files](#extends).
 
-Values: `"clock"`
-
-Presets are pre-defined sets of rules. You can specifically disable any preset rule by assigning it to null, like so:
-
-```json
-{ "preset": "clock"
-, "disallowIdLiterals": null
-}
-```
+> Instructions for those wishing to continue to use the rules defined in the deprecated `clock` preset can be found at https://github.com/pugjs/pug-lint/issues/80
 
 #### extends
 

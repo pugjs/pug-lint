@@ -19,7 +19,8 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should report missing required attributes', function () {
-        assert.equal(linter.checkString('img(title=\'title\')').length, 1)
+        assert.equal(linter.checkString('img(src=\'src\' title=\'title\')').length, 1)
+        assert.equal(linter.checkString('img').length, 1)
       })
 
       it('should not report existing attributes', function () {
