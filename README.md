@@ -87,7 +87,7 @@ Options and rules can be specified in a `.pug-lintrc`, `.pug-lintrc.js`, or `.pu
 
 Presets have been deprecated in favour of [extending configuration files](#extends).
 
-> Instructions for those wishing to continue to use the rules defined in the deprecated `clock` preset can be found at https://github.com/pugjs/pug-lint/issues/80
+> Instructions for those wishing to continue to use the rules defined in the deprecated `clock` preset can be found at https://github.com/pugjs/pug-lint/issues/80#issuecomment-223283681
 
 #### extends
 
