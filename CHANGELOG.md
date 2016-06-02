@@ -1,3 +1,13 @@
+## v2.2.0 / 2016-06-02
+
+### Highlights
+* Added support to extend configuration files from external resources such as files and modules
+* Deprecated `preset` configuration option in favour of `extends`
+* Updated to pug-lexer@2
+
+### Changes
+[v2.1.10...v2.2.0](https://github.com/pugjs/pug-lint/compare/v2.1.10...v2.2.0)
+
 ## v2.1.10 / 2016-06-01
 
 ### Highlights
