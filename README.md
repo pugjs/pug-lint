@@ -83,19 +83,47 @@ Options and rules can be specified in a `.pug-lintrc`, `.pug-lintrc.js`, or `.pu
 
 ### Options
 
-#### preset
+#### preset `deprecated`
+
+Presets have been deprecated in favour of [extending configuration files](#extends).
+
+> Instructions for those wishing to continue to use the rules defined in the deprecated `clock` preset can be found at https://github.com/pugjs/pug-lint/issues/80#issuecomment-223283681
+
+#### extends
 
 Type: `string`
 
-Values: `"clock"`
+If you want to extend a specific configuration file, you can use the `extends` property and specify the path to the file. The path can be either relative or absolute
 
-Presets are pre-defined sets of rules. You can specifically disable any preset rule by assigning it to null, like so:
+Configurations can be extended by using:
+
+1. JSON file
+2. JS file
+3. [Shareable configuration package](#shareable-configuration-packages)
+
+The extended configuration provides base rules, which can be overridden by the configuration that references it. For example:
 
 ```json
-{ "preset": "clock"
+{ "extends": "./node_modules/coding-standard/.pug-lintrc"
 , "disallowIdLiterals": null
 }
 ```
+
+You can also extend configurations using [shareable configuration packages](#shareable-configuration-packages). To do so, be sure to install the configuration package you want from npm and then use the package name, such as:
+
+```shell
+$ npm install --save-dev pug-lint-config-clock
+```
+
+```json
+{ "extends": "pug-lint-config-myrules"
+, "disallowIdLiterals": null
+}
+```
+
+In this example, the `pug-lint-config-myrules` package will be loaded as an object and used as the parent of this configuration. You can override settings from the shareable configuration package by adding them directly into your `.pug-lintrc` file.
+
+> **Note**: You can omit `pug-lint-config-` and pug-lint will automatically insert it for you
 
 #### excludeFiles
 
@@ -136,3 +164,13 @@ Some rules, if enabled at the same time, would be contradictory to one another, 
 ```
 
 In this case `requireSpaceAfterCodeOperator` is treated as null, and ignored.
+
+### Shareable configuration packages
+
+Shareable configs are simply npm packages that export a configuration object. To start, [create a Node.js module](https://docs.npmjs.com/getting-started/creating-node-modules) like you normally would. Make sure the module name begins with `pug-lint-config-`, such as `pug-lint-config-myconfig`. Create a new index.js file and export an object containing your settings:
+
+```js
+module.exports = { disallowBlockExpansion: true }
+```
+
+Once your shareable config is ready, you can [publish to npm](https://docs.npmjs.com/getting-started/publishing-npm-packages) to share with others. We recommend using the `puglint` and `puglintconfig` keywords so others can easily find your module.
