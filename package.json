@@ -69,7 +69,7 @@
     "pug-lint": "./bin/pug-lint"
   },
   "scripts": {
-    "lint": "eslint -f unix .",
+    "lint": "xo",
     "inspect": "jsinspect",
     "depcheck": "david",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
@@ -96,8 +96,6 @@
     "changelog": "^1.0.7",
     "david": "^7.0.0",
     "docco": "^0.7.0",
-    "eslint": "^2.11.1",
-    "eslint-config-xo-space": "^0.13.0",
     "istanbul": "^0.4.0",
     "jsinspect": "^0.8.0",
     "mocha": "^2.3.3",
@@ -105,7 +103,8 @@
     "pliers": "^1.2.1",
     "pug-lint-config-clock": "^1.1.0",
     "semver-regex": "^1.0.0",
-    "sinon": "^1.17.2"
+    "sinon": "^1.17.2",
+    "xo": "^0.15.1"
   },
   "xo": {
     "space": true,
