@@ -1,15 +1,10 @@
-/* istanbul ignore next */
-module.exports = tasks
+module.exports = tasks;
 
-/* istanbul ignore next */
-var glob = require('glob')
+var glob = require('glob');
+var path = require('path');
 
-/* istanbul ignore next */
-function tasks (pliers) {
-
-  // Load pliers plugins
-  glob.sync(__dirname + '/pliers/*.js').forEach(function (file) {
-    require(file)(pliers)
-  })
-
+function tasks(pliers) {
+  glob.sync(path.join(__dirname, '/pliers/*.js')).forEach(function (file) {
+    require(file)(pliers);
+  });
 }
