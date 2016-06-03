@@ -48,7 +48,7 @@ If you use VS Code, you can install the [vscode-puglint](https://marketplace.vis
 
 ### Vim
 
-jade-lint is part of [syntastic](https://github.com/scrooloose/syntastic).
+pug-lint is part of [syntastic](https://github.com/scrooloose/syntastic).
 
 If you are using [vim-plug](https://github.com/junegunn/vim-plug) to manage your
 Vim plugins (recommended), you can do:
@@ -61,10 +61,10 @@ Plug 'scrooloose/syntastic'
 :PlugInstall
 ```
 
-Then to turn the jade-linter on, you will need this line in your .vimrc.
+Then to turn the pug linter on, you will need this line in your .vimrc.
 
 ```
-let g:syntastic_jade_checkers = ['jade_lint']
+let g:syntastic_pug_checkers = ['pug_lint']
 ```
 
 ## Build system integration
