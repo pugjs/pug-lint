@@ -1,9 +1,9 @@
 module.exports = createTask;
 
-var docco = require('docco');
 var fs = require('fs');
-var glob = require('glob');
 var path = require('path');
+var docco = require('docco');
+var glob = require('glob');
 
 function createTask(pliers) {
   pliers('buildRuleDocs', function (done) {

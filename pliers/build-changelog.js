@@ -1,11 +1,11 @@
 module.exports = createTask;
 
-var changelog = require('changelog');
 var fs = require('fs');
-var moment = require('moment');
-var packageDetails = require('../package.json');
 var path = require('path');
+var changelog = require('changelog');
+var moment = require('moment');
 var semverRegex = require('semver-regex');
+var packageDetails = require('../package.json');
 
 function createTask(pliers) {
   pliers('buildChangelog', function (done) {
