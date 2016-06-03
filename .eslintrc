@@ -1,2 +1,6 @@
 { "extends": "xo-space"
+, "env":
+  { "node": true
+  , "mocha": true
+  }
 }
