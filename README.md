@@ -61,7 +61,7 @@ Plug 'scrooloose/syntastic'
 :PlugInstall
 ```
 
-Then to turn the pug linter on, you will need this line in your .vimrc.
+Then to turn the pug linter on, you will need this line in your `.vimrc`.
 
 ```
 let g:syntastic_pug_checkers = ['pug_lint']
