@@ -75,7 +75,7 @@
     "coverage": "istanbul cover ./node_modules/.bin/_mocha test",
     "docs": "pliers buildRuleDocs",
     "changelog": "pliers buildChangelog",
-    "pretest": "npm run docs && npm run lint && npm run inspect",
+    "pretest": "npm run docs && npm run lint",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rm -rf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
