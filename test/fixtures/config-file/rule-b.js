@@ -1,13 +1,11 @@
-module.exports = function () {}
+module.exports = function () {};
 
-module.exports.prototype =
-  { name: 'additionalRuleB'
+module.exports.prototype = {
+  name: 'additionalRuleB',
 
-  , configure: function () {}
+  configure: function () {},
 
-  , lint: function (file, errors) {
-
-      errors.add(this.name, 0)
-
-    }
+  lint: function (file, errors) {
+    errors.add(this.name, 0);
   }
+};
