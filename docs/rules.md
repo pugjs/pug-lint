@@ -610,3 +610,43 @@ foo/
 doctype xml
 area/
 ```
+
+# validateTemplateString: `true` | Array
+
+Validate the use of template string in Pug templates.
+
+The option can either be an array or `true`. If it is an array, it can
+contain the following strings. If it is `true` signifies all of the
+following subrules are enabled.
+
+## `'variable'`
+
+```pug
+//- Invalid
+h1= `${title}`
+
+//- Valid
+h1= title
+```
+
+## `'string'`
+
+```pug
+//- Invalid
+h1= `title`
+
+//- Valid
+h1= 'title'
+```
+
+## `'concatenation'`
+
+```pug
+//- Invalid
+h1= `title` + `text`
+h1= `title` + variable
+
+//- Valid
+h1= `titletext`
+h1= `title${variable}`
+```

@@ -1,0 +1,15 @@
+p #{`${text}`}
+p= `${text}`
+span(class=`${text}`)
+p #{`text`}
+p= `text`
+span(class=`text`)
+p #{`te${xt}` + text}
+p= "text" + `${te}xt`
+span(class=`${tex}t` + `t${ext}`)
+
+- `${text}`
+p= tagged`${text}`
+- `text`
+p= tagged`text`
+- `text` + `text`
