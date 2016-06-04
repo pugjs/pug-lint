@@ -82,6 +82,7 @@
   "dependencies": {
     "commander": "^2.9.0",
     "css-selector-parser": "^1.1.0",
+    "find-line-column": "^0.5.2",
     "glob": "^7.0.3",
     "minimatch": "^3.0.0",
     "path-is-absolute": "^1.0.0",
