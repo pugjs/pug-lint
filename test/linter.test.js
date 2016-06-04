@@ -39,7 +39,7 @@ describe('linter', function () {
 
     it('should error for invalid extended config file by module name', function () {
       assert.throws(function () {
-        linter.configure({extends: 'C:\\path\\dir\\nonexistent'});
+        linter.configure({extends: 'path\\dir\\nonexistent'});
       }, /Cannot find module "pug-lint-config-.*nonexistent" to extend/);
     });
 
