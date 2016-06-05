@@ -5,6 +5,9 @@ Pug must not contain any attribute concatenation.
 ```pug
 //- Invalid
 a(href='text ' + title) Link
+//- Invalid under `'aggressive'`
+a(href=text + title) Link
+a(href=num1 + num2) Link
 ```
 
 # disallowAttributeInterpolation: `true`
@@ -225,13 +228,15 @@ b Bold text
 i Italic text
 ```
 
-# disallowStringConcatenation: `true`
+# disallowStringConcatenation: `true` | `'aggressive'`
 
 Pug must not contain any string concatenation.
 
 ```pug
 //- Invalid
 h1= title + \'text\'
+//- Invalid under `'aggressive'`
+h1= title + text
 ```
 
 # disallowStringInterpolation: `true`
