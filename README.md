@@ -104,8 +104,9 @@ Configurations can be extended by using:
 The extended configuration provides base rules, which can be overridden by the configuration that references it. For example:
 
 ```json
-{ "extends": "./node_modules/coding-standard/.pug-lintrc"
-, "disallowIdLiterals": null
+{
+  "extends": "./node_modules/coding-standard/.pug-lintrc",
+  "disallowIdLiterals": null
 }
 ```
 
@@ -116,8 +117,9 @@ $ npm install --save-dev pug-lint-config-clock
 ```
 
 ```json
-{ "extends": "pug-lint-config-myrules"
-, "disallowIdLiterals": null
+{
+  "extends": "pug-lint-config-myrules",
+  "disallowIdLiterals": null
 }
 ```
 
@@ -129,7 +131,7 @@ In this example, the `pug-lint-config-myrules` package will be loaded as an obje
 
 Type: `Array`
 
-Default: `[ "node_modules/**" ]`
+Default: `["node_modules/**"]`
 
 Disables style checking for specified paths declared with glob patterns.
 
@@ -140,7 +142,8 @@ Type: `Array`
 Array of file path matching patterns to load additional rules from, e.g.:
 
 ```json
-{ "additionalRules": [ "project-rules/*.js" ]
+{
+  "additionalRules": ["project-rules/*.js"]
 }
 ```
 
@@ -151,15 +154,17 @@ Array of file path matching patterns to load additional rules from, e.g.:
 You can specifically disable any rule by omitting it from your `.pug-lintrc` config file or by assigning it to null, like so:
 
 ```json
-{ "disallowBlockExpansion": null
+{
+  "disallowBlockExpansion": null
 }
 ```
 
 Some rules, if enabled at the same time, would be contradictory to one another, such as:
 
 ```json
-{ "disallowSpaceAfterCodeOperator": true
-, "requireSpaceAfterCodeOperator": true
+{
+  "disallowSpaceAfterCodeOperator": true,
+  "requireSpaceAfterCodeOperator": true
 }
 ```
 
@@ -170,7 +175,9 @@ In this case `requireSpaceAfterCodeOperator` is treated as null, and ignored.
 Shareable configs are simply npm packages that export a configuration object. To start, [create a Node.js module](https://docs.npmjs.com/getting-started/creating-node-modules) like you normally would. Make sure the module name begins with `pug-lint-config-`, such as `pug-lint-config-myconfig`. Create a new index.js file and export an object containing your settings:
 
 ```js
-module.exports = { disallowBlockExpansion: true }
+module.exports = {
+  disallowBlockExpansion: true
+};
 ```
 
 Once your shareable config is ready, you can [publish to npm](https://docs.npmjs.com/getting-started/publishing-npm-packages) to share with others. We recommend using the `puglint` and `puglintconfig` keywords so others can easily find your module.
