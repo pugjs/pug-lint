@@ -85,8 +85,15 @@ describe('linter', function () {
       assert.equal(linter.getConfiguredRules().length, 1);
     });
 
-    it('should no check empty strings', function () {
-      assert.equal(linter.checkString('').length, 0);
+    it('should not check empty strings', function () {
+      var results = linter.checkString('');
+      var messages = results[0].messages;
+
+      assert.equal(results.length, 1);
+      assert.equal(results[0].filePath, 'input');
+      assert.equal(results[0].errorCount, 0);
+      assert.equal(results[0].warningCount, 0);
+      assert.equal(messages.length, 0);
     });
   });
 
@@ -96,10 +103,15 @@ describe('linter', function () {
     });
 
     it('should report errors during parsing', function () {
-      var result = linter.checkFile(fixturesPath + 'invalid.pug');
+      var results = linter.checkFile(fixturesPath + 'invalid.pug');
+      var messages = results[0].messages;
 
-      assert.equal(result.length, 1);
-      assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT');
+      assert.equal(results.length, 1);
+      assert.equal(results[0].filePath, fixturesPath + 'invalid.pug');
+      assert.equal(results[0].errorCount, 1);
+      assert.equal(results[0].warningCount, 0);
+      assert.equal(messages.length, 1);
+      assert.equal(messages[0].pugError.code, 'PUG:UNEXPECTED_TEXT');
     });
   });
 
@@ -115,17 +127,36 @@ describe('linter', function () {
     });
 
     it('should report errors for file path', function () {
-      var result = linter.checkPath(fixturesPath + 'invalid.pug');
+      var results = linter.checkPath(fixturesPath + 'invalid.pug');
+      var messages = results[0].messages;
 
-      assert.equal(result.length, 1);
-      assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT');
+      assert.equal(results.length, 1);
+      assert.equal(results[0].filePath, fixturesPath + 'invalid.pug');
+      assert.equal(results[0].errorCount, 1);
+      assert.equal(results[0].warningCount, 0);
+      assert.equal(messages.length, 1);
+      assert.equal(messages[0].pugError.code, 'PUG:UNEXPECTED_TEXT');
     });
 
     it('should report errors for directory path', function () {
-      var result = linter.checkPath(fixturesPath);
+      var results = linter.checkPath(fixturesPath);
 
-      assert.equal(result.length, 2);
-      assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT');
+      assert.equal(results.length, 43);
+
+      for (var i = 0; i < results.length; i++) {
+        if (results[i].filePath === fixturesPath + 'invalid.pug') {
+          var messages = results[i].messages;
+
+          assert.equal(results[i].errorCount, 1);
+          assert.equal(results[i].warningCount, 0);
+          assert.equal(messages.length, 1);
+          assert.equal(messages[0].pugError.code, 'PUG:UNEXPECTED_TEXT');
+
+          return;
+        }
+      }
+
+      assert(false);
     });
 
     it('should not report errors for default excluded directory path', function () {
