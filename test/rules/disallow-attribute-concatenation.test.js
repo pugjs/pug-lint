@@ -22,6 +22,8 @@ function createTest(linter, fixturesPath) {
 
       it('should not report attribute interpolation', function () {
         assert.equal(linter.checkString('a(href=\'#{title}\') Link').length, 0);
+        assert.equal(linter.checkString('img(src="logo.png", alt="Logo + \'Claim\'")').length, 0);
+        assert.equal(linter.checkString('img(src="jsvar + \'.png\'")').length, 0);
       });
 
       it('should report multiple errors found in file', function () {
