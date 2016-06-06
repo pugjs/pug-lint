@@ -2,7 +2,7 @@
 
 Pug must not contain any attribute concatenation.
 
-```jade
+```pug
 //- Invalid
 a(href='text ' + title) Link
 ```
@@ -11,7 +11,7 @@ a(href='text ' + title) Link
 
 Pug must not contain any attribute interpolation operators.
 
-```jade
+```pug
 //- Invalid
 a(href='text #{title}') Link
 ```
@@ -20,7 +20,7 @@ a(href='text #{title}') Link
 
 Pug must not contain any block expansion operators.
 
-```jade
+```pug
 //- Invalid
 p: strong text
 table: tr: td text
@@ -30,7 +30,7 @@ table: tr: td text
 
 Prefer class literals over `class` attributes with static values.
 
-```jade
+```pug
 //- Invalid
 span(class='foo')
 
@@ -42,7 +42,7 @@ span.foo
 
 All attribute blocks must be written before any class literals.
 
-```jade
+```pug
 //- Invalid
 input.class(type='text')
 
@@ -54,7 +54,7 @@ input(type='text').class
 
 All ID literals must be written before any class literals.
 
-```jade
+```pug
 //- Invalid
 input.class#id(type='text')
 
@@ -66,7 +66,7 @@ input#id.class(type='text')
 
 Pug must not contain any class literals.
 
-```jade
+```pug
 //- Invalid
 .class
 
@@ -79,7 +79,7 @@ div(class='class')
 Attribute blocks must not contain any duplicates.
 And if an ID literal is present an ID attribute must not be used. Ignores class attributes.
 
-```jade
+```pug
 //- Invalid
 div(a='a' a='b')
 #id(id='id')
@@ -93,7 +93,7 @@ div(class='a', class='b')
 
 Pug must not contain any HTML text.
 
-```jade
+```pug
 //- Invalid
 <strong>html text</strong>
 p this is <strong>html</strong> text
@@ -103,7 +103,7 @@ p this is <strong>html</strong> text
 
 Prefer ID literals over `id` attributes with static values.
 
-```jade
+```pug
 //- Invalid
 span(id='foo')
 
@@ -115,7 +115,7 @@ span#id
 
 All attribute blocks must be written before any ID literals.
 
-```jade
+```pug
 //- Invalid
 input#id(type='text')
 
@@ -127,7 +127,7 @@ input(type='text')#id
 
 Pug must not contain any ID literals.
 
-```jade
+```pug
 //- Invalid
 #id
 
@@ -139,7 +139,7 @@ div(id='id')
 
 Pug must not contain multiple blank lines in a row.
 
-```jade
+```pug
 //- Invalid
 div
 
@@ -152,11 +152,13 @@ div
 div
 ```
 
-# disallowSpaceAfterCodeOperator: `true`
+# disallowSpaceAfterCodeOperator: `true` | `Array`
 
-No code operators (unbuffered/buffered/unescped buffered) should be followed by any spaces.
+## e.g.: `true`
 
-```jade
+No code operators (`-`/`=`/`!=`) should be followed by any spaces.
+
+```pug
 //- Invalid
 p= 'This code is <escaped>'
 p!=  'This code is <strong>not</strong> escaped'
@@ -166,11 +168,23 @@ p='This code is <escaped>'
 p!='This code is <strong>not</strong> escaped'
 ```
 
+## e.g.: `[ "-" ]`
+
+No unbuffered code operators (`-`) should be followed by any spaces.
+
+```pug
+//- Invalid
+- var a = 'This is code'
+
+//- Valid
+-var a = 'This is code'
+```
+
 # disallowSpacesInsideAttributeBrackets: `true`
 
 Disallows space after opening attribute bracket and before closing.
 
-```jade
+```pug
 //- Invalid
 input( type='text' name='name' value='value' )
 
@@ -184,7 +198,7 @@ input(type='text' name='name' value='value')
 
 Pug must not contain any of the attributes specified.
 
-```jade
+```pug
 //- Invalid
 span(a='a')
 div(B='b')
@@ -194,7 +208,7 @@ div(B='b')
 
 `img` tags must not contain any of the attributes specified.
 
-```jade
+```pug
 //- Invalid
 img(title='title')
 ```
@@ -205,7 +219,7 @@ Pug must not contain any of the tags specified.
 
 ## e.g.: `[ "b", "i" ]`
 
-```jade
+```pug
 //- Invalid
 b Bold text
 i Italic text
@@ -215,7 +229,7 @@ i Italic text
 
 Pug must not contain any string concatenation.
 
-```jade
+```pug
 //- Invalid
 h1= title + \'text\'
 ```
@@ -224,7 +238,7 @@ h1= title + \'text\'
 
 Pug must not contain any string interpolation operators.
 
-```jade
+```pug
 //- Invalid
 h1 #{title} text
 ```
@@ -233,7 +247,7 @@ h1 #{title} text
 
 Pug must not contain any tag interpolation operators.
 
-```jade
+```pug
 //- Invalid
 | #[strong html] text
 p #[strong html] text
@@ -247,7 +261,7 @@ Pug files should be at most the number of lines specified.
 
 All class literals must be written before any attribute blocks.
 
-```jade
+```pug
 //- Invalid
 input(type='text').class
 
@@ -259,7 +273,7 @@ input.class(type='text')
 
 All class literals must be written before any ID literals.
 
-```jade
+```pug
 //- Invalid
 input#id.class(type='text')
 
@@ -271,7 +285,7 @@ input.class#id(type='text')
 
 All ID literals must be written before any attribute blocks.
 
-```jade
+```pug
 //- Invalid
 input(type='text')#id
 
@@ -287,7 +301,7 @@ All files must end with a line feed.
 
 All attributes must be written in lower case. Files with `doctype xml` are ignored.
 
-```jade
+```pug
 //- Invalid
 div(Class='class')
 
@@ -299,7 +313,7 @@ div(class='class')
 
 All tags must be written in lower case. Files with `doctype xml` are ignored.
 
-```jade
+```pug
 //- Invalid
 Div(class='class')
 
@@ -307,11 +321,13 @@ Div(class='class')
 div(class='class')
 ```
 
-# requireSpaceAfterCodeOperator: `true`
+# requireSpaceAfterCodeOperator: `true` | `Array`
 
-All code operators (unbuffered/buffered/unescaped buffered) must be immediately followed by a single space.
+## e.g.: `true`
 
-```jade
+All code operators (`-`/`=`/`!=`) must be immediately followed by a single space.
+
+```pug
 //- Invalid
 p='This code is <escaped>'
 p!=  'This code is <strong>not</strong> escaped'
@@ -321,11 +337,23 @@ p= 'This code is <escaped>'
 p!= 'This code is <strong>not</strong> escaped'
 ```
 
+## e.g.: `[ "-" ]`
+
+All unbuffered code operators (`-`) must be immediately followed by a single space.
+
+```pug
+//- Invalid
+-var a = 'This is code'
+
+//- Valid
+- var a = 'This is code'
+```
+
 # requireSpacesInsideAttributeBrackets: `true`
 
 Requires space after opening attribute bracket and before closing.
 
-```jade
+```pug
 //- Invalid
 input(type='text' name='name' value='value')
 
@@ -339,7 +367,7 @@ input( type='text' name='name' value='value' )
 
 `img` tags must contain all of the attributes specified.
 
-```jade
+```pug
 //- Invalid
 img(src='src')
 
@@ -351,7 +379,7 @@ img(src='src' alt='alt')
 
 Requires the use of `===` and `!==` instead of `==` and `!=`.
 
-```jade
+```pug
 //- Invalid
 if true == false
 if true != false
@@ -367,7 +395,7 @@ if true !== false
 
 All attribute values must be enclosed in single quotes.
 
-```jade
+```pug
 //- Invalid
 input(type="text" name="name" value="value")
 
@@ -386,7 +414,7 @@ All attribute values must be enclosed in quote marks match the first quote mark 
 * All attributes must be immediately followed by a comma and then a space.
 * All attributes must be on the same line.
 
-```jade
+```pug
 //- Invalid
 input(type='text' name='name' value='value')
 div
@@ -404,7 +432,7 @@ input(type='text', name='name', value='value')
 * All attributes that are on the same line must be immediately followed by a space.
 * All attributes that are on different lines must be preceded by two spaces.
 
-```jade
+```pug
 //- Invalid
 input(type='text', name='name', value='value')
 div
@@ -426,7 +454,7 @@ div
 
 Checks that Pug does not contain any unnecessary `div` tags.
 
-```jade
+```pug
 //- Invalid
 div.class
 div#id
@@ -444,7 +472,7 @@ div.class(class='class')
 
 Indentation must be consistently two spaces.
 
-```jade
+```pug
 //- Invalid
 div
 <TAB>div
@@ -458,7 +486,7 @@ div
 
 Indentation must be consistently tabs.
 
-```jade
+```pug
 //- Invalid
 div
 <SPACE><SPACE>div
@@ -474,7 +502,7 @@ div
 
 All line break characters must match.
 
-```jade
+```pug
 //- Invalid
 div(class='class')<CRLF>
 .button
@@ -490,7 +518,7 @@ Checks that Pug does not contain any
 [unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements).
 Files with `doctype xml` are ignored.
 
-```jade
+```pug
 //- Invalid
 area/
 link/

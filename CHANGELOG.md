@@ -1,3 +1,41 @@
+## v2.2.0 / 2016-06-02
+
+### Highlights
+* Added support to extend configuration files from external resources such as files and modules
+* Deprecated `preset` configuration option in favour of `extends`
+* Updated to pug-lexer@2
+
+### Changes
+[v2.1.10...v2.2.0](https://github.com/pugjs/pug-lint/compare/v2.1.10...v2.2.0)
+
+## v2.1.10 / 2016-06-01
+
+### Highlights
+* Changes priority order, and fixes naming inconsistency, of supported config files
+
+### Changes
+[v2.1.9...v2.1.10](https://github.com/pugjs/pug-lint/compare/v2.1.9...v2.1.10)
+
+## v2.1.9 / 2016-06-01
+
+### Highlights
+* Adds support to disallow/require space after individual code operator types
+
+### Changes
+[v2.1.8...v2.1.9](https://github.com/pugjs/pug-lint/compare/v2.1.8...v2.1.9)
+
+## v2.1.8 / 2016-05-31
+
+### Highlights
+* Validating multi-line separator now handles outdents correctly
+* All rules now report column numbers for errors where appropriate
+* Adds missing portion of rule documentation for validateIndentation
+* Add information about plugin for VS Code
+* Remove duplicate rule requireSpecificAttributes from documentation
+
+### Changes
+[v2.1.7...v2.1.8](https://github.com/pugjs/pug-lint/compare/v2.1.7...v2.1.8)
+
 ## v2.1.7 / 2016-04-18
 
 ### Highlights

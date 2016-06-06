@@ -6,6 +6,9 @@
     { "@disable": true
     }
   , "eslint":
+    { "@disable": true
+    }
+  , "xo":
     { "@disable": false
     , "args": []
     , "excludes": []

@@ -40,7 +40,7 @@ plugin using [Package Control](https://packagecontrol.io/).
 
 ### Atom
 
-If you use Atom, you can install the [linter-jade](https://atom.io/packages/linter-jade) package.
+If you use Atom, you can install the [linter-pug](https://atom.io/packages/linter-pug) package.
 
 ### VS Code
 
@@ -48,7 +48,7 @@ If you use VS Code, you can install the [vscode-puglint](https://marketplace.vis
 
 ### Vim
 
-jade-lint is part of [syntastic](https://github.com/scrooloose/syntastic).
+pug-lint is part of [syntastic](https://github.com/scrooloose/syntastic).
 
 If you are using [vim-plug](https://github.com/junegunn/vim-plug) to manage your
 Vim plugins (recommended), you can do:
@@ -61,10 +61,10 @@ Plug 'scrooloose/syntastic'
 :PlugInstall
 ```
 
-Then to turn the jade-linter on, you will need this line in your .vimrc.
+Then to turn the pug linter on, you will need this line in your `.vimrc`.
 
 ```
-let g:syntastic_jade_checkers = ['jade_lint']
+let g:syntastic_pug_checkers = ['pug_lint']
 ```
 
 ## Build system integration
@@ -79,29 +79,59 @@ If you're using Grunt as your build system, you can use [grunt-puglint](https://
 
 ## Configuration file
 
-Options and rules can be specified in a `.pug-lintrc` or `.pug-lint.json` file, or via adding a `"pugLintConfig"` option to `package.json`.
+Options and rules can be specified in a `.pug-lintrc`, `.pug-lintrc.js`, or `.pug-lintrc.json` file, or via adding a `"pugLintConfig"` option to `package.json`.
 
 ### Options
 
-#### preset
+#### preset `deprecated`
+
+Presets have been deprecated in favour of [extending configuration files](#extends).
+
+> Instructions for those wishing to continue to use the rules defined in the deprecated `clock` preset can be found at https://github.com/pugjs/pug-lint/issues/80#issuecomment-223283681
+
+#### extends
 
 Type: `string`
 
-Values: `"clock"`
+If you want to extend a specific configuration file, you can use the `extends` property and specify the path to the file. The path can be either relative or absolute
 
-Presets are pre-defined sets of rules. You can specifically disable any preset rule by assigning it to null, like so:
+Configurations can be extended by using:
+
+1. JSON file
+2. JS file
+3. [Shareable configuration package](#shareable-configuration-packages)
+
+The extended configuration provides base rules, which can be overridden by the configuration that references it. For example:
 
 ```json
-{ "preset": "clock"
-, "disallowIdLiterals": null
+{
+  "extends": "./node_modules/coding-standard/.pug-lintrc",
+  "disallowIdLiterals": null
 }
 ```
+
+You can also extend configurations using [shareable configuration packages](#shareable-configuration-packages). To do so, be sure to install the configuration package you want from npm and then use the package name, such as:
+
+```shell
+$ npm install --save-dev pug-lint-config-clock
+```
+
+```json
+{
+  "extends": "pug-lint-config-myrules",
+  "disallowIdLiterals": null
+}
+```
+
+In this example, the `pug-lint-config-myrules` package will be loaded as an object and used as the parent of this configuration. You can override settings from the shareable configuration package by adding them directly into your `.pug-lintrc` file.
+
+> **Note**: You can omit `pug-lint-config-` and pug-lint will automatically insert it for you
 
 #### excludeFiles
 
 Type: `Array`
 
-Default: `[ "node_modules/**" ]`
+Default: `["node_modules/**"]`
 
 Disables style checking for specified paths declared with glob patterns.
 
@@ -112,7 +142,8 @@ Type: `Array`
 Array of file path matching patterns to load additional rules from, e.g.:
 
 ```json
-{ "additionalRules": [ "project-rules/*.js" ]
+{
+  "additionalRules": ["project-rules/*.js"]
 }
 ```
 
@@ -123,16 +154,30 @@ Array of file path matching patterns to load additional rules from, e.g.:
 You can specifically disable any rule by omitting it from your `.pug-lintrc` config file or by assigning it to null, like so:
 
 ```json
-{ "disallowBlockExpansion": null
+{
+  "disallowBlockExpansion": null
 }
 ```
 
 Some rules, if enabled at the same time, would be contradictory to one another, such as:
 
 ```json
-{ "disallowSpaceAfterCodeOperator": true
-, "requireSpaceAfterCodeOperator": true
+{
+  "disallowSpaceAfterCodeOperator": true,
+  "requireSpaceAfterCodeOperator": true
 }
 ```
 
 In this case `requireSpaceAfterCodeOperator` is treated as null, and ignored.
+
+### Shareable configuration packages
+
+Shareable configs are simply npm packages that export a configuration object. To start, [create a Node.js module](https://docs.npmjs.com/getting-started/creating-node-modules) like you normally would. Make sure the module name begins with `pug-lint-config-`, such as `pug-lint-config-myconfig`. Create a new index.js file and export an object containing your settings:
+
+```js
+module.exports = {
+  disallowBlockExpansion: true
+};
+```
+
+Once your shareable config is ready, you can [publish to npm](https://docs.npmjs.com/getting-started/publishing-npm-packages) to share with others. We recommend using the `puglint` and `puglintconfig` keywords so others can easily find your module.
