@@ -1,3 +1,11 @@
+## v2.2.2 / 2016-06-06
+
+## Highlights
+* CLI hot-fix
+
+### Changes
+[v2.2.1...v2.2.2](https://github.com/pugjs/pug-lint/compare/v2.2.1...v2.2.2)
+
 ## v2.2.1 / 2016-06-06
 
 ### Highlights
