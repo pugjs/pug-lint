@@ -1,3 +1,13 @@
+## v2.2.1 / 2016-06-06
+
+### Highlights
+* disallowAttributeInterpolation: More accurate handling
+* disallowAttributeContatentation:  More accurate concatenation detection
+* Adds requireStrictExtensions rule
+
+### Changes
+[v2.2.0...v2.2.1](https://github.com/pugjs/pug-lint/compare/v2.2.0...v2.2.1)
+
 ## v2.2.0 / 2016-06-02
 
 ### Highlights
