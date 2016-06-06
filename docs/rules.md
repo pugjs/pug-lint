@@ -5,6 +5,9 @@ Pug must not contain any attribute concatenation.
 ```pug
 //- Invalid
 a(href='text ' + title) Link
+//- Invalid under `'aggressive'`
+a(href=text + title) Link
+a(href=num1 + num2) Link
 ```
 
 # disallowAttributeInterpolation: `true`
@@ -14,7 +17,16 @@ Pug must not contain any attribute interpolation operators.
 ```pug
 //- Invalid
 a(href='text #{title}') Link
+//- Valid
+a(href='text \#{title}') Link
+a(href='text \\#{title}') Link
 ```
+
+## Compatibility note
+
+Attribute interpolation has already been removed from Pug v2. This rule
+helps transition from legacy "Jade" v1 code bases to Pug, but does not serve
+any real purpose in real world if Pug v2 is used.
 
 # disallowBlockExpansion: `true`
 
@@ -225,13 +237,15 @@ b Bold text
 i Italic text
 ```
 
-# disallowStringConcatenation: `true`
+# disallowStringConcatenation: `true` | `'aggressive'`
 
 Pug must not contain any string concatenation.
 
 ```pug
 //- Invalid
 h1= title + \'text\'
+//- Invalid under `'aggressive'`
+h1= title + text
 ```
 
 # disallowStringInterpolation: `true`
