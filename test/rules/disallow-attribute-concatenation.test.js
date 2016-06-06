@@ -35,6 +35,7 @@ function createTest (linter, fixturesPath) {
         assert.equal(result.length, 3)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWATTRIBUTECONCATENATION')
         assert.equal(result[0].line, 13)
+        assert.equal(result[0].column, 16)
       })
 
     })

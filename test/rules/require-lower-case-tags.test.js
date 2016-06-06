@@ -25,6 +25,8 @@ function createTest (linter, fixturesPath) {
 
         assert.equal(result.length, 6)
         assert.equal(result[0].code, 'PUG:LINT_REQUIRELOWERCASETAGS')
+        assert.equal(result[0].line, 2)
+        assert.equal(result[0].column, 6)
       })
 
       it('should not report errors found in XML', function () {

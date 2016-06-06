@@ -26,6 +26,7 @@ function createTest (linter, fixturesPath) {
         assert.equal(result.length, 6)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWBLOCKEXPANSION')
         assert.equal(result[0].line, 4)
+        assert.equal(result[0].column, 5)
         assert.equal(result[1].line, 6)
         assert.equal(result[2].line, 6)
         assert.equal(result[3].line, 8)

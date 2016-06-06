@@ -25,6 +25,8 @@ function createTest (linter, fixturesPath) {
 
         assert.equal(result.length, 1)
         assert.equal(result[0].code, 'PUG:LINT_MAXIMUMNUMBEROFLINES')
+        assert.equal(result[0].line, 4)
+        assert.equal(result[0].column, undefined)
       })
 
     })

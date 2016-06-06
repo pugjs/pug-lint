@@ -26,6 +26,7 @@ function createTest (linter, fixturesPath) {
         assert.equal(result.length, 6)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWSTRINGINTERPOLATION')
         assert.equal(result[0].line, 6)
+        assert.equal(result[0].column, 4)
       })
 
     })

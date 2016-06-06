@@ -32,6 +32,7 @@ function createTest (linter, fixturesPath) {
         assert.equal(result.length, 3)
         assert.equal(result[0].code, 'PUG:LINT_REQUIRESPECIFICATTRIBUTES')
         assert.equal(result[0].line, 2)
+        assert.equal(result[0].column, 1)
         assert.equal(result[1].line, 3)
         assert.equal(result[2].line, 5)
       })

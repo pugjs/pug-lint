@@ -26,6 +26,7 @@ function createTest (linter, fixturesPath) {
         assert.equal(result.length, 4)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWTAGINTERPOLATION')
         assert.equal(result[0].line, 2)
+        assert.equal(result[0].column, 5)
         assert.equal(result[1].line, 3)
         assert.equal(result[2].line, 5)
         assert.equal(result[3].line, 6)

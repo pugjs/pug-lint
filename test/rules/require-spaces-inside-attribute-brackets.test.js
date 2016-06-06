@@ -17,7 +17,7 @@ function createTest (linter, fixturesPath) {
       })
 
       it('should not report spaces inside attribute brackets', function () {
-        assert.equal(linter.checkString('input( type=\'text\' name=\'name\' checked )').length, 0)
+        assert.equal(linter.checkString('input(  type=\'text\' name=\'name\' checked )').length, 0)
       })
 
       it('should report multiple errors found in file', function () {
@@ -25,6 +25,10 @@ function createTest (linter, fixturesPath) {
 
         assert.equal(result.length, 12)
         assert.equal(result[0].code, 'PUG:LINT_REQUIRESPACESINSIDEATTRIBUTEBRACKETS')
+        assert.equal(result[0].line, 1)
+        assert.equal(result[0].column, 7)
+        assert.equal(result[6].line, 1)
+        assert.equal(result[6].column, 38)
       })
 
     })

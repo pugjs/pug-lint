@@ -26,6 +26,7 @@ function createTest (linter, fixturesPath) {
         assert.equal(result.length, 5)
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWMULTIPLELINEBREAKS')
         assert.equal(result[0].line, 9)
+        assert.equal(result[0].column, undefined)
         assert.equal(result[1].line, 10)
         assert.equal(result[2].line, 15)
         assert.equal(result[3].line, 26)
