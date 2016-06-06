@@ -2,7 +2,7 @@ module.exports = createTest;
 
 var assert = require('assert');
 
-function createTest(linter, fixturesPath) {
+function createTest(linter, fixturesPath, test) {
   describe('disallowAttributeInterpolation', function () {
     describe('true', function () {
       before(function () {
@@ -10,11 +10,12 @@ function createTest(linter, fixturesPath) {
       });
 
       it('should report attribute interpolation', function () {
-        assert.equal(linter.checkString('a(href=\'#{title}\') Link').length, 1);
+        test('a(href=\'#{title}\') Link', 1, 9);
+        test('a(href=\'\'\n + \'#{title}\') Link', 2, 5);
       });
 
       it('should not report attribute concatenation', function () {
-        assert.equal(linter.checkString('a(href=\'text \' + title) Link').length, 0);
+        test('a(href=\'text \' + title) Link');
       });
 
       it('should report multiple errors found in file', function () {
