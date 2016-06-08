@@ -5,7 +5,7 @@ An unopinionated and configurable linter and style checker for Pug (formerly Jad
 > v2 under active development. Watch this space as issues are fixed, and the [rules roll in](https://github.com/pugjs/pug-lint/issues/3) :rainbow::rabbit:
 
 [![build status](https://img.shields.io/travis/pugjs/pug-lint/master.svg)](https://travis-ci.org/pugjs/pug-lint)
-[![coverage status](https://img.shields.io/coveralls/pugjs/pug-lint/master.svg)](https://coveralls.io/github/pugjs/pug-lint)
+[![coverage status](https://img.shields.io/codecov/c/github/pugjs/pug-lint/master.svg)](https://codecov.io/gh/pugjs/pug-lint)
 [![dependency status](https://img.shields.io/david/pugjs/pug-lint.svg)](https://david-dm.org/pugjs/pug-lint)
 [![npm](https://img.shields.io/npm/v/pug-lint.svg)](https://www.npmjs.com/package/pug-lint)
 
