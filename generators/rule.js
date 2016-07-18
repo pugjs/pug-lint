@@ -1,5 +1,5 @@
 var path = require('path');
-var sentenceCase = require('sentence-case');
+var noCase = require('no-case');
 var camelCase = require('camel-case');
 var generators = require('yeoman-generator');
 
