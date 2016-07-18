@@ -1,3 +1,14 @@
+## v2.3.0 / 2016-07-18
+
+### Highlights
+* Optimize ignoring directories
+* Add validateTemplateString rule
+* Add disallow template string rules
+* Add disallowLegacyMixinCall rule
+
+### Changes
+[v2.2.2...v2.3.0](https://github.com/pugjs/pug-lint/compare/v2.2.2...v2.3.0)
+
 ## v2.2.2 / 2016-06-06
 
 ## Highlights
