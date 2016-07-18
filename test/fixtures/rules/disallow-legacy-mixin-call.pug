@@ -1,0 +1,25 @@
++myMixin(variable)
+
+mixin myMixin(variable)
+
++myMixin(variable)
+  p Yay
+
+mixin myMixin(variable)
+  p Yay
+
+div
+  +myMixin(variable)
+  p Yay
+
+div
+  mixin myMixin(variable)
+  p Nay
+
+div
+  +myMixin(variable)
+    p Yay
+
+div
+  mixin myMixin(variable)
+    p Yay

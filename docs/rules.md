@@ -147,6 +147,26 @@ Pug must not contain any ID literals.
 div(id='id')
 ```
 
+# disallowLegacyMixinCall: `true`
+
+The Pug template must not contain legacy mixin call.
+
+```pug
+//- Invalid
+mixin myMixin(arg)
+
+//- Valid mixin call
++myMixin(arg)
+
+//- Valid mixin call with block attached
++myMixin(arg)
+  p Hey
+
+//- Valid mixin definition
+mixin myMixin(arg)
+  p Hey
+```
+
 # disallowMultipleLineBreaks: `true`
 
 Pug must not contain multiple blank lines in a row.
