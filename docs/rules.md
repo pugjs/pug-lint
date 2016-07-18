@@ -28,6 +28,29 @@ Attribute interpolation has already been removed from Pug v2. This rule
 helps transition from legacy "Jade" v1 code bases to Pug, but does not serve
 any real purpose in real world if Pug v2 is used.
 
+# disallowAttributeTemplateString: `true` | `'all'`
+
+Pug must not contain template strings in attributes. `true` only fails when
+the attribute is a template string; `'all'` fails when template strings are
+used at all.
+
+## e.g. `true`
+
+```pug
+//- Invalid
+a(href=`https://${site}`) Link
+
+//- Valid
+a(href=getLink(`https://${site}`)) Link
+```
+
+## e.g. `'all'`
+
+```pug
+//- Invalid
+a(href=getLink(`https://${site}`)) Link
+```
+
 # disallowBlockExpansion: `true`
 
 Pug must not contain any block expansion operators.
@@ -285,6 +308,29 @@ Pug must not contain any tag interpolation operators.
 //- Invalid
 | #[strong html] text
 p #[strong html] text
+```
+
+# disallowTemplateString: `true` | `'all'`
+
+Pug must not contain template strings. `true` only fails when a template
+string is used directly; `'all'` fails when template strings are used at
+all.
+
+## e.g. `true`
+
+```pug
+//- Invalid
+h1= `${title} text`
+
+//- Valid
+h1= translate(`${title} text`)
+```
+
+## e.g. `'all'`
+
+```pug
+//- Invalid
+h1= translate(`${title} text`)
 ```
 
 # maximumNumberOfLines: `int`
@@ -583,4 +629,44 @@ foo/
 
 doctype xml
 area/
+```
+
+# validateTemplateString: `true` | Array
+
+Validate the use of template string in Pug templates.
+
+The option can either be an array or `true`. If it is an array, it can
+contain the following strings. If it is `true` signifies all of the
+following subrules are enabled.
+
+## `'variable'`
+
+```pug
+//- Invalid
+h1= `${title}`
+
+//- Valid
+h1= title
+```
+
+## `'string'`
+
+```pug
+//- Invalid
+h1= `title`
+
+//- Valid
+h1= 'title'
+```
+
+## `'concatenation'`
+
+```pug
+//- Invalid
+h1= `title` + `text`
+h1= `title` + variable
+
+//- Valid
+h1= `titletext`
+h1= `title${variable}`
 ```
