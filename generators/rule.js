@@ -62,7 +62,7 @@ module.exports = generators.Base.extend({
       }
     ]).then(function (answers) {
       var purpose = answers.verb + ' ' + answers.thing;
-      this.filename = sentenceCase(purpose, null, '-');
+      this.filename = noCase(purpose, null, '-');
       this.optionName = camelCase(purpose);
 
       this.requirement = {
