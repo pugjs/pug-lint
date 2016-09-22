@@ -2,7 +2,7 @@ module.exports = createTest;
 
 var assert = require('assert');
 
-function createTest(linter, fixturesPath) {
+function createTest(linter) {
   describe('disallowJavaScriptCode', function () {
     describe('true', function () {
       before(function () {
@@ -15,17 +15,17 @@ function createTest(linter, fixturesPath) {
 
       it('should report JavaScript code in attribute', function () {
         assert.equal(linter.checkString('p(x=y)').length, 1);
-        assert.equal(linter.checkString("p(x=1)").length, 1);
-        assert.equal(linter.checkString("p(x=`y`)").length, 1);
-        assert.equal(linter.checkString("p(x=true)").length, 1);
+        assert.equal(linter.checkString('p(x=1)').length, 1);
+        assert.equal(linter.checkString('p(x=`y`)').length, 1);
+        assert.equal(linter.checkString('p(x=true)').length, 1);
       });
 
       it('should not report JavaScript code in attribute', function () {
         assert.equal(linter.checkString('p(x="y")').length, 0);
         assert.equal(linter.checkString('p(x="y\\"y")').length, 0);
-        assert.equal(linter.checkString("p(x='y')").length, 0);
-        assert.equal(linter.checkString("p(x='y\\'y')").length, 0);
-        assert.equal(linter.checkString("input(checked)").length, 0);
+        assert.equal(linter.checkString('p(x=\'y\')').length, 0);
+        assert.equal(linter.checkString('p(x=\'y\\\'y\')').length, 0);
+        assert.equal(linter.checkString('input(checked)').length, 0);
       });
 
       it('should report JavaScript code in each', function () {
