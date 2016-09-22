@@ -170,6 +170,20 @@ Pug must not contain any ID literals.
 div(id='id')
 ```
 
+# disallowJavaScriptCode: `true`
+
+Pug must not contain any JavaScript code.
+
+```pug
+//- Invalid
+- var someVariable = 1
+div(class=someVariable)
+div= someVariable
+if someVariable
+each item in someVariable
+while someVariable
+```
+
 # disallowLegacyMixinCall: `true`
 
 The Pug template must not contain legacy mixin call.
