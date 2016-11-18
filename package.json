@@ -74,8 +74,9 @@
     "depcheck": "david",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha test",
     "docs": "pliers buildRuleDocs",
+    "schema": "pliers buildJsonSchema",
     "changelog": "pliers buildChangelog",
-    "pretest": "npm run docs && npm run lint",
+    "pretest": "npm run docs && npm run schema && npm run lint",
     "test": "npm run coverage",
     "posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rimraf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
   },
