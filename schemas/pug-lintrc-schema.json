@@ -216,7 +216,7 @@
                 "aggressive"
             ],
             "description": "Pug must not contain any string concatenation.",
-            "documentation": "# disallowStringConcatenation: `true` | `'aggressive'`\n\nPug must not contain any string concatenation.\n\n```pug\n//- Invalid\nh1= title + \\'text\\'\n//- Invalid under `'aggressive'`\nh1= title + text\n```\n"
+            "documentation": "# disallowStringConcatenation: `true` | `'aggressive'`\n\nPug must not contain any string concatenation.\n\n```pug\n//- Invalid\nh1= title + 'text'\n//- Invalid under `'aggressive'`\nh1= title + text\n```\n"
         },
         "disallowStringInterpolation": {
             "enum": [

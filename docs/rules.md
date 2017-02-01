@@ -286,7 +286,7 @@ Pug must not contain any string concatenation.
 
 ```pug
 //- Invalid
-h1= title + \'text\'
+h1= title + 'text'
 //- Invalid under `'aggressive'`
 h1= title + text
 ```

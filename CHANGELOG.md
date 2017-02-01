@@ -1,3 +1,21 @@
+## v2.4.0 / 2017-02-01
+
+### Highlights
+* Merge pull request #121 from cspotcode/feature/json-schema
+* Merge pull request #117 from pandora2000/bug/my-fix-branch
+* Merge pull request #122 from cspotcode/patch-1
+* Merge pull request #113 from jackbrewer/patch-1
+* Fixes documentation
+* Adds build script to regenerate full schema from rule schemas and docs
+* Adds options schema to each rule
+* Adds JSON schema for .pug-lintrc configuration
+* Escape asterisk and other regexp reserved characters for attribute match pattern for validate-attribute-separator
+* Corrects message for requireLowerCaseAttributes
+* Update outdated dependencies (#109)
+
+### Changes
+[v2.3.0...v2.4.0](https://github.com/pugjs/pug-lint/compare/v2.3.0...v2.4.0)
+
 ## v2.3.0 / 2016-07-18
 
 ### Highlights
