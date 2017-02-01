@@ -21,6 +21,10 @@ module.exports = function () {};
 module.exports.prototype = {
   name: '<%- optionName %>',
 
+  schema: {
+    enum: [null, true]
+  },
+
   configure: function (options) {
 <% if (optionsType === 'true') { -%>
     utils.validateTrueOptions(this.name, options);

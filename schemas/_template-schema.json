@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "properties": {
+        "extends": {
+            "description": "If you want to extend a specific configuration file, you can use the extends property and specify the path to the file. The path can be either relative or absolute.",
+            "type": "string"
+        },
+        "excludeFiles": {
+            "description": "Disables style checking for specified paths declared with glob patterns.",
+            "default": ["node_modules/**"],
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "additionalRules": {
+          "description": "Array of file path matching patterns to load additional rules from.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}
