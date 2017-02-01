@@ -29,6 +29,12 @@ function createTest(linter, fixturesPath) {
         assert.equal(result[1].line, 3);
         assert.equal(result[1].column, 30);
       });
+
+      it('should not raise error on attribute having asterisk mark in name', function () {
+        assert.doesNotThrow(function () {
+          linter.checkString('input(*ngIf=\'editing\' type=\'text\' name=\'name\' value=\'value\')');
+        }, /Invalid regular expression/);
+      });
     });
 
     describe('comma', function () {
