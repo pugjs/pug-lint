@@ -243,6 +243,14 @@
             "description": "Pug must not contain template strings. `true` only fails when a template\nstring is used directly; `'all'` fails when template strings are used at\nall.",
             "documentation": "# disallowTemplateString: `true` | `'all'`\n\nPug must not contain template strings. `true` only fails when a template\nstring is used directly; `'all'` fails when template strings are used at\nall.\n\n## e.g. `true`\n\n```pug\n//- Invalid\nh1= `${title} text`\n\n//- Valid\nh1= translate(`${title} text`)\n```\n\n## e.g. `'all'`\n\n```pug\n//- Invalid\nh1= translate(`${title} text`)\n```\n"
         },
+        "disallowTrailingSpaces": {
+            "enum": [
+                null,
+                true
+            ],
+            "description": "Lines in Pug file must not contain useless spaces at the end.",
+            "documentation": "# disallowTrailingSpaces: `true`\n\nLines in Pug file must not contain useless spaces at the end.\n"
+        },
         "maximumLineLength": {
             "type": [
                 "null",
