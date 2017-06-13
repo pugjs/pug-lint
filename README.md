@@ -180,4 +180,4 @@ module.exports = {
 };
 ```
 
-Once your shareable config is ready, you can [publish to npm](https://docs.npmjs.com/getting-started/publishing-npm-packages) to share with others. We recommend using the `puglint` and `puglintconfig` keywords so others can easily find your module.
+Once your shareable config is ready, you can [publish to npm](https://docs.npmjs.com/getting-started/publishing-npm-packages) to share with others. We recommend using the [`puglint`](https://www.npmjs.com/browse/keyword/puglint) and [`puglintconfig`](https://www.npmjs.com/browse/keyword/puglintconfig) keywords so others can easily find your module.
