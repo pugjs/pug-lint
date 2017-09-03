@@ -333,6 +333,10 @@ h1= translate(`${title} text`)
 h1= translate(`${title} text`)
 ```
 
+# disallowTrailingSpaces: `true`
+
+Lines in Pug file must not contain useless spaces at the end.
+
 # maximumLineLength: `int`
 
 ## e.g.: `80`
