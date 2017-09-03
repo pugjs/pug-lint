@@ -333,6 +333,12 @@ h1= translate(`${title} text`)
 h1= translate(`${title} text`)
 ```
 
+# maximumLineLength: `int`
+
+## e.g.: `80`
+
+Lines in Pug file must not exceed the specified length.
+
 # maximumNumberOfLines: `int`
 
 Pug files should be at most the number of lines specified.
