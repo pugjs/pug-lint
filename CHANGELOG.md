@@ -1,3 +1,14 @@
+## v2.5.0 / 2017-09-03
+
+### Highlights
+* Add disallowTrailingSpaces rule
+* docs: version 2 is already out
+* docs: link keywords to npmjs.com
+* Add maximumLineLength rule
+
+### Changes
+[v2.4.0...v2.5.0](https://github.com/pugjs/pug-lint/compare/v2.4.0...v2.5.0)
+
 ## v2.4.0 / 2017-02-01
 
 ### Highlights
