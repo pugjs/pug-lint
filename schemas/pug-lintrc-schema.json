@@ -56,12 +56,27 @@
             "documentation": "# disallowBlockExpansion: `true`\n\nPug must not contain any block expansion operators.\n\n```pug\n//- Invalid\np: strong text\ntable: tr: td text\n```\n"
         },
         "disallowClassAttributeWithStaticValue": {
-            "enum": [
-                null,
-                true
+            "anyOf": [
+                {
+                    "enum": [
+                        null,
+                        true
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "allowTokens": {
+                            "type": "array"
+                        },
+                        "denyTokens": {
+                            "type": "array"
+                        }
+                    }
+                }
             ],
             "description": "Prefer class literals over `class` attributes with static values.",
-            "documentation": "# disallowClassAttributeWithStaticValue: `true`\n\nPrefer class literals over `class` attributes with static values.\n\n```pug\n//- Invalid\nspan(class='foo')\n\n//- Valid\nspan.foo\n```\n"
+            "documentation": "# disallowClassAttributeWithStaticValue: `true` | `object`\n\nPrefer class literals over `class` attributes with static values.\n\n## e.g.: `true`\n```pug\n//- Invalid\nspan(class='foo')\n\n//- Valid\nspan.foo\n```\n\n## e.g. `{ denyTokens: ['::'] }`\n```pug\n//- Invalid\nspan(class='sth::sth-else')\n\n//- Valid\nspan(class='sth:sth-else')\n```\n\n## e.g. `{ allowTokens: ['{'] }`\n```pug\n//- Invalid\nspan(class='sth::sth-else')\n\n//- Valid\nspan(class='{{::testVariable}}')\n```\n"
         },
         "disallowClassLiteralsBeforeAttributes": {
             "enum": [
@@ -104,12 +119,27 @@
             "documentation": "# disallowHtmlText: `true`\n\nPug must not contain any HTML text.\n\n```pug\n//- Invalid\n<strong>html text</strong>\np this is <strong>html</strong> text\n```\n"
         },
         "disallowIdAttributeWithStaticValue": {
-            "enum": [
-                null,
-                true
+            "anyOf": [
+                {
+                    "enum": [
+                        null,
+                        true
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "allowTokens": {
+                            "type": "array"
+                        },
+                        "denyTokens": {
+                            "type": "array"
+                        }
+                    }
+                }
             ],
             "description": "Prefer ID literals over `id` attributes with static values.",
-            "documentation": "# disallowIdAttributeWithStaticValue: `true`\n\nPrefer ID literals over `id` attributes with static values.\n\n```pug\n//- Invalid\nspan(id='foo')\n\n//- Valid\nspan#id\n```\n"
+            "documentation": "# disallowIdAttributeWithStaticValue: `true` | `object`\n\nPrefer ID literals over `id` attributes with static values.\n\n## e.g.: `true`\n```pug\n//- Invalid\nspan(id='foo')\n\n//- Valid\nspan#foo\n```\n\n## e.g. `{ denyTokens: ['::'] }`\n```pug\n//- Invalid\nspan(id='sth::sth-else')\n\n//- Valid\nspan(id='sth:sth-else')\n```\n\n## e.g. `{ allowTokens: ['{'] }`\n```pug\n//- Invalid\nspan(id='sth::sth-else')\n\n//- Valid\nspan(id='{{::testVariable}}')\n```\n"
         },
         "disallowIdLiteralsBeforeAttributes": {
             "enum": [

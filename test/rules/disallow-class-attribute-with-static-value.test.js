@@ -26,5 +26,31 @@ function createTest(linter, fixturesPath) {
         assert.equal(result[0].column, 22);
       });
     });
+
+    describe('object', function () {
+      it('should not report class attribute with value containing allowed sub-string', function () {
+        linter.configure({disallowClassAttributeWithStaticValue: {allowTokens: ['{', '}']}});
+        assert.equal(linter.checkString('a(class="{{::sth}}-title")').length, 0);
+      });
+
+      it('should report class attribute with value containing denied sub-string', function () {
+        linter.configure({disallowClassAttributeWithStaticValue: {denyTokens: ['::']}});
+        var result = linter.checkString('a(class="{{::sth}}-title")');
+
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWCLASSATTRIBUTEWITHSTATICVALUE');
+        assert.equal(result[0].line, 1);
+        assert.equal(result[0].column, 3);
+      });
+
+      it('should prioritize `allowTokens` over `denyTokens`', function () {
+        linter.configure({
+          disallowClassAttributeWithStaticValue: {
+            allowTokens: ['::'],
+            denyTokens: ['::']
+          }
+        });
+        assert.equal(linter.checkString('a(class="{{::sth}}-title")').length, 0);
+      });
+    });
   });
 }

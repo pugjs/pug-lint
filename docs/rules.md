@@ -61,16 +61,35 @@ p: strong text
 table: tr: td text
 ```
 
-# disallowClassAttributeWithStaticValue: `true`
+# disallowClassAttributeWithStaticValue: `true` | `object`
 
 Prefer class literals over `class` attributes with static values.
 
+## e.g.: `true`
 ```pug
 //- Invalid
 span(class='foo')
 
 //- Valid
 span.foo
+```
+
+## e.g. `{ denyTokens: ['::'] }`
+```pug
+//- Invalid
+span(class='sth::sth-else')
+
+//- Valid
+span(class='sth:sth-else')
+```
+
+## e.g. `{ allowTokens: ['{'] }`
+```pug
+//- Invalid
+span(class='sth::sth-else')
+
+//- Valid
+span(class='{{::testVariable}}')
 ```
 
 # disallowClassLiteralsBeforeAttributes: `true`
@@ -134,16 +153,35 @@ Pug must not contain any HTML text.
 p this is <strong>html</strong> text
 ```
 
-# disallowIdAttributeWithStaticValue: `true`
+# disallowIdAttributeWithStaticValue: `true` | `object`
 
 Prefer ID literals over `id` attributes with static values.
 
+## e.g.: `true`
 ```pug
 //- Invalid
 span(id='foo')
 
 //- Valid
-span#id
+span#foo
+```
+
+## e.g. `{ denyTokens: ['::'] }`
+```pug
+//- Invalid
+span(id='sth::sth-else')
+
+//- Valid
+span(id='sth:sth-else')
+```
+
+## e.g. `{ allowTokens: ['{'] }`
+```pug
+//- Invalid
+span(id='sth::sth-else')
+
+//- Valid
+span(id='{{::testVariable}}')
 ```
 
 # disallowIdLiteralsBeforeAttributes: `true`
