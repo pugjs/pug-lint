@@ -53,7 +53,7 @@ function createTest(linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath);
 
-        assert.equal(result.length, 32);
+        assert.equal(result.length, 34);
         assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR');
         assert.equal(result[0].line, 2);
         assert.equal(result[0].column, 18);
@@ -76,7 +76,7 @@ function createTest(linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath);
 
-        assert.equal(result.length, 31);
+        assert.equal(result.length, 33);
         assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR');
         assert.equal(result[0].line, 2);
         assert.equal(result[0].column, 18);
@@ -99,7 +99,7 @@ function createTest(linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath);
 
-        assert.equal(result.length, 32);
+        assert.equal(result.length, 34);
         assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR');
         assert.equal(result[0].line, 2);
         assert.equal(result[0].column, 18);
@@ -122,7 +122,7 @@ function createTest(linter, fixturesPath) {
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturePath);
 
-        assert.equal(result.length, 33);
+        assert.equal(result.length, 35);
         assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR');
         assert.equal(result[0].line, 2);
         assert.equal(result[0].column, 18);

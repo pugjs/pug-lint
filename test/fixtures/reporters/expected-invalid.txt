@@ -1,9 +1,8 @@
-%dirname%invalid.pug:2:1
-    1| div
-  > 2| |
--------^
-    3| div
-    4| 
+%dirname%invalid.pug:1:4
+  > 1| div=
+----------^
+    2| div
+    3| 
 
-unexpected text "|
+unexpected text "=
 div"
