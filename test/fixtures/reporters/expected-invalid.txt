@@ -1,9 +1,6 @@
-%dirname%invalid.pug:2:1
-    1| div
-  > 2| |
--------^
-    3| div
-    4| 
+%dirname%invalid.pug:1:5
+  > 1| div=#
+-----------^
+    2| 
 
-unexpected text "|
-div"
+Syntax Error: Unexpected character '#'
