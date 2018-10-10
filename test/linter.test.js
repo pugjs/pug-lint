@@ -99,7 +99,7 @@ describe('linter', function () {
       var result = linter.checkFile(fixturesPath + 'invalid.pug');
 
       assert.equal(result.length, 1);
-      assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT');
+      assert.equal(result[0].code, 'PUG:SYNTAX_ERROR');
     });
   });
 
@@ -118,14 +118,14 @@ describe('linter', function () {
       var result = linter.checkPath(fixturesPath + 'invalid.pug');
 
       assert.equal(result.length, 1);
-      assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT');
+      assert.equal(result[0].code, 'PUG:SYNTAX_ERROR');
     });
 
     it('should report errors for directory path', function () {
       var result = linter.checkPath(fixturesPath);
 
       assert.equal(result.length, 2);
-      assert.equal(result[0].code, 'PUG:UNEXPECTED_TEXT');
+      assert.equal(result[0].code, 'PUG:SYNTAX_ERROR');
     });
 
     it('should not report errors for default excluded directory path', function () {
