@@ -123,6 +123,8 @@ $ npm install --save-dev pug-lint-config-clock
 
 In this example, the `pug-lint-config-myrules` package will be loaded as an object and used as the parent of this configuration. You can override settings from the shareable configuration package by adding them directly into your `.pug-lintrc` file.
 
+You can find config to extend on NPM using [`"pug-lint-config"` query](https://www.npmjs.com/search?q=pug-lint-config).
+
 > **Note**: You can omit `pug-lint-config-` and pug-lint will automatically insert it for you
 
 #### excludeFiles
