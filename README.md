@@ -33,7 +33,7 @@ $ pug-lint [options] <file ...>
 ### Sublime Text 3
 
 If you use SublimeLinter 3 with Sublime Text 3, you can install the
-[SublimeLinter-pug-lint](SublimeLinter/SublimeLinter-pug-lint)
+[SublimeLinter-pug-lint](https://github.com/SublimeLinter/SublimeLinter-pug-lint)
 plugin using [Package Control](https://packagecontrol.io/).
 
 ### Atom
