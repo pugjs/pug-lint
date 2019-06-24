@@ -1,3 +1,13 @@
+## v2.6.0 / 2019-06-24
+
+### Highlights
+* Update to pug-lexer@4 & co.
+* Fix problem with scoped config packages
+* Support Node.js versions 4 to 12
+
+### Changes
+[v2.5.0...v2.6.0](https://github.com/pugjs/pug-lint/compare/v2.5.0...v2.6.0)
+
 ## v2.5.0 / 2017-09-03
 
 ### Highlights
