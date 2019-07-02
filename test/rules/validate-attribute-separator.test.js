@@ -35,6 +35,23 @@ function createTest(linter, fixturesPath) {
           linter.checkString('input(*ngIf=\'editing\' type=\'text\' name=\'name\' value=\'value\')');
         }, /Invalid regular expression/);
       });
+
+      describe('with ellipsis mark in name', () => {
+        it('reports invalid attribute separator', () => {
+          const result = linter.checkString('input(type=\'text\'  ...props name=\'name\')');
+
+          assert.equal(result.length, 1);
+          assert.equal(result[0].code, 'PUG:LINT_VALIDATEATTRIBUTESEPARATOR');
+          assert.equal(result[0].line, 1);
+          assert.equal(result[0].column, 18);
+        });
+
+        it('does not report with valid separator', function () {
+          const result = linter.checkString('input(...props type=\'text\' ...props name=\'name\' value=\'value\' ...props)');
+
+          assert.equal(result.length, 0);
+        });
+      });
     });
 
     describe('comma', function () {
