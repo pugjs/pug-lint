@@ -1,10 +1,10 @@
 module.exports = tasks;
 
-var path = require('path');
-var glob = require('glob');
+const path = require('path');
+const glob = require('glob');
 
 function tasks(pliers) {
-  glob.sync(path.join(__dirname, '/pliers/*.js')).forEach(function (file) {
+  for (const file of glob.sync(path.join(__dirname, '/pliers/*.js'))) {
     require(file)(pliers);
-  });
+  }
 }

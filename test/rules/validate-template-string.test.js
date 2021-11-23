@@ -1,15 +1,15 @@
 module.exports = createTest;
 
-var assert = require('assert');
+const assert = require('assert');
 
 function createTest(linter, fixturesPath, test) {
-  describe('validateTemplateString', function () {
-    describe('variable', function () {
-      before(function () {
+  describe('validateTemplateString', () => {
+    describe('variable', () => {
+      before(() => {
         linter.configure({validateTemplateString: ['variable']});
       });
 
-      it('should report unnecessary template string', function () {
+      it('should report unnecessary template string', () => {
         test('p #{`${text}`}', 1, 5);
         test('p= `${text}`', 1, 4);
         test('span(class=`${text}`)', 1, 12);
@@ -18,8 +18,8 @@ function createTest(linter, fixturesPath, test) {
         test('p= tagged`${text}`');
       });
 
-      it('should report multiple errors found in Pug file', function () {
-        var result = linter.checkFile(fixturesPath + 'validate-template-string.pug');
+      it('should report multiple errors found in Pug file', () => {
+        const result = linter.checkFile(fixturesPath + 'validate-template-string.pug');
 
         assert.equal(result.length, 3);
         assert.equal(result[0].code, 'PUG:LINT_VALIDATETEMPLATESTRING');
@@ -28,12 +28,12 @@ function createTest(linter, fixturesPath, test) {
       });
     });
 
-    describe('string', function () {
-      before(function () {
+    describe('string', () => {
+      before(() => {
         linter.configure({validateTemplateString: ['string']});
       });
 
-      it('should report unnecessary template string', function () {
+      it('should report unnecessary template string', () => {
         test('p #{`text`}', 1, 5);
         test('p= `text`', 1, 4);
         test('span(class=`text`)', 1, 12);
@@ -42,8 +42,8 @@ function createTest(linter, fixturesPath, test) {
         test('p= tagged`text`');
       });
 
-      it('should report multiple errors found in Pug file', function () {
-        var result = linter.checkFile(fixturesPath + 'validate-template-string.pug');
+      it('should report multiple errors found in Pug file', () => {
+        const result = linter.checkFile(fixturesPath + 'validate-template-string.pug');
 
         assert.equal(result.length, 3);
         assert.equal(result[0].code, 'PUG:LINT_VALIDATETEMPLATESTRING');
@@ -52,26 +52,26 @@ function createTest(linter, fixturesPath, test) {
       });
     });
 
-    describe('concatenation', function () {
-      before(function () {
+    describe('concatenation', () => {
+      before(() => {
         linter.configure({validateTemplateString: ['concatenation']});
       });
 
-      it('should report unnecessary template string concatenation', function () {
+      it('should report unnecessary template string concatenation', () => {
         test('p #{`te${xt}` + text}', 1, 15);
         test('p= "text" + `${te}xt`', 1, 11);
         test('span(class=`${tex}t` + `t${ext}`)', 1, 22);
         test('- `text` + `text`');
       });
 
-      it('should not report other operators', function () {
+      it('should not report other operators', () => {
         test('p #{`te${xt}` - text}');
         test('p= "text" * `${te}xt`');
         test('span(class=`${tex}t` / `t${ext}`)');
       });
 
-      it('should report multiple errors found in Pug file', function () {
-        var result = linter.checkFile(fixturesPath + 'validate-template-string.pug');
+      it('should report multiple errors found in Pug file', () => {
+        const result = linter.checkFile(fixturesPath + 'validate-template-string.pug');
 
         assert.equal(result.length, 3);
         assert.equal(result[0].code, 'PUG:LINT_VALIDATETEMPLATESTRING');
@@ -80,12 +80,12 @@ function createTest(linter, fixturesPath, test) {
       });
     });
 
-    describe('true', function () {
-      before(function () {
+    describe('true', () => {
+      before(() => {
         linter.configure({validateTemplateString: true});
       });
 
-      it('should enable all subrules', function () {
+      it('should enable all subrules', () => {
         test('p #{`${text}`}', 1, 5);
         test('p= `${text}`', 1, 4);
         test('span(class=`${text}`)', 1, 12);

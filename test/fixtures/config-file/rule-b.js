@@ -3,9 +3,9 @@ module.exports = function () {};
 module.exports.prototype = {
   name: 'additionalRuleB',
 
-  configure: function () {},
+  configure() {},
 
-  lint: function (file, errors) {
+  lint(file, errors) {
     errors.add(this.name, 0);
   }
 };

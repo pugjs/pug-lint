@@ -1,24 +1,24 @@
 module.exports = createTest;
 
-var assert = require('assert');
+const assert = require('assert');
 
 function createTest(linter, fixturesPath) {
-  describe('disallowTagInterpolation', function () {
-    describe('true', function () {
-      before(function () {
+  describe('disallowTagInterpolation', () => {
+    describe('true', () => {
+      before(() => {
         linter.configure({disallowTagInterpolation: true});
       });
 
-      it('should report tag interpolation at the start', function () {
+      it('should report tag interpolation at the start', () => {
         assert.equal(linter.checkString('| #[strong html] text').length, 1);
       });
 
-      it('should report tag interpolation anywhere', function () {
+      it('should report tag interpolation anywhere', () => {
         assert.equal(linter.checkString('p #[strong html] text').length, 1);
       });
 
-      it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'disallow-tag-interpolation.pug');
+      it('should report multiple errors found in file', () => {
+        const result = linter.checkFile(fixturesPath + 'disallow-tag-interpolation.pug');
 
         assert.equal(result.length, 4);
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWTAGINTERPOLATION');

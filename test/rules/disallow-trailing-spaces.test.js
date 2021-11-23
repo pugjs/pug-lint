@@ -1,35 +1,35 @@
 module.exports = createTest;
 
-var assert = require('assert');
+const assert = require('assert');
 
 function createTest(linter) {
-  describe('disallowTrailingSpaces', function () {
-    describe('true', function () {
-      before(function () {
+  describe('disallowTrailingSpaces', () => {
+    describe('true', () => {
+      before(() => {
         linter.configure({disallowTrailingSpaces: true});
       });
 
-      var ok = 'html\n' +
-               '  head\n' +
-               '\n' +
-               '  body\n' +
-               '    div Some text.\n' +
-               '    p Footer.\n' +
-               '\n';
-      var notOk = 'html\n' +
-                  '  head \t\n' +
-                  '\t \t \n' +
-                  '  body\n' +
-                  '    div Some text. \n' +
-                  '    p Footer.\n' +
-                  ' \n';
+      const ok = 'html\n'
+               + '  head\n'
+               + '\n'
+               + '  body\n'
+               + '    div Some text.\n'
+               + '    p Footer.\n'
+               + '\n';
+      const notOk = 'html\n'
+                  + '  head \t\n'
+                  + '\t \t \n'
+                  + '  body\n'
+                  + '    div Some text. \n'
+                  + '    p Footer.\n'
+                  + ' \n';
 
-      it('should not report normal lines', function () {
+      it('should not report normal lines', () => {
         assert.equal(linter.checkString(ok).length, 0);
       });
 
-      it('should report lines with trailing spaces', function () {
-        var result = linter.checkString(notOk);
+      it('should report lines with trailing spaces', () => {
+        const result = linter.checkString(notOk);
 
         assert.equal(result.length, 4);
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWTRAILINGSPACES');

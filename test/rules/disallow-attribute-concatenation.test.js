@@ -1,15 +1,15 @@
 module.exports = createTest;
 
-var assert = require('assert');
+const assert = require('assert');
 
 function createTest(linter, fixturesPath, test) {
-  describe('disallowAttributeConcatenation', function () {
-    describe('true', function () {
-      before(function () {
+  describe('disallowAttributeConcatenation', () => {
+    describe('true', () => {
+      before(() => {
         linter.configure({disallowAttributeConcatenation: true});
       });
 
-      it('should report attribute concatenation', function () {
+      it('should report attribute concatenation', () => {
         test('a(href=\'text \' + title) Link', 1, 16);
         test('a(href=title + \'text \') Link', 1, 14);
         test('a(href=title+"text ") Link', 1, 13);
@@ -22,12 +22,12 @@ function createTest(linter, fixturesPath, test) {
         test('img(src=\'logo.png\', alt=\'+\')');
       });
 
-      it('should not report attribute as template string', function () {
+      it('should not report attribute as template string', () => {
         assert.equal(linter.checkString('a(href=`https://${link}`) Link').length, 0);
       });
 
-      it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'disallow-attribute-concatenation.pug');
+      it('should report multiple errors found in file', () => {
+        const result = linter.checkFile(fixturesPath + 'disallow-attribute-concatenation.pug');
 
         assert.equal(result.length, 3);
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWATTRIBUTECONCATENATION');
@@ -36,12 +36,12 @@ function createTest(linter, fixturesPath, test) {
       });
     });
 
-    describe('aggressive', function () {
-      before(function () {
+    describe('aggressive', () => {
+      before(() => {
         linter.configure({disallowAttributeConcatenation: 'aggressive'});
       });
 
-      it('should report attribute concatenation', function () {
+      it('should report attribute concatenation', () => {
         test('a(href=\'text \' + title) Link', 1, 16);
         test('a(href=title + \'text \') Link', 1, 14);
         test('a(href=title + "text ") Link', 1, 14);
@@ -54,12 +54,12 @@ function createTest(linter, fixturesPath, test) {
         test('img(src=\'logo.png\', alt=\'+\')');
       });
 
-      it('should not report attribute as template string', function () {
+      it('should not report attribute as template string', () => {
         assert.equal(linter.checkString('a(href=`https://${link}`) Link').length, 0);
       });
 
-      it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'disallow-attribute-concatenation.pug');
+      it('should report multiple errors found in file', () => {
+        const result = linter.checkFile(fixturesPath + 'disallow-attribute-concatenation.pug');
 
         assert.equal(result.length, 3);
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWATTRIBUTECONCATENATION');

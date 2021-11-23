@@ -1,24 +1,24 @@
 module.exports = createTest;
 
-var assert = require('assert');
+const assert = require('assert');
 
 function createTest(linter, fixturesPath) {
-  describe('disallowMultipleLineBreaks', function () {
-    describe('true', function () {
-      before(function () {
+  describe('disallowMultipleLineBreaks', () => {
+    describe('true', () => {
+      before(() => {
         linter.configure({disallowMultipleLineBreaks: true});
       });
 
-      it('should report multiple line breaks', function () {
+      it('should report multiple line breaks', () => {
         assert.equal(linter.checkString('div\r\r\r\ndiv').length, 1);
       });
 
-      it('should not report single line breaks', function () {
+      it('should not report single line breaks', () => {
         assert.equal(linter.checkString('div\rdiv\ndiv\r\ndiv').length, 0);
       });
 
-      it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'disallow-multiple-line-breaks.pug');
+      it('should report multiple errors found in file', () => {
+        const result = linter.checkFile(fixturesPath + 'disallow-multiple-line-breaks.pug');
 
         assert.equal(result.length, 5);
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWMULTIPLELINEBREAKS');

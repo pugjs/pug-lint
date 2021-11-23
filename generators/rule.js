@@ -1,17 +1,18 @@
-var path = require('path');
-var noCase = require('no-case');
-var camelCase = require('camel-case');
-var generators = require('yeoman-generator');
+const path = require('path');
+const noCase = require('no-case');
+const camelCase = require('camel-case');
+const generators = require('yeoman-generator');
 
 module.exports = generators.Base.extend({
-  constructor: function () {
+  constructor() {
+    // eslint-disable-next-line prefer-rest-params
     generators.Base.apply(this, arguments);
 
     this.destinationRoot(path.resolve(__dirname, '..'));
     this.sourceRoot(path.join(__dirname, 'rule-templates'));
   },
 
-  prompting: function () {
+  prompting() {
     return this.prompt([
       {
         type: 'list',
@@ -25,7 +26,7 @@ module.exports = generators.Base.extend({
       }, {
         type: 'input',
         name: 'thing',
-        message: function (answers) {
+        message(answers) {
           return {
             disallow: 'What your rule disallows (e.g. string interpolation)',
             require: 'What your rule requires (e.g. strict equality operators)',
@@ -36,7 +37,7 @@ module.exports = generators.Base.extend({
         type: 'input',
         name: 'negative',
         message: 'What your rule tries to prevent (e.g. non-strict equality operators)',
-        when: function (answers) {
+        when(answers) {
           return answers.verb === 'require';
         }
       }, {
@@ -56,12 +57,12 @@ module.exports = generators.Base.extend({
         type: 'input',
         name: 'optionsExpanded',
         message: 'The list of possible options (use JavaScript syntax, separated with a pipe "|"; e.g. true|\'aggresive\')',
-        when: function (answers) {
+        when(answers) {
           return answers.options === 'other';
         }
       }
-    ]).then(function (answers) {
-      var purpose = answers.verb + ' ' + answers.thing;
+    ]).then(answers => {
+      const purpose = answers.verb + ' ' + answers.thing;
       this.filename = noCase(purpose, null, '-');
       this.optionName = camelCase(purpose);
 
@@ -79,14 +80,14 @@ module.exports = generators.Base.extend({
 
       this.optionsType = answers.options;
       this.options = {
-        'true': ['true'],
+        true: ['true'],
         'true|codeSep': ['true', 'code separator'],
-        'other': (answers.optionsExpanded || '').split('|')
+        other: (answers.optionsExpanded || '').split('|')
       }[answers.options];
-    }.bind(this));
+    });
   },
 
-  writing: function () {
+  writing() {
     this.template('rule.js', 'lib/rules/' + this.filename + '.js');
     this.template('test.js', 'test/rules/' + this.filename + '.test.js');
     this.fs.write(path.resolve(this.destinationRoot(), 'test', 'fixtures', 'rules', this.filename + '.pug'), '//- ...');

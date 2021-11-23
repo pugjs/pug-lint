@@ -1,24 +1,24 @@
 module.exports = createTest;
 
-var assert = require('assert');
+const assert = require('assert');
 
 function createTest(linter, fixturesPath) {
-  describe('disallowBlockExpansion', function () {
-    describe('true', function () {
-      before(function () {
+  describe('disallowBlockExpansion', () => {
+    describe('true', () => {
+      before(() => {
         linter.configure({disallowBlockExpansion: true});
       });
 
-      it('should report block expansion operator', function () {
+      it('should report block expansion operator', () => {
         assert.equal(linter.checkString('p: strong text').length, 1);
       });
 
-      it('should report tag multiple block expansion operators', function () {
+      it('should report tag multiple block expansion operators', () => {
         assert.equal(linter.checkString('table: tr: td text').length, 2);
       });
 
-      it('should report multiple errors found in file', function () {
-        var result = linter.checkFile(fixturesPath + 'disallow-block-expansion.pug');
+      it('should report multiple errors found in file', () => {
+        const result = linter.checkFile(fixturesPath + 'disallow-block-expansion.pug');
 
         assert.equal(result.length, 6);
         assert.equal(result[0].code, 'PUG:LINT_DISALLOWBLOCKEXPANSION');

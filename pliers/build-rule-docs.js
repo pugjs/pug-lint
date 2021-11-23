@@ -1,18 +1,16 @@
 module.exports = createTask;
 
-var fs = require('fs');
-var path = require('path');
-var parseDocsFromRules = require('./parse-docs-from-rules');
+const fs = require('fs');
+const path = require('path');
+const parseDocsFromRules = require('./parse-docs-from-rules');
 
 function createTask(pliers) {
-  pliers('buildRuleDocs', function (done) {
-    var docs = parseDocsFromRules(pliers);
+  pliers('buildRuleDocs', done => {
+    const docs = parseDocsFromRules(pliers);
 
-    var concatenatedDocs = docs.map(function (doc) {
-      return doc.text;
-    }).join('\n');
+    const concatenatedDocs = docs.map(doc => doc.text).join('\n');
 
-    fs.writeFile(path.join(__dirname, '../docs/rules.md'), concatenatedDocs, 'utf8', function (error) {
+    fs.writeFile(path.join(__dirname, '../docs/rules.md'), concatenatedDocs, 'utf8', error => {
       if (error) {
         pliers.logger.error('Failed to build rule docs');
         return done(error);
