@@ -9,35 +9,35 @@ const fixturesPath = path.join(__dirname, 'fixtures/');
 const fixturesRelativePath = './test/fixtures/';
 const packageDetails = require('../package.json');
 
-describe('cli', () => {
-  function run(args, cb) {
-    const command = [bin, ...args];
-    let stdout = '';
-    let stderr = '';
-    const node = process.execPath;
-    const child = spawn(node, command);
+function run(args, cb) {
+  const command = [bin, ...args];
+  let stdout = '';
+  let stderr = '';
+  const node = process.execPath;
+  const child = spawn(node, command);
 
-    if (child.stderr) {
-      child.stderr.on('data', chunk => {
-        stderr += chunk;
-      });
-    }
-
-    if (child.stdout) {
-      child.stdout.on('data', chunk => {
-        stdout += chunk;
-      });
-    }
-
-    child.on('error', cb);
-
-    child.on('close', code => {
-      cb(null, code, stdout, stderr);
+  if (child.stderr) {
+    child.stderr.on('data', chunk => {
+      stderr += chunk;
     });
-
-    return child;
   }
 
+  if (child.stdout) {
+    child.stdout.on('data', chunk => {
+      stdout += chunk;
+    });
+  }
+
+  child.on('error', cb);
+
+  child.on('close', code => {
+    cb(null, code, stdout, stderr);
+  });
+
+  return child;
+}
+
+describe('cli', () => {
   it('should output the current version number', done => {
     const args = ['-V'];
 

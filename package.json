@@ -69,7 +69,7 @@
     "pug-lint": "./bin/pug-lint"
   },
   "scripts": {
-    "lint": "xo",
+    "lint": "eslint {lib,pliers,test,generators}/**/*.js pliers.js bin/pug-lint",
     "inspect": "jsinspect",
     "depcheck": "david",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha test",
@@ -100,6 +100,8 @@
     "changelog": "^1.0.7",
     "david": "^7.0.0",
     "docco": "^0.7.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-unicorn": "^39.0.0",
     "istanbul": "^0.4.0",
     "jsinspect": "^0.8.0",
     "mocha": "^2.3.3",
@@ -110,7 +112,6 @@
     "rimraf": "^2.5.2",
     "semver-regex": "^1.0.0",
     "sinon": "^1.17.2",
-    "xo": "^0.46.4",
     "yeoman-generator": "^0.23.3",
     "yo": "^1.8.4"
   }

@@ -13,7 +13,7 @@ function createTask(pliers) {
     for (const doc of docs) {
       const rule = require(doc.file).prototype;
       const schema = rule.schema || {};
-      schema.description = doc.text.match(/\n\n(?:## .*?\n\n)?([\s\S]*?)\n(?:\n|$)/)[1];
+      schema.description = doc.text.match(/\n\n(?:## .*?\n\n)?([\S\s]*?)\n(?:\n|$)/)[1];
       schema.documentation = doc.text;
       props[rule.name] = schema;
     }
