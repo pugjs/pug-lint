@@ -1,3 +1,3 @@
 module.exports = function () {
-  console.error('Custom reporter');
+	console.error('Custom reporter');
 };

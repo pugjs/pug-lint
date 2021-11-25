@@ -1,0 +1,52 @@
+root: true
+
+env:
+    es6: true
+    node: true
+
+extends:
+    - eslint:recommended
+    - plugin:unicorn/recommended
+    - prettier
+plugins:
+    - unicorn
+
+rules:
+    import/extensions: 0
+    node/prefer-global/process: 0
+    unicorn/explicit-length-check: 0
+    unicorn/no-array-callback-reference: 0
+    unicorn/no-array-push-push: 0
+    unicorn/no-this-assignment: 0
+    unicorn/prefer-module: 0
+    unicorn/prefer-optional-catch-binding: 0
+    unicorn/prefer-reflect-apply: 0
+    unicorn/prefer-set-has: 0
+    unicorn/prefer-string-slice: 0
+    comma-dangle:
+        - error
+        - functions: never
+    max-depth: 0
+    max-params: 0
+    no-negated-condition: 0
+    no-unused-vars:
+        - error
+        - caughtErrors: none
+
+    unicorn/no-null: 0
+    unicorn/prevent-abbreviations: 0
+    no-empty:
+        - error
+        - allowEmptyCatch: true
+
+noInlineConfig: true
+
+overrides:
+    - files: test/**/*.js
+      env:
+          mocha: true
+      rules:
+          no-prototype-builtins: 0
+
+ignorePatterns:
+    - generators/*-templates/**

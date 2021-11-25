@@ -1,6 +1,7 @@
-{ "threshold": 30
-, "identifiers": true
-, "ignore": "coverage|test"
-, "reporter": "default"
-, "suppress": 100
+{
+	"threshold": 30,
+	"identifiers": true,
+	"ignore": "coverage|test",
+	"reporter": "default",
+	"suppress": 100
 }

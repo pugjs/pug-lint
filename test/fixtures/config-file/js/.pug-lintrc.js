@@ -1,4 +1,3 @@
 module.exports =
-  // Comment
-  { 'disallowBlockExpansion': true
-  };
+	// Comment
+	{ disallowBlockExpansion: true };
