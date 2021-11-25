@@ -1,17 +1,18 @@
-{ "linters":
-  { "jshint":
-    { "@disable": true
-    }
-  , "jscs":
-    { "@disable": true
-    }
-  , "eslint":
-    { "@disable": true
-    }
-  , "xo":
-    { "@disable": false
-    , "args": []
-    , "excludes": []
-    }
-  }
+{
+	"linters": {
+		"jshint": {
+			"@disable": true
+		},
+		"jscs": {
+			"@disable": true
+		},
+		"eslint": {
+			"@disable": true
+		},
+		"xo": {
+			"@disable": false,
+			"args": [],
+			"excludes": []
+		}
+	}
 }
