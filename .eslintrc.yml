@@ -1,3 +1,5 @@
+root: true
+
 env:
     es6: true
     node: true
@@ -36,11 +38,15 @@ rules:
     no-empty:
         - error
         - allowEmptyCatch: true
-	
+
+noInlineConfig: true
+
 overrides:
     - files: test/**/*.js
       env:
-        mocha: true
+          mocha: true
+      rules:
+          no-prototype-builtins: 0
 
 ignorePatterns:
     - generators/*-templates/**

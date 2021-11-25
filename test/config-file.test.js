@@ -1,5 +1,3 @@
-/* eslint no-prototype-builtins: 0 */
-
 const assert = require('assert');
 const path = require('path');
 const configFile = require('../lib/config-file');
