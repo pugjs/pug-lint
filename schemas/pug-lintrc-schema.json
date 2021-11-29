@@ -1,472 +1,472 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema",
-    "properties": {
-        "extends": {
-            "description": "If you want to extend a specific configuration file, you can use the extends property and specify the path to the file. The path can be either relative or absolute.",
-            "type": "string"
-        },
-        "excludeFiles": {
-            "description": "Disables style checking for specified paths declared with glob patterns.",
-            "default": [
-                "node_modules/**"
-            ],
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
-        "additionalRules": {
-            "description": "Array of file path matching patterns to load additional rules from.",
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
-        },
-        "disallowAttributeConcatenation": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug must not contain any attribute concatenation.",
-            "documentation": "# disallowAttributeConcatenation: `true`\n\nPug must not contain any attribute concatenation.\n\n```pug\n//- Invalid\na(href='text ' + title) Link\n//- Invalid under `'aggressive'`\na(href=text + title) Link\na(href=num1 + num2) Link\n```\n"
-        },
-        "disallowAttributeInterpolation": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug must not contain any attribute interpolation operators.",
-            "documentation": "# disallowAttributeInterpolation: `true`\n\nPug must not contain any attribute interpolation operators.\n\n```pug\n//- Invalid\na(href='text #{title}') Link\n//- Valid\na(href='text \\#{title}') Link\na(href='text \\\\#{title}') Link\n```\n\n## Compatibility note\n\nAttribute interpolation has already been removed from Pug v2. This rule\nhelps transition from legacy \"Jade\" v1 code bases to Pug, but does not serve\nany real purpose in real world if Pug v2 is used.\n"
-        },
-        "disallowAttributeTemplateString": {
-            "enum": [
-                null,
-                true,
-                "all"
-            ],
-            "description": "Pug must not contain template strings in attributes. `true` only fails when\nthe attribute is a template string; `'all'` fails when template strings are\nused at all.",
-            "documentation": "# disallowAttributeTemplateString: `true` | `'all'`\n\nPug must not contain template strings in attributes. `true` only fails when\nthe attribute is a template string; `'all'` fails when template strings are\nused at all.\n\n## e.g. `true`\n\n```pug\n//- Invalid\na(href=`https://${site}`) Link\n\n//- Valid\na(href=getLink(`https://${site}`)) Link\n```\n\n## e.g. `'all'`\n\n```pug\n//- Invalid\na(href=getLink(`https://${site}`)) Link\n```\n"
-        },
-        "disallowBlockExpansion": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug must not contain any block expansion operators.",
-            "documentation": "# disallowBlockExpansion: `true`\n\nPug must not contain any block expansion operators.\n\n```pug\n//- Invalid\np: strong text\ntable: tr: td text\n```\n"
-        },
-        "disallowClassAttributeWithStaticValue": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Prefer class literals over `class` attributes with static values.",
-            "documentation": "# disallowClassAttributeWithStaticValue: `true`\n\nPrefer class literals over `class` attributes with static values.\n\n```pug\n//- Invalid\nspan(class='foo')\n\n//- Valid\nspan.foo\n```\n"
-        },
-        "disallowClassLiteralsBeforeAttributes": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "All attribute blocks must be written before any class literals.",
-            "documentation": "# disallowClassLiteralsBeforeAttributes: `true`\n\nAll attribute blocks must be written before any class literals.\n\n```pug\n//- Invalid\ninput.class(type='text')\n\n//- Valid\ninput(type='text').class\n```\n"
-        },
-        "disallowClassLiteralsBeforeIdLiterals": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "All ID literals must be written before any class literals.",
-            "documentation": "# disallowClassLiteralsBeforeIdLiterals: `true`\n\nAll ID literals must be written before any class literals.\n\n```pug\n//- Invalid\ninput.class#id(type='text')\n\n//- Valid\ninput#id.class(type='text')\n```\n"
-        },
-        "disallowClassLiterals": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug must not contain any class literals.",
-            "documentation": "# disallowClassLiterals: `true`\n\nPug must not contain any class literals.\n\n```pug\n//- Invalid\n.class\n\n//- Valid\ndiv(class='class')\n```\n"
-        },
-        "disallowDuplicateAttributes": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Attribute blocks must not contain any duplicates.\nAnd if an ID literal is present an ID attribute must not be used. Ignores class attributes.",
-            "documentation": "# disallowDuplicateAttributes: `true`\n\nAttribute blocks must not contain any duplicates.\nAnd if an ID literal is present an ID attribute must not be used. Ignores class attributes.\n\n```pug\n//- Invalid\ndiv(a='a' a='b')\n#id(id='id')\n\n//- Valid\ndiv(class='a', class='b')\n.class(class='class')\n```\n"
-        },
-        "disallowHtmlText": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug must not contain any HTML text.",
-            "documentation": "# disallowHtmlText: `true`\n\nPug must not contain any HTML text.\n\n```pug\n//- Invalid\n<strong>html text</strong>\np this is <strong>html</strong> text\n```\n"
-        },
-        "disallowIdAttributeWithStaticValue": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Prefer ID literals over `id` attributes with static values.",
-            "documentation": "# disallowIdAttributeWithStaticValue: `true`\n\nPrefer ID literals over `id` attributes with static values.\n\n```pug\n//- Invalid\nspan(id='foo')\n\n//- Valid\nspan#id\n```\n"
-        },
-        "disallowIdLiteralsBeforeAttributes": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "All attribute blocks must be written before any ID literals.",
-            "documentation": "# disallowIdLiteralsBeforeAttributes: `true`\n\nAll attribute blocks must be written before any ID literals.\n\n```pug\n//- Invalid\ninput#id(type='text')\n\n//- Valid\ninput(type='text')#id\n```\n"
-        },
-        "disallowIdLiterals": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug must not contain any ID literals.",
-            "documentation": "# disallowIdLiterals: `true`\n\nPug must not contain any ID literals.\n\n```pug\n//- Invalid\n#id\n\n//- Valid\ndiv(id='id')\n```\n"
-        },
-        "disallowLegacyMixinCall": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "The Pug template must not contain legacy mixin call.",
-            "documentation": "# disallowLegacyMixinCall: `true`\n\nThe Pug template must not contain legacy mixin call.\n\n```pug\n//- Invalid\nmixin myMixin(arg)\n\n//- Valid mixin call\n+myMixin(arg)\n\n//- Valid mixin call with block attached\n+myMixin(arg)\n  p Hey\n\n//- Valid mixin definition\nmixin myMixin(arg)\n  p Hey\n```\n"
-        },
-        "disallowMultipleLineBreaks": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug must not contain multiple blank lines in a row.",
-            "documentation": "# disallowMultipleLineBreaks: `true`\n\nPug must not contain multiple blank lines in a row.\n\n```pug\n//- Invalid\ndiv\n\n\ndiv\n\n//- Valid\ndiv\n\ndiv\n```\n"
-        },
-        "disallowSpaceAfterCodeOperator": {
-            "anyOf": [
-                {
-                    "enum": [
-                        null,
-                        true
-                    ]
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "enum": [
-                            "-",
-                            "=",
-                            "!="
-                        ]
-                    }
-                }
-            ],
-            "description": "No code operators (`-`/`=`/`!=`) should be followed by any spaces.",
-            "documentation": "# disallowSpaceAfterCodeOperator: `true` | `Array`\n\n## e.g.: `true`\n\nNo code operators (`-`/`=`/`!=`) should be followed by any spaces.\n\n```pug\n//- Invalid\np= 'This code is <escaped>'\np!=  'This code is <strong>not</strong> escaped'\n\n//- Valid\np='This code is <escaped>'\np!='This code is <strong>not</strong> escaped'\n```\n\n## e.g.: `[ \"-\" ]`\n\nNo unbuffered code operators (`-`) should be followed by any spaces.\n\n```pug\n//- Invalid\n- var a = 'This is code'\n\n//- Valid\n-var a = 'This is code'\n```\n"
-        },
-        "disallowSpacesInsideAttributeBrackets": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Disallows space after opening attribute bracket and before closing.",
-            "documentation": "# disallowSpacesInsideAttributeBrackets: `true`\n\nDisallows space after opening attribute bracket and before closing.\n\n```pug\n//- Invalid\ninput( type='text' name='name' value='value' )\n\n//- Valid\ninput(type='text' name='name' value='value')\n```\n"
-        },
-        "disallowSpecificAttributes": {
-            "type": [
-                "null",
-                "string",
-                "array"
-            ],
-            "items": {
-                "type": [
-                    "object",
-                    "string"
-                ],
-                "additionalProperties": {
-                    "type": [
-                        "string",
-                        "array"
-                    ],
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "description": "Pug must not contain any of the attributes specified.",
-            "documentation": "# disallowSpecificAttributes: `string` | `Array`\n\n## e.g.: `\"a\"` OR `[ \"A\", \"b\" ]`\n\nPug must not contain any of the attributes specified.\n\n```pug\n//- Invalid\nspan(a='a')\ndiv(B='b')\n```\n\n## e.g.: `[ { img: [ \"title\" ] } ]`\n\n`img` tags must not contain any of the attributes specified.\n\n```pug\n//- Invalid\nimg(title='title')\n```\n"
-        },
-        "disallowSpecificTags": {
-            "type": [
-                "null",
-                "string",
-                "array"
-            ],
-            "items": {
-                "type": "string"
-            },
-            "description": "Pug must not contain any of the tags specified.",
-            "documentation": "# disallowSpecificTags: `string` | `Array`\n\nPug must not contain any of the tags specified.\n\n## e.g.: `[ \"b\", \"i\" ]`\n\n```pug\n//- Invalid\nb Bold text\ni Italic text\n```\n"
-        },
-        "disallowStringConcatenation": {
-            "enum": [
-                null,
-                true,
-                "aggressive"
-            ],
-            "description": "Pug must not contain any string concatenation.",
-            "documentation": "# disallowStringConcatenation: `true` | `'aggressive'`\n\nPug must not contain any string concatenation.\n\n```pug\n//- Invalid\nh1= title + 'text'\n//- Invalid under `'aggressive'`\nh1= title + text\n```\n"
-        },
-        "disallowStringInterpolation": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug must not contain any string interpolation operators.",
-            "documentation": "# disallowStringInterpolation: `true`\n\nPug must not contain any string interpolation operators.\n\n```pug\n//- Invalid\nh1 #{title} text\n```\n"
-        },
-        "disallowTagInterpolation": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug must not contain any tag interpolation operators.",
-            "documentation": "# disallowTagInterpolation: `true`\n\nPug must not contain any tag interpolation operators.\n\n```pug\n//- Invalid\n| #[strong html] text\np #[strong html] text\n```\n"
-        },
-        "disallowTemplateString": {
-            "enum": [
-                null,
-                true,
-                "all"
-            ],
-            "description": "Pug must not contain template strings. `true` only fails when a template\nstring is used directly; `'all'` fails when template strings are used at\nall.",
-            "documentation": "# disallowTemplateString: `true` | `'all'`\n\nPug must not contain template strings. `true` only fails when a template\nstring is used directly; `'all'` fails when template strings are used at\nall.\n\n## e.g. `true`\n\n```pug\n//- Invalid\nh1= `${title} text`\n\n//- Valid\nh1= translate(`${title} text`)\n```\n\n## e.g. `'all'`\n\n```pug\n//- Invalid\nh1= translate(`${title} text`)\n```\n"
-        },
-        "disallowTrailingSpaces": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Lines in Pug file must not contain useless spaces at the end.",
-            "documentation": "# disallowTrailingSpaces: `true`\n\nLines in Pug file must not contain useless spaces at the end.\n"
-        },
-        "maximumLineLength": {
-            "type": [
-                "null",
-                "integer"
-            ],
-            "description": "Lines in Pug file must not exceed the specified length.",
-            "documentation": "# maximumLineLength: `int`\n\n## e.g.: `80`\n\nLines in Pug file must not exceed the specified length.\n"
-        },
-        "maximumNumberOfLines": {
-            "type": [
-                "null",
-                "integer"
-            ],
-            "description": "Pug files should be at most the number of lines specified.",
-            "documentation": "# maximumNumberOfLines: `int`\n\nPug files should be at most the number of lines specified.\n"
-        },
-        "requireClassLiteralsBeforeAttributes": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "All class literals must be written before any attribute blocks.",
-            "documentation": "# requireClassLiteralsBeforeAttributes: `true`\n\nAll class literals must be written before any attribute blocks.\n\n```pug\n//- Invalid\ninput(type='text').class\n\n//- Valid\ninput.class(type='text')\n```\n"
-        },
-        "requireClassLiteralsBeforeIdLiterals": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "All class literals must be written before any ID literals.",
-            "documentation": "# requireClassLiteralsBeforeIdLiterals: `true`\n\nAll class literals must be written before any ID literals.\n\n```pug\n//- Invalid\ninput#id.class(type='text')\n\n//- Valid\ninput.class#id(type='text')\n```\n"
-        },
-        "requireIdLiteralsBeforeAttributes": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "All ID literals must be written before any attribute blocks.",
-            "documentation": "# requireIdLiteralsBeforeAttributes: `true`\n\nAll ID literals must be written before any attribute blocks.\n\n```pug\n//- Invalid\ninput(type='text')#id\n\n//- Valid\ninput#id(type='text')\n```\n"
-        },
-        "requireLineFeedAtFileEnd": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "All files must end with a line feed.",
-            "documentation": "# requireLineFeedAtFileEnd: `true`\n\nAll files must end with a line feed.\n"
-        },
-        "requireLowerCaseAttributes": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "All attributes must be written in lower case. Files with `doctype xml` are ignored.",
-            "documentation": "# requireLowerCaseAttributes: `true`\n\nAll attributes must be written in lower case. Files with `doctype xml` are ignored.\n\n```pug\n//- Invalid\ndiv(Class='class')\n\n//- Valid\ndiv(class='class')\n```\n"
-        },
-        "requireLowerCaseTags": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "All tags must be written in lower case. Files with `doctype xml` are ignored.",
-            "documentation": "# requireLowerCaseTags: `true`\n\nAll tags must be written in lower case. Files with `doctype xml` are ignored.\n\n```pug\n//- Invalid\nDiv(class='class')\n\n//- Valid\ndiv(class='class')\n```\n"
-        },
-        "requireSpaceAfterCodeOperator": {
-            "anyOf": [
-                {
-                    "enum": [
-                        null,
-                        true
-                    ]
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "enum": [
-                            "-",
-                            "=",
-                            "!="
-                        ]
-                    }
-                }
-            ],
-            "description": "All code operators (`-`/`=`/`!=`) must be immediately followed by a single space.",
-            "documentation": "# requireSpaceAfterCodeOperator: `true` | `Array`\n\n## e.g.: `true`\n\nAll code operators (`-`/`=`/`!=`) must be immediately followed by a single space.\n\n```pug\n//- Invalid\np='This code is <escaped>'\np!=  'This code is <strong>not</strong> escaped'\n\n//- Valid\np= 'This code is <escaped>'\np!= 'This code is <strong>not</strong> escaped'\n```\n\n## e.g.: `[ \"-\" ]`\n\nAll unbuffered code operators (`-`) must be immediately followed by a single space.\n\n```pug\n//- Invalid\n-var a = 'This is code'\n\n//- Valid\n- var a = 'This is code'\n```\n"
-        },
-        "requireSpacesInsideAttributeBrackets": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Requires space after opening attribute bracket and before closing.",
-            "documentation": "# requireSpacesInsideAttributeBrackets: `true`\n\nRequires space after opening attribute bracket and before closing.\n\n```pug\n//- Invalid\ninput(type='text' name='name' value='value')\n\n//- Valid\ninput( type='text' name='name' value='value' )\n```\n"
-        },
-        "requireSpecificAttributes": {
-            "type": [
-                "null",
-                "array"
-            ],
-            "items": {
-                "type": "object",
-                "additionalProperties": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "description": "`img` tags must contain all of the attributes specified.",
-            "documentation": "# requireSpecificAttributes: `Array`\n\n## e.g.: `[ { img: [ \"alt\" ] } ]`\n\n`img` tags must contain all of the attributes specified.\n\n```pug\n//- Invalid\nimg(src='src')\n\n//- Valid\nimg(src='src' alt='alt')\n```\n"
-        },
-        "requireStrictEqualityOperators": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Requires the use of `===` and `!==` instead of `==` and `!=`.",
-            "documentation": "# requireStrictEqualityOperators: `true`\n\nRequires the use of `===` and `!==` instead of `==` and `!=`.\n\n```pug\n//- Invalid\nif true == false\nif true != false\n\n//- Valid\nif true === false\nif true !== false\n```\n"
-        },
-        "validateAttributeQuoteMarks": {
-            "enum": [
-                null,
-                "\"",
-                "'",
-                true
-            ],
-            "description": "All attribute values must be enclosed in single quotes.",
-            "documentation": "# validateAttributeQuoteMarks: `\"\\\"\"` | `\"'\"` | `true`\n\n## e.g.: `\"'\"`\n\nAll attribute values must be enclosed in single quotes.\n\n```pug\n//- Invalid\ninput(type=\"text\" name=\"name\" value=\"value\")\n\n//- Valid\ninput(type='text' name='name' value='value')\n```\n\n## if (true)\n\nAll attribute values must be enclosed in quote marks match the first quote mark encountered in the source code.\n"
-        },
-        "validateAttributeSeparator": {
-            "type": [
-                "null",
-                "string",
-                "object"
-            ],
-            "properties": {
-                "separator": {
-                    "type": "string"
-                },
-                "multiLineSeparator": {
-                    "type": "string"
-                }
-            },
-            "description": "* All attributes must be immediately followed by a comma and then a space.\n* All attributes must be on the same line.",
-            "documentation": "# validateAttributeSeparator: `string` | `object`\n\n## e.g.: `\", \"`\n\n* All attributes must be immediately followed by a comma and then a space.\n* All attributes must be on the same line.\n\n```pug\n//- Invalid\ninput(type='text' name='name' value='value')\ndiv\n  input(type='text'\n  , name='name'\n  , value='value'\n  )\n\n//- Valid\ninput(type='text', name='name', value='value')\n```\n\n## e.g.: `{ \"separator\": \" \", \"multiLineSeparator\": \"\\n  \" }`\n\n* All attributes that are on the same line must be immediately followed by a space.\n* All attributes that are on different lines must be preceded by two spaces.\n\n```pug\n//- Invalid\ninput(type='text', name='name', value='value')\ndiv\n  input(type='text'\n  , name='name'\n  , value='value'\n  )\n\n//- Valid\ninput(type='text' name='name' value='value')\ndiv\n  input(type='text'\n    name='name'\n    value='value'\n)\n```\n"
-        },
-        "validateDivTags": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Checks that Pug does not contain any unnecessary `div` tags.",
-            "documentation": "# validateDivTags: `true`\n\nChecks that Pug does not contain any unnecessary `div` tags.\n\n```pug\n//- Invalid\ndiv.class\ndiv#id\ndiv.class(class='class')\n\n//- Valid\n.class\n#id\n.class(class='class')\n```\n"
-        },
-        "validateExtensions": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Pug template must use proper file extensions with inclusion and inheritance\n(`.pug`).",
-            "documentation": "# validateExtensions: `true`\n\nPug template must use proper file extensions with inclusion and inheritance\n(`.pug`).\n\n```pug\n//- Invalid\ninclude a\ninclude a.jade\nextends a\nextends a.txt\nextends a.jade\n\n//- Valid\ninclude a.txt\ninclude a.pug\nextends a.pug\n```\n"
-        },
-        "validateIndentation": {
-            "anyOf": [
-                {
-                    "enum": [
-                        null,
-                        "\t"
-                    ]
-                },
-                {
-                    "type": "integer"
-                }
-            ],
-            "description": "Indentation must be consistently two spaces.",
-            "documentation": "# validateIndentation: `int` | `\"\\t\"`\n\n## e.g.: `2`\n\nIndentation must be consistently two spaces.\n\n```pug\n//- Invalid\ndiv\n<TAB>div\n\n//- Valid\ndiv\n<SPACE><SPACE>div\n```\n\n## e.g.: `\"\\t\"`\n\nIndentation must be consistently tabs.\n\n```pug\n//- Invalid\ndiv\n<SPACE><SPACE>div\n\n//- Valid\ndiv\n<TAB>div\n```\n"
-        },
-        "validateLineBreaks": {
-            "enum": [
-                null,
-                "CR",
-                "LF",
-                "CRLF"
-            ],
-            "description": "All line break characters must match.",
-            "documentation": "# validateLineBreaks: `\"CR\"` | `\"LF\"` | `\"CRLF\"`\n\n## e.g.: `\"LF\"`\n\nAll line break characters must match.\n\n```pug\n//- Invalid\ndiv(class='class')<CRLF>\n.button\n\n//- Valid\ndiv(class='class')<LF>\n.button\n```\n"
-        },
-        "validateSelfClosingTags": {
-            "enum": [
-                null,
-                true
-            ],
-            "description": "Checks that Pug does not contain any\n[unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements).\nFiles with `doctype xml` are ignored.",
-            "documentation": "# validateSelfClosingTags: `true`\n\nChecks that Pug does not contain any\n[unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements).\nFiles with `doctype xml` are ignored.\n\n```pug\n//- Invalid\narea/\nlink/\n\n//- Valid\narea\nlink\nfoo/\n\ndoctype xml\narea/\n```\n"
-        },
-        "validateTemplateString": {
-            "anyOf": [
-                {
-                    "enum": [
-                        null,
-                        true
-                    ]
-                },
-                {
-                    "type": "array",
-                    "items": {
-                        "enum": [
-                            "variable",
-                            "string",
-                            "concatenation"
-                        ]
-                    }
-                }
-            ],
-            "description": "Validate the use of template string in Pug templates.",
-            "documentation": "# validateTemplateString: `true` | Array\n\nValidate the use of template string in Pug templates.\n\nThe option can either be an array or `true`. If it is an array, it can\ncontain the following strings. If it is `true` signifies all of the\nfollowing subrules are enabled.\n\n## `'variable'`\n\n```pug\n//- Invalid\nh1= `${title}`\n\n//- Valid\nh1= title\n```\n\n## `'string'`\n\n```pug\n//- Invalid\nh1= `title`\n\n//- Valid\nh1= 'title'\n```\n\n## `'concatenation'`\n\n```pug\n//- Invalid\nh1= `title` + `text`\nh1= `title` + variable\n\n//- Valid\nh1= `titletext`\nh1= `title${variable}`\n```\n"
-        }
-    }
+	"$schema": "http://json-schema.org/draft-04/schema",
+	"properties": {
+		"extends": {
+			"description": "If you want to extend a specific configuration file, you can use the extends property and specify the path to the file. The path can be either relative or absolute.",
+			"type": "string"
+		},
+		"excludeFiles": {
+			"description": "Disables style checking for specified paths declared with glob patterns.",
+			"default": [
+				"node_modules/**"
+			],
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"additionalRules": {
+			"description": "Array of file path matching patterns to load additional rules from.",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"disallowAttributeConcatenation": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug must not contain any attribute concatenation.",
+			"documentation": "# disallowAttributeConcatenation: `true`\n\nPug must not contain any attribute concatenation.\n\n```pug\n//- Invalid\na(href='text ' + title) Link\n//- Invalid under `'aggressive'`\na(href=text + title) Link\na(href=num1 + num2) Link\n```\n"
+		},
+		"disallowAttributeInterpolation": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug must not contain any attribute interpolation operators.",
+			"documentation": "# disallowAttributeInterpolation: `true`\n\nPug must not contain any attribute interpolation operators.\n\n```pug\n//- Invalid\na(href='text #{title}') Link\n//- Valid\na(href='text \\#{title}') Link\na(href='text \\\\#{title}') Link\n```\n\n## Compatibility note\n\nAttribute interpolation has already been removed from Pug v2. This rule\nhelps transition from legacy \"Jade\" v1 code bases to Pug, but does not serve\nany real purpose in real world if Pug v2 is used.\n"
+		},
+		"disallowAttributeTemplateString": {
+			"enum": [
+				null,
+				true,
+				"all"
+			],
+			"description": "Pug must not contain template strings in attributes. `true` only fails when\nthe attribute is a template string; `'all'` fails when template strings are\nused at all.",
+			"documentation": "# disallowAttributeTemplateString: `true` | `'all'`\n\nPug must not contain template strings in attributes. `true` only fails when\nthe attribute is a template string; `'all'` fails when template strings are\nused at all.\n\n## e.g. `true`\n\n```pug\n//- Invalid\na(href=`https://${site}`) Link\n\n//- Valid\na(href=getLink(`https://${site}`)) Link\n```\n\n## e.g. `'all'`\n\n```pug\n//- Invalid\na(href=getLink(`https://${site}`)) Link\n```\n"
+		},
+		"disallowBlockExpansion": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug must not contain any block expansion operators.",
+			"documentation": "# disallowBlockExpansion: `true`\n\nPug must not contain any block expansion operators.\n\n```pug\n//- Invalid\np: strong text\ntable: tr: td text\n```\n"
+		},
+		"disallowClassAttributeWithStaticValue": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Prefer class literals over `class` attributes with static values.",
+			"documentation": "# disallowClassAttributeWithStaticValue: `true`\n\nPrefer class literals over `class` attributes with static values.\n\n```pug\n//- Invalid\nspan(class='foo')\n\n//- Valid\nspan.foo\n```\n"
+		},
+		"disallowClassLiteralsBeforeAttributes": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "All attribute blocks must be written before any class literals.",
+			"documentation": "# disallowClassLiteralsBeforeAttributes: `true`\n\nAll attribute blocks must be written before any class literals.\n\n```pug\n//- Invalid\ninput.class(type='text')\n\n//- Valid\ninput(type='text').class\n```\n"
+		},
+		"disallowClassLiteralsBeforeIdLiterals": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "All ID literals must be written before any class literals.",
+			"documentation": "# disallowClassLiteralsBeforeIdLiterals: `true`\n\nAll ID literals must be written before any class literals.\n\n```pug\n//- Invalid\ninput.class#id(type='text')\n\n//- Valid\ninput#id.class(type='text')\n```\n"
+		},
+		"disallowClassLiterals": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug must not contain any class literals.",
+			"documentation": "# disallowClassLiterals: `true`\n\nPug must not contain any class literals.\n\n```pug\n//- Invalid\n.class\n\n//- Valid\ndiv(class='class')\n```\n"
+		},
+		"disallowDuplicateAttributes": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Attribute blocks must not contain any duplicates.\nAnd if an ID literal is present an ID attribute must not be used. Ignores class attributes.",
+			"documentation": "# disallowDuplicateAttributes: `true`\n\nAttribute blocks must not contain any duplicates.\nAnd if an ID literal is present an ID attribute must not be used. Ignores class attributes.\n\n```pug\n//- Invalid\ndiv(a='a' a='b')\n#id(id='id')\n\n//- Valid\ndiv(class='a', class='b')\n.class(class='class')\n```\n"
+		},
+		"disallowHtmlText": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug must not contain any HTML text.",
+			"documentation": "# disallowHtmlText: `true`\n\nPug must not contain any HTML text.\n\n```pug\n//- Invalid\n<strong>html text</strong>\np this is <strong>html</strong> text\n```\n"
+		},
+		"disallowIdAttributeWithStaticValue": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Prefer ID literals over `id` attributes with static values.",
+			"documentation": "# disallowIdAttributeWithStaticValue: `true`\n\nPrefer ID literals over `id` attributes with static values.\n\n```pug\n//- Invalid\nspan(id='foo')\n\n//- Valid\nspan#id\n```\n"
+		},
+		"disallowIdLiteralsBeforeAttributes": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "All attribute blocks must be written before any ID literals.",
+			"documentation": "# disallowIdLiteralsBeforeAttributes: `true`\n\nAll attribute blocks must be written before any ID literals.\n\n```pug\n//- Invalid\ninput#id(type='text')\n\n//- Valid\ninput(type='text')#id\n```\n"
+		},
+		"disallowIdLiterals": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug must not contain any ID literals.",
+			"documentation": "# disallowIdLiterals: `true`\n\nPug must not contain any ID literals.\n\n```pug\n//- Invalid\n#id\n\n//- Valid\ndiv(id='id')\n```\n"
+		},
+		"disallowLegacyMixinCall": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "The Pug template must not contain legacy mixin call.",
+			"documentation": "# disallowLegacyMixinCall: `true`\n\nThe Pug template must not contain legacy mixin call.\n\n```pug\n//- Invalid\nmixin myMixin(arg)\n\n//- Valid mixin call\n+myMixin(arg)\n\n//- Valid mixin call with block attached\n+myMixin(arg)\n  p Hey\n\n//- Valid mixin definition\nmixin myMixin(arg)\n  p Hey\n```\n"
+		},
+		"disallowMultipleLineBreaks": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug must not contain multiple blank lines in a row.",
+			"documentation": "# disallowMultipleLineBreaks: `true`\n\nPug must not contain multiple blank lines in a row.\n\n```pug\n//- Invalid\ndiv\n\n\ndiv\n\n//- Valid\ndiv\n\ndiv\n```\n"
+		},
+		"disallowSpaceAfterCodeOperator": {
+			"anyOf": [
+				{
+					"enum": [
+						null,
+						true
+					]
+				},
+				{
+					"type": "array",
+					"items": {
+						"enum": [
+							"-",
+							"=",
+							"!="
+						]
+					}
+				}
+			],
+			"description": "No code operators (`-`/`=`/`!=`) should be followed by any spaces.",
+			"documentation": "# disallowSpaceAfterCodeOperator: `true` | `Array`\n\n## e.g.: `true`\n\nNo code operators (`-`/`=`/`!=`) should be followed by any spaces.\n\n```pug\n//- Invalid\np= 'This code is <escaped>'\np!=  'This code is <strong>not</strong> escaped'\n\n//- Valid\np='This code is <escaped>'\np!='This code is <strong>not</strong> escaped'\n```\n\n## e.g.: `[ \"-\" ]`\n\nNo unbuffered code operators (`-`) should be followed by any spaces.\n\n```pug\n//- Invalid\n- var a = 'This is code'\n\n//- Valid\n-var a = 'This is code'\n```\n"
+		},
+		"disallowSpacesInsideAttributeBrackets": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Disallows space after opening attribute bracket and before closing.",
+			"documentation": "# disallowSpacesInsideAttributeBrackets: `true`\n\nDisallows space after opening attribute bracket and before closing.\n\n```pug\n//- Invalid\ninput( type='text' name='name' value='value' )\n\n//- Valid\ninput(type='text' name='name' value='value')\n```\n"
+		},
+		"disallowSpecificAttributes": {
+			"type": [
+				"null",
+				"string",
+				"array"
+			],
+			"items": {
+				"type": [
+					"object",
+					"string"
+				],
+				"additionalProperties": {
+					"type": [
+						"string",
+						"array"
+					],
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"description": "Pug must not contain any of the attributes specified.",
+			"documentation": "# disallowSpecificAttributes: `string` | `Array`\n\n## e.g.: `\"a\"` OR `[ \"A\", \"b\" ]`\n\nPug must not contain any of the attributes specified.\n\n```pug\n//- Invalid\nspan(a='a')\ndiv(B='b')\n```\n\n## e.g.: `[ { img: [ \"title\" ] } ]`\n\n`img` tags must not contain any of the attributes specified.\n\n```pug\n//- Invalid\nimg(title='title')\n```\n"
+		},
+		"disallowSpecificTags": {
+			"type": [
+				"null",
+				"string",
+				"array"
+			],
+			"items": {
+				"type": "string"
+			},
+			"description": "Pug must not contain any of the tags specified.",
+			"documentation": "# disallowSpecificTags: `string` | `Array`\n\nPug must not contain any of the tags specified.\n\n## e.g.: `[ \"b\", \"i\" ]`\n\n```pug\n//- Invalid\nb Bold text\ni Italic text\n```\n"
+		},
+		"disallowStringConcatenation": {
+			"enum": [
+				null,
+				true,
+				"aggressive"
+			],
+			"description": "Pug must not contain any string concatenation.",
+			"documentation": "# disallowStringConcatenation: `true` | `'aggressive'`\n\nPug must not contain any string concatenation.\n\n```pug\n//- Invalid\nh1= title + 'text'\n//- Invalid under `'aggressive'`\nh1= title + text\n```\n"
+		},
+		"disallowStringInterpolation": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug must not contain any string interpolation operators.",
+			"documentation": "# disallowStringInterpolation: `true`\n\nPug must not contain any string interpolation operators.\n\n```pug\n//- Invalid\nh1 #{title} text\n```\n"
+		},
+		"disallowTagInterpolation": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug must not contain any tag interpolation operators.",
+			"documentation": "# disallowTagInterpolation: `true`\n\nPug must not contain any tag interpolation operators.\n\n```pug\n//- Invalid\n| #[strong html] text\np #[strong html] text\n```\n"
+		},
+		"disallowTemplateString": {
+			"enum": [
+				null,
+				true,
+				"all"
+			],
+			"description": "Pug must not contain template strings. `true` only fails when a template\nstring is used directly; `'all'` fails when template strings are used at\nall.",
+			"documentation": "# disallowTemplateString: `true` | `'all'`\n\nPug must not contain template strings. `true` only fails when a template\nstring is used directly; `'all'` fails when template strings are used at\nall.\n\n## e.g. `true`\n\n```pug\n//- Invalid\nh1= `${title} text`\n\n//- Valid\nh1= translate(`${title} text`)\n```\n\n## e.g. `'all'`\n\n```pug\n//- Invalid\nh1= translate(`${title} text`)\n```\n"
+		},
+		"disallowTrailingSpaces": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Lines in Pug file must not contain useless spaces at the end.",
+			"documentation": "# disallowTrailingSpaces: `true`\n\nLines in Pug file must not contain useless spaces at the end.\n"
+		},
+		"maximumLineLength": {
+			"type": [
+				"null",
+				"integer"
+			],
+			"description": "Lines in Pug file must not exceed the specified length.",
+			"documentation": "# maximumLineLength: `int`\n\n## e.g.: `80`\n\nLines in Pug file must not exceed the specified length.\n"
+		},
+		"maximumNumberOfLines": {
+			"type": [
+				"null",
+				"integer"
+			],
+			"description": "Pug files should be at most the number of lines specified.",
+			"documentation": "# maximumNumberOfLines: `int`\n\nPug files should be at most the number of lines specified.\n"
+		},
+		"requireClassLiteralsBeforeAttributes": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "All class literals must be written before any attribute blocks.",
+			"documentation": "# requireClassLiteralsBeforeAttributes: `true`\n\nAll class literals must be written before any attribute blocks.\n\n```pug\n//- Invalid\ninput(type='text').class\n\n//- Valid\ninput.class(type='text')\n```\n"
+		},
+		"requireClassLiteralsBeforeIdLiterals": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "All class literals must be written before any ID literals.",
+			"documentation": "# requireClassLiteralsBeforeIdLiterals: `true`\n\nAll class literals must be written before any ID literals.\n\n```pug\n//- Invalid\ninput#id.class(type='text')\n\n//- Valid\ninput.class#id(type='text')\n```\n"
+		},
+		"requireIdLiteralsBeforeAttributes": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "All ID literals must be written before any attribute blocks.",
+			"documentation": "# requireIdLiteralsBeforeAttributes: `true`\n\nAll ID literals must be written before any attribute blocks.\n\n```pug\n//- Invalid\ninput(type='text')#id\n\n//- Valid\ninput#id(type='text')\n```\n"
+		},
+		"requireLineFeedAtFileEnd": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "All files must end with a line feed.",
+			"documentation": "# requireLineFeedAtFileEnd: `true`\n\nAll files must end with a line feed.\n"
+		},
+		"requireLowerCaseAttributes": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "All attributes must be written in lower case. Files with `doctype xml` are ignored.",
+			"documentation": "# requireLowerCaseAttributes: `true`\n\nAll attributes must be written in lower case. Files with `doctype xml` are ignored.\n\n```pug\n//- Invalid\ndiv(Class='class')\n\n//- Valid\ndiv(class='class')\n```\n"
+		},
+		"requireLowerCaseTags": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "All tags must be written in lower case. Files with `doctype xml` are ignored.",
+			"documentation": "# requireLowerCaseTags: `true`\n\nAll tags must be written in lower case. Files with `doctype xml` are ignored.\n\n```pug\n//- Invalid\nDiv(class='class')\n\n//- Valid\ndiv(class='class')\n```\n"
+		},
+		"requireSpaceAfterCodeOperator": {
+			"anyOf": [
+				{
+					"enum": [
+						null,
+						true
+					]
+				},
+				{
+					"type": "array",
+					"items": {
+						"enum": [
+							"-",
+							"=",
+							"!="
+						]
+					}
+				}
+			],
+			"description": "All code operators (`-`/`=`/`!=`) must be immediately followed by a single space.",
+			"documentation": "# requireSpaceAfterCodeOperator: `true` | `Array`\n\n## e.g.: `true`\n\nAll code operators (`-`/`=`/`!=`) must be immediately followed by a single space.\n\n```pug\n//- Invalid\np='This code is <escaped>'\np!=  'This code is <strong>not</strong> escaped'\n\n//- Valid\np= 'This code is <escaped>'\np!= 'This code is <strong>not</strong> escaped'\n```\n\n## e.g.: `[ \"-\" ]`\n\nAll unbuffered code operators (`-`) must be immediately followed by a single space.\n\n```pug\n//- Invalid\n-var a = 'This is code'\n\n//- Valid\n- var a = 'This is code'\n```\n"
+		},
+		"requireSpacesInsideAttributeBrackets": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Requires space after opening attribute bracket and before closing.",
+			"documentation": "# requireSpacesInsideAttributeBrackets: `true`\n\nRequires space after opening attribute bracket and before closing.\n\n```pug\n//- Invalid\ninput(type='text' name='name' value='value')\n\n//- Valid\ninput( type='text' name='name' value='value' )\n```\n"
+		},
+		"requireSpecificAttributes": {
+			"type": [
+				"null",
+				"array"
+			],
+			"items": {
+				"type": "object",
+				"additionalProperties": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"description": "`img` tags must contain all of the attributes specified.",
+			"documentation": "# requireSpecificAttributes: `Array`\n\n## e.g.: `[ { img: [ \"alt\" ] } ]`\n\n`img` tags must contain all of the attributes specified.\n\n```pug\n//- Invalid\nimg(src='src')\n\n//- Valid\nimg(src='src' alt='alt')\n```\n"
+		},
+		"requireStrictEqualityOperators": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Requires the use of `===` and `!==` instead of `==` and `!=`.",
+			"documentation": "# requireStrictEqualityOperators: `true`\n\nRequires the use of `===` and `!==` instead of `==` and `!=`.\n\n```pug\n//- Invalid\nif true == false\nif true != false\n\n//- Valid\nif true === false\nif true !== false\n```\n"
+		},
+		"validateAttributeQuoteMarks": {
+			"enum": [
+				null,
+				"\"",
+				"'",
+				true
+			],
+			"description": "All attribute values must be enclosed in single quotes.",
+			"documentation": "# validateAttributeQuoteMarks: `\"\\\"\"` | `\"'\"` | `true`\n\n## e.g.: `\"'\"`\n\nAll attribute values must be enclosed in single quotes.\n\n```pug\n//- Invalid\ninput(type=\"text\" name=\"name\" value=\"value\")\n\n//- Valid\ninput(type='text' name='name' value='value')\n```\n\n## if (true)\n\nAll attribute values must be enclosed in quote marks match the first quote mark encountered in the source code.\n"
+		},
+		"validateAttributeSeparator": {
+			"type": [
+				"null",
+				"string",
+				"object"
+			],
+			"properties": {
+				"separator": {
+					"type": "string"
+				},
+				"multiLineSeparator": {
+					"type": "string"
+				}
+			},
+			"description": "* All attributes must be immediately followed by a comma and then a space.\n* All attributes must be on the same line.",
+			"documentation": "# validateAttributeSeparator: `string` | `object`\n\n## e.g.: `\", \"`\n\n* All attributes must be immediately followed by a comma and then a space.\n* All attributes must be on the same line.\n\n```pug\n//- Invalid\ninput(type='text' name='name' value='value')\ndiv\n  input(type='text'\n  , name='name'\n  , value='value'\n  )\n\n//- Valid\ninput(type='text', name='name', value='value')\n```\n\n## e.g.: `{ \"separator\": \" \", \"multiLineSeparator\": \"\\n  \" }`\n\n* All attributes that are on the same line must be immediately followed by a space.\n* All attributes that are on different lines must be preceded by two spaces.\n\n```pug\n//- Invalid\ninput(type='text', name='name', value='value')\ndiv\n  input(type='text'\n  , name='name'\n  , value='value'\n  )\n\n//- Valid\ninput(type='text' name='name' value='value')\ndiv\n  input(type='text'\n    name='name'\n    value='value'\n)\n```\n"
+		},
+		"validateDivTags": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Checks that Pug does not contain any unnecessary `div` tags.",
+			"documentation": "# validateDivTags: `true`\n\nChecks that Pug does not contain any unnecessary `div` tags.\n\n```pug\n//- Invalid\ndiv.class\ndiv#id\ndiv.class(class='class')\n\n//- Valid\n.class\n#id\n.class(class='class')\n```\n"
+		},
+		"validateExtensions": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Pug template must use proper file extensions with inclusion and inheritance\n(`.pug`).",
+			"documentation": "# validateExtensions: `true`\n\nPug template must use proper file extensions with inclusion and inheritance\n(`.pug`).\n\n```pug\n//- Invalid\ninclude a\ninclude a.jade\nextends a\nextends a.txt\nextends a.jade\n\n//- Valid\ninclude a.txt\ninclude a.pug\nextends a.pug\n```\n"
+		},
+		"validateIndentation": {
+			"anyOf": [
+				{
+					"enum": [
+						null,
+						"\t"
+					]
+				},
+				{
+					"type": "integer"
+				}
+			],
+			"description": "Indentation must be consistently two spaces.",
+			"documentation": "# validateIndentation: `int` | `\"\\t\"`\n\n## e.g.: `2`\n\nIndentation must be consistently two spaces.\n\n```pug\n//- Invalid\ndiv\n<TAB>div\n\n//- Valid\ndiv\n<SPACE><SPACE>div\n```\n\n## e.g.: `\"\\t\"`\n\nIndentation must be consistently tabs.\n\n```pug\n//- Invalid\ndiv\n<SPACE><SPACE>div\n\n//- Valid\ndiv\n<TAB>div\n```\n"
+		},
+		"validateLineBreaks": {
+			"enum": [
+				null,
+				"CR",
+				"LF",
+				"CRLF"
+			],
+			"description": "All line break characters must match.",
+			"documentation": "# validateLineBreaks: `\"CR\"` | `\"LF\"` | `\"CRLF\"`\n\n## e.g.: `\"LF\"`\n\nAll line break characters must match.\n\n```pug\n//- Invalid\ndiv(class='class')<CRLF>\n.button\n\n//- Valid\ndiv(class='class')<LF>\n.button\n```\n"
+		},
+		"validateSelfClosingTags": {
+			"enum": [
+				null,
+				true
+			],
+			"description": "Checks that Pug does not contain any\n[unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements).\nFiles with `doctype xml` are ignored.",
+			"documentation": "# validateSelfClosingTags: `true`\n\nChecks that Pug does not contain any\n[unnecessary self closing tags](http://www.w3.org/html/wg/drafts/html/master/syntax.html#void-elements).\nFiles with `doctype xml` are ignored.\n\n```pug\n//- Invalid\narea/\nlink/\n\n//- Valid\narea\nlink\nfoo/\n\ndoctype xml\narea/\n```\n"
+		},
+		"validateTemplateString": {
+			"anyOf": [
+				{
+					"enum": [
+						null,
+						true
+					]
+				},
+				{
+					"type": "array",
+					"items": {
+						"enum": [
+							"variable",
+							"string",
+							"concatenation"
+						]
+					}
+				}
+			],
+			"description": "Validate the use of template string in Pug templates.",
+			"documentation": "# validateTemplateString: `true` | Array\n\nValidate the use of template string in Pug templates.\n\nThe option can either be an array or `true`. If it is an array, it can\ncontain the following strings. If it is `true` signifies all of the\nfollowing subrules are enabled.\n\n## `'variable'`\n\n```pug\n//- Invalid\nh1= `${title}`\n\n//- Valid\nh1= title\n```\n\n## `'string'`\n\n```pug\n//- Invalid\nh1= `title`\n\n//- Valid\nh1= 'title'\n```\n\n## `'concatenation'`\n\n```pug\n//- Invalid\nh1= `title` + `text`\nh1= `title` + variable\n\n//- Valid\nh1= `titletext`\nh1= `title${variable}`\n```\n"
+		}
+	}
 }
