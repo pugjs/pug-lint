@@ -1,16 +1,16 @@
 const path = require('path');
+
 const noCase = require('no-case');
 const camelCase = require('camel-case');
-const generators = require('yeoman-generator');
+const Generators = require('yeoman-generator');
 
-module.exports = generators.Base.extend({
-	constructor() {
-		// eslint-disable-next-line prefer-rest-params
-		generators.Base.apply(this, arguments);
+module.exports = class extends Generators {
+	constructor(args, opts) {
+		super(args, opts);
 
 		this.destinationRoot(path.resolve(__dirname, '..'));
 		this.sourceRoot(path.join(__dirname, 'rule-templates'));
-	},
+	}
 
 	prompting() {
 		return this.prompt([
@@ -50,8 +50,7 @@ module.exports = generators.Base.extend({
 				choices: [
 					'true',
 					{
-						name:
-							'true or array of code separators ("-", "=", or "!=")',
+						name: 'true or array of code separators ("-", "=", or "!=")',
 						value: 'true|codeSep',
 						short: 'true|Array<code sep>'
 					},
@@ -94,7 +93,7 @@ module.exports = generators.Base.extend({
 				other: (answers.optionsExpanded || '').split('|')
 			}[answers.options];
 		});
-	},
+	}
 
 	writing() {
 		this.template('rule.js', 'lib/rules/' + this.filename + '.js');
@@ -110,4 +109,4 @@ module.exports = generators.Base.extend({
 			'//- ...'
 		);
 	}
-});
+};

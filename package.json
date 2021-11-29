@@ -81,6 +81,7 @@
 		"docs": "node tools/build-rule-docs",
 		"schema": "node tools/build-json-schema",
 		"changelog": "node tools/build-changelog",
+		"create-rule": "yo ./generators/rule.js",
 		"pretest": "npm run docs && npm run schema && npm run lint",
 		"test": "npm run coverage",
 		"posttest": "(istanbul check-coverage --statements 90 --branches 90 --functions 100 --lines 90 && rimraf coverage) || echo Look at 'coverage/lcov-report/index.html' to find out more"
@@ -118,7 +119,7 @@
 		"rimraf": "^2.5.2",
 		"semver-regex": "^1.0.0",
 		"sinon": "^1.17.2",
-		"yeoman-generator": "^0.23.3",
-		"yo": "^1.8.4"
+		"yeoman-generator": "^5.4.2",
+		"yo": "^4.3.0"
 	}
 }
