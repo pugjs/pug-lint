@@ -1,7 +1,6 @@
 const path = require('path');
 
-const noCase = require('no-case');
-const camelCase = require('camel-case');
+const caseAnything = require('case-anything');
 const Generators = require('yeoman-generator');
 
 module.exports = class extends Generators {
@@ -68,8 +67,8 @@ module.exports = class extends Generators {
 			}
 		]).then((answers) => {
 			const purpose = answers.verb + ' ' + answers.thing;
-			this.filename = noCase(purpose, null, '-');
-			this.optionName = camelCase(purpose);
+			this.filename = caseAnything.kebabCase(purpose);
+			this.optionName = caseAnything.camelCase(purpose);
 
 			this.requirement =
 				{

@@ -1,0 +1,6 @@
+{
+	"pattern": "lib/**/*.js",
+	"reporters": ["html", "console"],
+	"absolute": true,
+	"skipLocal": true
+}

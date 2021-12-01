@@ -1,7 +1,0 @@
-{
-	"threshold": 30,
-	"identifiers": true,
-	"ignore": "coverage|test",
-	"reporter": "default",
-	"suppress": 100
-}

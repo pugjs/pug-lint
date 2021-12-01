@@ -3,3 +3,5 @@ node_modules
 npm-debug.log
 test/*ignore*
 .eslintcache
+.nyc_output/
+report/
