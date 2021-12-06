@@ -1,0 +1,23 @@
+name: Code Quality
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+        branches: [master]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v2
+              cache: 'npm'
+              with:
+                  node-version: lts/*
+            - run: npm ci
+            - run: npm lint
+            - run: npm inspect
+            - run: npm depcheck
