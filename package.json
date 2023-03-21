@@ -62,7 +62,7 @@
     "url": "git@github.com:pugjs/pug-lint.git"
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org"
   },
   "main": "./lib/linter",
   "bin": {
