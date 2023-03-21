@@ -4,7 +4,6 @@ var fs = require('fs');
 var path = require('path');
 var changelog = require('changelog');
 var moment = require('moment');
-var semverRegex = require('semver-regex');
 var packageDetails = require('../package.json');
 
 function createTask(pliers) {
@@ -37,7 +36,7 @@ function createTask(pliers) {
           var message = change.message.split('\n')[0];
 
           if (message) {
-            if (semverRegex().test(message)) {
+            if (/^(.*\s)?v?[0-9]+\.[0-9]+\.[0-9]+(\s.*)?$/.test(message)) {
               previousVersion = message;
 
               if (previousVersion.length) {
