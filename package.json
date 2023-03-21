@@ -108,7 +108,6 @@
     "pliers": "^1.2.1",
     "pug-lint-config-clock": "^1.1.0",
     "rimraf": "^2.5.2",
-    "semver-regex": "^1.0.0",
     "sinon": "^1.17.2",
     "xo": "^0.15.1",
     "yeoman-generator": "^0.23.3",
