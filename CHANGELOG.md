@@ -1,3 +1,15 @@
+## v2.7.0 / 2023-03-21
+
+### Highlights
+* Remove dependency semver-regex
+* Upgrade pug-lexer to allow ellipsis in attributes
+* Add failed test case when using ellipsis in attribute names
+* Fully qualifying URL
+* Changed URL SublimeLinter/SublimeLinter-pug-lint
+
+### Changes
+[v2.6.0...v2.7.0](https://github.com/pugjs/pug-lint/compare/v2.6.0...v2.7.0)
+
 ## v2.6.0 / 2019-06-24
 
 ### Highlights
