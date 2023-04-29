@@ -67,6 +67,14 @@ let g:syntastic_pug_checkers = ['pug_lint']
 
 ## Build system integration
 
+### Shell
+
+The fastest way to lint multiple `.pug` files is by using the standard `find` unix command. The command below assumes you have a `views` directory which contains other nested directories with `.pug` files.
+
+```sh
+find ./views -type f -name '*.pug' | xargs pug-lint
+```
+
 ### Gulp
 
 If you're using Gulp as your build system, you can use [gulp-pug-linter](https://github.com/ilyakam/gulp-pug-linter) for easier integration.
