@@ -26,5 +26,31 @@ function createTest(linter, fixturesPath) {
         assert.equal(result[0].column, 19);
       });
     });
+
+    describe('object', function () {
+      it('should not report ID attribute with value containing allowed sub-string', function () {
+        linter.configure({disallowIdAttributeWithStaticValue: {allowTokens: ['{', '}']}});
+        assert.equal(linter.checkString('a(id="{{::sth}}-title")').length, 0);
+      });
+
+      it('should report ID attribute with value containing denied sub-string', function () {
+        linter.configure({disallowIdAttributeWithStaticValue: {denyTokens: ['::']}});
+        var result = linter.checkString('a(id="{{::sth}}-title")');
+
+        assert.equal(result[0].code, 'PUG:LINT_DISALLOWIDATTRIBUTEWITHSTATICVALUE');
+        assert.equal(result[0].line, 1);
+        assert.equal(result[0].column, 3);
+      });
+
+      it('should prioritize `allowTokens` over `denyTokens`', function () {
+        linter.configure({
+          disallowIdAttributeWithStaticValue: {
+            allowTokens: ['::'],
+            denyTokens: ['::']
+          }
+        });
+        assert.equal(linter.checkString('a(id="{{::sth}}-title")').length, 0);
+      });
+    });
   });
 }
