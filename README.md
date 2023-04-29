@@ -28,6 +28,29 @@ $ pug-lint [options] <file ...>
 * `-c, --config <path>`: [configuration file](#configuration-file) path
 * `-r, --reporter <reporter>`: error reporter; console - default, inline
 
+#### Lint multiples files in npm script
+
+```json
+{
+  "scripts": {
+    "lint:pug": "git ls-files 'src/**/*.pug' | xargs pug-lint",
+  }
+}
+```
+
+#### Integrate with [lint-staged](https://www.npmjs.com/package/lint-staged)
+
+```json
+{
+  "lint-staged": {
+    "{src}/**/*.pug": [
+      "pug-lint",
+      "git add"
+    ]
+  }
+}
+```
+
 ## Editor integration
 
 ### Sublime Text 3
