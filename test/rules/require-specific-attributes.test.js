@@ -24,6 +24,10 @@ function createTest(linter, fixturesPath) {
         assert.equal(linter.checkString('img(alt=\'alt\')').length, 0);
       });
 
+      it('should not report existing bracketed attributes', function () {
+        assert.equal(linter.checkString('img([alt]=\'alt\')').length, 0);
+      });
+
       it('should report multiple errors found in file', function () {
         var result = linter.checkFile(fixturesPath + 'require-specific-attributes.pug');
 
